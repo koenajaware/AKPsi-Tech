@@ -14,7 +14,6 @@ const Banner = () => {
         <h1 className="hero-title">ALPHA KAPPA PSI</h1>
         <p className="hero-subtitle">The Omega Theta Chapter at the University of Maryland - College Park</p>
       </div>
-      <div className="decorative-bar"></div>
     </section>
   );
 };

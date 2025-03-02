@@ -37,11 +37,3 @@
     font-family: var(--font-family-thasadith);
     white-space: nowrap;
   }
-  
-  .decorative-bar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 155px;
-    background-color: rgba(0, 93, 171, 0.5);
-  }

@@ -1,0 +1,10 @@
+.blue-bar {
+  background-color: lightblue; /* Blue color */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  height: 200px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+}
