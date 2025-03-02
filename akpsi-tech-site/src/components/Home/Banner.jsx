@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../styles/Home/Banner.css';
+import fratPic from "../../assets/Home-Frat-Pic.jpeg";
 // Placeholder banner image, change to reflect actual banner
-const placeholderImage = 'https://placehold.co/600x400?text=Alpha+Kappa+Psi';
 
 // Can also add the rotating footer section with the companies below
 const Banner = () => {
   return (
     <section className="hero">
       <div className="hero-image-container">
-        <img src={placeholderImage} alt="Alpha Kappa Psi members" className="hero-image" />
+        <img src={fratPic} alt="Alpha Kappa Psi members" className="hero-image" />
       </div>
       <div className="hero-content">
         <h1 className="hero-title">ALPHA KAPPA PSI</h1>

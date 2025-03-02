@@ -1,12 +1,13 @@
 import React from 'react';
 import '../../styles/Home/Header.css';
+import logo from "../../assets/Akpsi-emblem.png";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
         <img 
-          src="https://placehold.co/200x200?text=AKPsi+Logo" 
+          src={logo} 
           alt="Alpha Kappa Psi logo" 
           className="logo" 
         />
