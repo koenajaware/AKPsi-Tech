@@ -1,0 +1,67 @@
+.pillars {
+    padding: 100px 150px;
+    display: flex;
+    gap: 75px;
+  }
+  
+  .pillars-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .pillars-list {
+    width: 100%;
+  }
+  
+  .pillar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .pillar-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: black;
+  }
+  
+  .pillar-title {
+    font-size: 40px;
+    font-family: var(--font-family-thasadith);
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .expand-icon {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .pillars-cards {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .pillar-card {
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .pillar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

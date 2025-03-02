@@ -1,0 +1,26 @@
+.story {
+    display: flex;
+    padding: 100px 150px;
+    gap: 75px;
+  }
+  
+  .section-title {
+    font-size: 80px;
+    font-family: var(--font-family-inria-serif);
+    font-weight: bold;
+    color: var(--color-primary);
+    text-align: center;
+    flex-shrink: 0;
+    width: 245px;
+  }
+  
+  .story-content {
+    max-width: 980px;
+  }
+  
+  .story-content p {
+    font-size: 15px;
+    font-family: var(--font-family-thasadith);
+    line-height: 1.6;
+    text-align: center;
+  }
