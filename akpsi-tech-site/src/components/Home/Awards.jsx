@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/Home/Awards.css';
 
 /* Should be rebuilt into a dropdown, as per Figma design */ 
+/* Also make it so that the dropdown stays open when you click on the next dropdown */
 
 const Awards = () => {
   const [expandedAward, setExpandedAward] = useState(null);
@@ -99,7 +100,6 @@ const Awards = () => {
             "Omega Theta won 2008-2009 International Chapter of the Year at our annual Convention",
             "2011 KPMG National Case Competition in NYC: AKPsi team won both the UMD and the Mid-Atlantic Region rounds",
             "2011 Wake Forest Marketing Competition: Brett Cullen helped the UMD team win 3rd place"
-            // Update notable awards for 2025 ie. what eileen and them won.
           ]
         }
       ]
@@ -149,6 +149,20 @@ const Awards = () => {
                               </div>
                             ))}
                           </div>
+                        )}
+                        {item.recipients && (
+                          <ul className="recipients-list">
+                            {item.recipients.map((recipient, idx) => (
+                              <li key={idx}>{recipient}</li>
+                            ))}
+                          </ul>
+                        )}
+                        {item.achievements && (
+                          <ul className="achievements-list">
+                            {item.achievements.map((achievement, idx) => (
+                              <li key={idx}>{achievement}</li>
+                            ))}
+                          </ul>
                         )}
                       </div>
                     ))
