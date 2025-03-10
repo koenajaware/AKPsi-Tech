@@ -7,10 +7,10 @@ const Banner = () => {
   const [windowHeight, setWindowHeight] = useState(0);
   const { scrollY } = useScroll();
   
-  // Create more subtle parallax effects
-  const y = useTransform(scrollY, [0, windowHeight], [0, 70]); // Reduced movement from 150 to 70
-  const opacity = useTransform(scrollY, [0, windowHeight], [1, 0.7]); // Less opacity change
-  const scale = useTransform(scrollY, [0, windowHeight], [1, 1.07]); // Reduced scale effect
+  // Create parallax effects with useTransform
+  const y = useTransform(scrollY, [0, windowHeight], [0, 150]);
+  const opacity = useTransform(scrollY, [0, windowHeight * 0.8], [1, 0.3]);
+  const scale = useTransform(scrollY, [0, windowHeight], [1, 1.15]);
   
   // Update window height on mount and resize
   useEffect(() => {
@@ -62,18 +62,18 @@ const Banner = () => {
       >
         <motion.h1 
           className="hero-title"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0.7, y: 3 }} // Much less movement and higher starting opacity 
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }} // Faster with less delay
         >
           ALPHA KAPPA PSI
         </motion.h1>
         
         <motion.p 
           className="hero-subtitle"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0.7, y: 3 }} // Much less movement and higher starting opacity
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }} // Faster with less delay
         >
           The Omega Theta Chapter at the University of Maryland - College Park
         </motion.p>
