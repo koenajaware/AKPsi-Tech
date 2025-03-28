@@ -1,4 +1,7 @@
 .organizations {
   padding: 4rem 0;
   text-align: center;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  background-color: blue
 }

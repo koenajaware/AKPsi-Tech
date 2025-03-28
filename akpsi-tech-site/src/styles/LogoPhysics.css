@@ -2,19 +2,23 @@
   position: relative;
   min-height: 400px;
   margin: 2rem auto;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
-.logo {
+.organization-logo {
+  border-radius: 50%; /* Makes the logos circular */
+  width: 150px; /* Set a fixed size for the logos */
+  height: 150px; /* Ensure width and height are equal */
+  object-fit: contain; /* Ensures the image fits within the circle */
   position: absolute;
-  width: 200px;
-  height: 100px;
-  object-fit: contain;
-  transition: transform 0.1s linear;
+  /*transition: transform 0.1s linear; */
   cursor: pointer;
-  will-change: transform;
-  z-index: 1;
+  /*will-change: transform;*/
+  z-index: 2;
+  background-color: white
 }
-
 
 .center-box {
   position: absolute;
@@ -22,9 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 

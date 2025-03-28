@@ -2,6 +2,8 @@
     padding: 100px 150px;
     display: flex;
     gap: 75px;
+    width: 100vw; /* Set width to 100% of the viewport width */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
   }
   
   .awards-content {
