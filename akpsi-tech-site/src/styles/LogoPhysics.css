@@ -1,6 +1,6 @@
 .logo-container {
   position: relative;
-  min-height: 400px;
+  min-height: 600px;
   margin: 2rem auto;
   width: 100vw; /* Set width to 100% of the viewport width */
   max-width: 100%; /* Ensure it doesn't exceed the viewport width */
