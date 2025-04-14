@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../styles/Home/Pillars.css';
 
 const Pillars = () => {
-  const [expandedPillar, setExpandedPillar] = useState(null);
+  const [expandedPillars, setExpandedPillars] = useState([]);
 
   const pillars = [
     { 
@@ -44,7 +44,13 @@ const Pillars = () => {
   ];
 
   const togglePillar = (index) => {
-    setExpandedPillar(expandedPillar === index ? null : index);
+    setExpandedPillars(prev => {
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
   };
 
   return (
@@ -61,10 +67,10 @@ const Pillars = () => {
               >
                 <h3 className="pillar-title">{pillar.title}</h3>
                 <div className="expand-icon">
-                  {expandedPillar === index ? '−' : '+'}
+                  {expandedPillars.includes(index) ? '−' : '+'}
                 </div>
               </div>
-              {expandedPillar === index && (
+              {expandedPillars.includes(index) && (
                 <div className="pillar-dropdown">
                   <p>{pillar.content}</p>
                 </div>

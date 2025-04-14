@@ -5,7 +5,7 @@ import '../../styles/Home/Awards.css';
 /* Also make it so that the dropdown stays open when you click on the next dropdown */
 
 const Awards = () => {
-  const [expandedAward, setExpandedAward] = useState(null);
+  const [expandedAwards, setExpandedAwards] = useState([]);
 
   const awards = [
     { 
@@ -107,7 +107,13 @@ const Awards = () => {
   ];
 
   const toggleAward = (index) => {
-    setExpandedAward(expandedAward === index ? null : index);
+    setExpandedAwards((prevExpandedAwards) => {
+      if (prevExpandedAwards.includes(index)) {
+        return prevExpandedAwards.filter((i) => i !== index);
+      } else {
+        return [...prevExpandedAwards, index];
+      }
+    });
   };
 
   return (
@@ -124,10 +130,10 @@ const Awards = () => {
               >
                 <h3 className="award-title">{award.title}</h3>
                 <div className="expand-icon">
-                  {expandedAward === index ? '−' : '+'}
+                  {expandedAwards.includes(index) ? '−' : '+'}
                 </div>
               </div>
-              {expandedAward === index && (
+              {expandedAwards.includes(index) && (
                 <div className="award-dropdown">
                   {!Array.isArray(award.content) ? (
                     <p>{award.content}</p>
