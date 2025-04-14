@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // import Link from react-router-dom
 import '../../styles/Home/Header.css';
 import logo from "../../assets/Akpsi-emblem.png";
 
@@ -11,16 +12,28 @@ const Header = () => {
           alt="Alpha Kappa Psi logo" 
           className="logo" 
         />
-        <h1 className="organization-name">ALPHA KAPPA PSI<br />OMEGA THETA</h1>
+        <h1 className="organization-name">
+          ALPHA KAPPA PSI<br />OMEGA THETA
+        </h1>
       </div>
       
       <nav className="navigation">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#recruitment">Recruitment</a></li>
-          <li><a href="#exec">Exec</a></li>
-          <li><a href="#brothers">Brothers</a></li>
-          <li><a href="#alumni">Alumni</a></li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/recruitment">Recruitment</Link>
+          </li>
+          <li>
+            <Link to="/exec">Exec</Link>
+          </li>
+          <li>
+            <Link to="/brothers">Brothers</Link>
+          </li>
+          <li>
+            <Link to="/alumni">Alumni</Link>
+          </li>
         </ul>
       </nav>
       
