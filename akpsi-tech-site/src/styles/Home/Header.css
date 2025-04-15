@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    width: 100vw; /* Set width to 100% of the viewport width */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 86px;
+  }
+  
+  .organization-name {
+    margin-left: 18px;
+    font-size: 25px;
+    font-family: var(--font-family-inria-serif);
+    font-weight: bold;
+    color: var(--color-text-dark);
+  }
+  
+  .navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+  }
+  
+  .navigation a {
+    font-size: 20px;
+    font-family: var(--font-family-inria-serif);
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  .contact-button {
+    width: 150px;
+    height: 50px;
+    background-color: var(--color-white);
+    border: 0.5px solid #000;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: var(--font-family-inria-serif);
+    font-weight: bold;
+    color: var(--color-text-dark);
+    cursor: pointer;
+  }

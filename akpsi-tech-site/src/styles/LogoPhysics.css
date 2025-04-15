@@ -1,0 +1,46 @@
+.logo-container {
+  position: relative;
+  min-height: 600px;
+  margin: 2rem auto;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  background-color: #082c54
+}
+
+.organization-logo {
+  border-radius: 50%; /* Makes the logos circular */
+  width: 160px; /* Set a fixed size for the logos */
+  height: 160px; /* Ensure width and height are equal */
+  object-fit: contain; /* Ensures the image fits within the circle */
+  position: absolute;
+  transition: transform 0.1s ease-out; /* optional for smooth movement */
+  cursor: pointer;
+  /*will-change: transform;*/
+  z-index: 2;
+  background-color: white
+}
+
+.center-box {
+  position: absolute;
+  background: #082c54;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  border-color: gold;
+  border-width: 10px;
+}
+
+.center-box h2 {
+  font-family: 'Arial', sans-serif; /* Font family */
+  font-size: 30px; /* Font size */
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
