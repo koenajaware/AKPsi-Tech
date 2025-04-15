@@ -23,8 +23,8 @@ const LogoPhysics = ({ logos }) => {
   });
   // struct to store change in position and velocity of each logo
   const positions = useRef(logos.map(() => ({
-    x: 0,
-    y: 0,
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
     vx: 0,
     vy: 0
   })));
@@ -90,8 +90,8 @@ const LogoPhysics = ({ logos }) => {
 
       // apply a random velocty to each logo relative to the clamped scroll delta
       positions.current.forEach(pos => {
-        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
-        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
+        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
+        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
       });
 
       // starts the animation frame
@@ -106,172 +106,150 @@ const LogoPhysics = ({ logos }) => {
   }, []);
 
   const animate = () => {
-    // define some variables for the container for ease
     const container = logoRefs.current[0]?.parentElement;
     if (!container) return;
     const containerRect = container.getBoundingClientRect();
     const containerLeft = containerRect.left;
     const containerTop = containerRect.top;
-
-    // by default, each logo should decelerate to avoid oscillation
-    // also at each frame of the animation, update the position of each logo by adding the velocity to it
-    positions.current.forEach((pos, i) => {
-      pos.vx *= 0.92;
-      pos.vy *= 0.92;
+    const box = centerBox.current;
+    const boxCenterX = box.x + box.width / 2;
+    const boxCenterY = box.y + box.height / 2;
+  
+    // First apply velocity and damping
+    positions.current.forEach((pos) => {
+      pos.vx *= 0.93; // Increased damping
+      pos.vy *= 0.93;
       pos.x += pos.vx;
       pos.y += pos.vy;
     });
-
-    // Logo-to-logo collisions
-    // check every pair of logos and make sure they don't intersect with respect to the radius length
+  
+    // Process all collisions in a single pass with force-based resolution
     for (let i = 0; i < logos.length; i++) {
-      for (let j = i + 1; j < logos.length; j++) {
-        // get positions for the two logos
-        const a = initialPositions.current[i];
-        const b = initialPositions.current[j];
-        const posA = positions.current[i];
-        const posB = positions.current[j];
-
-        if (!a || !b) continue;
-
-        // get radius for the two logos
-        const radiusA = a.width / 2;
-        const radiusB = b.width / 2;
-
-        // get center for the two logos based on the position
-        const aCenterX = containerLeft + a.left + posA.x + radiusA;
-        const aCenterY = containerTop + a.top + posA.y + radiusA;
-        const bCenterX = containerLeft + b.left + posB.x + radiusB;
-        const bCenterY = containerTop + b.top + posB.y + radiusB;
-
-        // start of calculation
-        // get the x and y distance between the centers
-        const dx = bCenterX - aCenterX;
-        const dy = bCenterY - aCenterY;
-        // calculate the actual distance between the centers
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const minDist = radiusA + radiusB;
-
-        // if the distance between the centers is less than 2R, the logos have collided
-        if (distance < minDist && distance > 0) {
-          // figure out overlap
-          const overlap = (minDist - distance) / 2;
-
-          // Adjust positions based on the overlap
-          if (posA.x > posB.x) {
-            posA.x += overlap;
-            posB.x -= overlap;
-          } else {
-            posA.x -= overlap;
-            posB.x += overlap;
-          }
-
-          if (posA.y > posB.y){
-            posA.y += overlap;
-            posB.y += overlap;
-          } else {
-            posA.y -= overlap;
-            posB.y += overlap;
-          }
-          // decelerate after collision
-          posA.vx *= -0.8
-          posA.vy *= -0.8
-          posB.vx *= -0.8
-          posB.vy *= -0.8
-        }
-      }
-    }
-
-    // checks if circular logo is colliding with rectangular center box
-    // most likely correct because logic was translated from someone else's code online
-    const checkCenterBoxCollision = (rx, ry, rw, rh, lx, ly, lr) => {
-      // calculate x and y distances between circle center and rectangle center
-      // abs collapses 4 quadrants to 1
-      let circleDistance = {
-        x: Math.abs(lx - rx),
-        y: Math.abs(ly - ry)
-      };
-      
-      // if circle is beyond top or right edges of the rectangle, it is definitely not intersecting
-      if (circleDistance.x > (rw / 2 + lr)) { return false; }
-      if (circleDistance.y > (rh / 2 + lr)) { return false; }
-  
-      // if circle is within top of right edges of the rectangle, it is definitely intersecting
-      if (circleDistance.x <= (rw / 2)) { return true; }
-      if (circleDistance.y <= (rh / 2)) { return true; }
-  
-      // cover edge case where circle is intersecting top right corner of the rectangle
-      let cornerDistance_sq = Math.pow(circleDistance.x - (rw / 2), 2) +
-        Math.pow(circleDistance.y - (rh / 2), 2);
-  
-      return (cornerDistance_sq <= Math.pow(lr, 2));
-    }
-    
-    
-    // Logo-to-center-box collisions
-    positions.current.forEach((pos, i) => {
       const initial = initialPositions.current[i];
-      if (!initial) return;
-
-      // calculate logo radius and center
+      if (!initial) continue;
       const radius = initial.width / 2;
+      const pos = positions.current[i];
+      
+      // Calculate logo center
       const logoCenterX = containerLeft + initial.left + pos.x + radius;
       const logoCenterY = containerTop + initial.top + pos.y + radius;
-      const box = centerBox.current;
-      // calculate box center coordinates
-      const boxCenterX = box.x + box.width / 2;
-      const boxCenterY = box.y + box.height / 2;
+  
+      // 1. Center box collision - as a soft force field
+      const boxRepulsionForce = 0.5; // Softer repulsion
+      const boxPadding = 10; // Extra space around box
       
-      /*
-      // if the logo intersects the box, we want to make an adjustment to the logo's position and velocity
-      if (checkCenterBoxCollision(boxCenterX, boxCenterY, box.width, box.height, logoCenterX, logoCenterY, radius)) {
-        // Calculate closest point on box to circle center
-        const closestX = Math.max(box.x, Math.min(logoCenterX, box.x + box.width));
-        const closestY = Math.max(box.y, Math.min(logoCenterY, box.y + box.height));
+      // Calculate distance from logo to box edges
+      const boxLeft = boxCenterX - box.width/2 - boxPadding;
+      const boxRight = boxCenterX + box.width/2 + boxPadding;
+      const boxTop = boxCenterY - box.height/2 - boxPadding;
+      const boxBottom = boxCenterY + box.height/2 + boxPadding;
       
-        const dx = logoCenterX - closestX;
-        const dy = logoCenterY - closestY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-      
-        // Calculate the minimum distance for collision (edge-to-edge)
-        const minDistance = radius;
-      
-        if (distance <= minDistance) {
-          // Calculate the collision normal (direction vector)
-          const nx = dx / distance;
-          const ny = dy / distance;
-      
-          // Calculate the overlap (penetration depth)
-          const overlap = minDistance - distance;
-      
-          // Adjust the logo's position to prevent penetration
-          pos.x += nx * overlap;
-          pos.y += ny * overlap;
-      
-          // Reflect the logo's velocity with damping
+      const checkCenterBoxCollision = (rx, ry, rw, rh, lx, ly, lr) => {
+        // calculate x and y distances between circle center and rectangle center
+        // abs collapses 4 quadrants to 1
+        let circleDistance = {
+          x: Math.abs(lx - rx),
+          y: Math.abs(ly - ry)
+        };
+  
+        // if circle is beyond top or right edges of the rectangle, it is definitely not intersecting
+        if (circleDistance.x > (rw / 2 + lr)) { return false; }
+        if (circleDistance.y > (rh / 2 + lr)) { return false; }
+  
+        // if circle is within top of right edges of the rectangle, it is definitely intersecting
+        if (circleDistance.x <= (rw / 2)) { return true; }
+        if (circleDistance.y <= (rh / 2)) { return true; }
+  
+        // cover edge case where circle is intersecting top right corner of the rectangle
+        let cornerDistance_sq = Math.pow(circleDistance.x - (rw / 2), 2) +
+          Math.pow(circleDistance.y - (rh / 2), 2);
+  
+        return (cornerDistance_sq <= Math.pow(lr, 2));
+      }
 
-          // when reversing velocities, need to consider cases.
-          // e.g. if box is coming in straight from the left side of the box, only reverse x velocity.
-          pos.vx *= -0.9
-          pos.vy *= -0.9
+      // Check if logo is overlapping with padded box
+      if (checkCenterBoxCollision(boxCenterX, boxCenterY, boxRight - boxLeft, boxBottom - boxTop, logoCenterX, logoCenterY, radius)) {
+        
+        // Find closest box edge
+        const distToLeft = Math.abs(logoCenterX - boxLeft);
+        const distToRight = Math.abs(logoCenterX - boxRight);
+        const distToTop = Math.abs(logoCenterY - boxTop);
+        const distToBottom = Math.abs(logoCenterY - boxBottom);
+        
+        const minDist = Math.min(distToLeft, distToRight, distToTop, distToBottom);
+        
+        // Apply repulsion force away from closest edge
+        if (minDist === distToLeft) {
+          pos.vx -= boxRepulsionForce * (1 - distToLeft/radius);
+        } else if (minDist === distToRight) {
+          pos.vx += boxRepulsionForce * (1 - distToRight/radius);
+        } else if (minDist === distToTop) {
+          pos.vy -= boxRepulsionForce * (1 - distToTop/radius);
+        } else {
+          pos.vy += boxRepulsionForce * (1 - distToBottom/radius);
         }
       }
-      */
-
-      // Boundary constraints within container
+  
+      // 2. Boundary constraints (container edges)
       const minX = -initial.left;
       const maxX = containerDimensions.current.width - initial.left - initial.width;
       const minY = -initial.top;
       const maxY = containerDimensions.current.height - initial.top - initial.height;
-
-      pos.x = Math.max(minX, Math.min(pos.x, maxX));
-      pos.y = Math.max(minY, Math.min(pos.y, maxY));
-
-      logoRefs.current[i].style.transform =
-        `translate3d(${pos.x}px, ${pos.y}px, 0)`;
-    });
-
-    if (positions.current.some(p => Math.abs(p.vx) > 0.1 || Math.abs(p.vy) > 0.1)) {
+  
+      // Soft boundary constraints
+      if (pos.x < minX) {
+        pos.vx += 0.2 * (minX - pos.x);
+        pos.x = minX;
+      } else if (pos.x > maxX) {
+        pos.vx += 0.2 * (maxX - pos.x);
+        pos.x = maxX;
+      }
+      
+      if (pos.y < minY) {
+        pos.vy += 0.2 * (minY - pos.y);
+        pos.y = minY;
+      } else if (pos.y > maxY) {
+        pos.vy += 0.2 * (maxY - pos.y);
+        pos.y = maxY;
+      }
+  
+      // 3. Logo-to-logo collisions (processed after center box)
+      for (let j = i + 1; j < logos.length; j++) {
+        const otherInitial = initialPositions.current[j];
+        const otherPos = positions.current[j];
+        if (!otherInitial) continue;
+  
+        const otherRadius = otherInitial.width / 2;
+        const otherCenterX = containerLeft + otherInitial.left + otherPos.x + otherRadius;
+        const otherCenterY = containerTop + otherInitial.top + otherPos.y + otherRadius;
+  
+        const dx = otherCenterX - logoCenterX;
+        const dy = otherCenterY - logoCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const minDist = radius + otherRadius;
+  
+        if (distance < minDist && distance > 0) {
+          // Soft collision response with damping
+          const overlap = (minDist - distance) / distance;
+          const repelForce = 0.15; // Softer logo-to-logo repulsion
+          
+          // Apply forces to both logos
+          const fx = dx * overlap * repelForce;
+          const fy = dy * overlap * repelForce;
+          
+          pos.vx -= fx;
+          pos.vy -= fy;
+          otherPos.vx += fx;
+          otherPos.vy += fy;
+        }
+      }
+  
+      // Apply position changes to DOM
+      logoRefs.current[i].style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+    }
+  
+    // Continue animation if there's still movement
+    if (positions.current.some(p => Math.abs(p.vx) > 0.05 || Math.abs(p.vy) > 0.05)) {
       animationFrame.current = requestAnimationFrame(animate);
     } else {
       physicsEnabled.current = false;
