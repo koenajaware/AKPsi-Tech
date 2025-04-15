@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../../styles/Header/Header.css';
+import logo from "/assets/Akpsi-emblem.png";
 
 const Header = () => {
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handle scroll event to change header appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Function to scroll to a specific element by ID
   const scrollToSection = (id) => {
@@ -15,35 +29,34 @@ const Header = () => {
 
   // Handle the About link click
   const handleAboutClick = (e) => {
-    // If we're on the home page, scroll to the "our-story" section
     if (location.pathname === '/') {
-      e.preventDefault(); // Prevent default navigation
+      e.preventDefault();
       scrollToSection('our-story');
     }
-    // Otherwise, let the Link component handle the navigation
+  };
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo-container">
-          <Link to="/" className="logo-link">
-            <div className="logo-text">
-              <h1>ALPHA KAPPA PSI</h1>
-              <h2>OMEGA THETA</h2>
-            </div>
-          </Link>
+        <div className="emblem-container">
+          <img 
+            src={logo} 
+            alt="Alpha Kappa Psi logo" 
+            className="logo" 
+          />
+          <h1 className="logo-text">
+            ALPHA KAPPA PSI<br />OMEGA THETA
+          </h1>
         </div>
+
         
-        <div className="header-right">
-          <div className="search-box">
-            <button className="search-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </button>
-          </div>
+        <div className={`header-right ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+
           
           <nav className="nav-links">
             <Link to="/#about" className="nav-link" onClick={handleAboutClick}>About</Link>
@@ -57,6 +70,16 @@ const Header = () => {
             CONTACT US
           </Link>
         </div>
+
+        <button 
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </div>
     </header>
   );

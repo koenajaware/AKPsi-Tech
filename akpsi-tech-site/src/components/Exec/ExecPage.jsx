@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import '../../styles/Exec/ExecPage.css';
 import Footer from '../Footer/Footer';
 
@@ -92,24 +93,77 @@ const ExecPage = () => {
 
   ];
 
+  const [windowHeight, setWindowHeight] = useState(0);
+  const { scrollY } = useScroll();
+
+  // Create parallax effects with useTransform
+  const y = useTransform(scrollY, [0, windowHeight], [0, 150]);
+  const opacity = useTransform(scrollY, [0, windowHeight * 0.8], [1, 0.3]);
+  const scale = useTransform(scrollY, [0, windowHeight], [1, 1.15]);
+
+  // Update window height on mount and resize
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleImageError = (e) => {
     e.target.src = `https://via.placeholder.com/150?text=${e.target.alt.charAt(0)}`;
   };
 
   return (
     <div className="exec-page">
-      {/* Simple banner with no scrolling effect */}
-      <div className="exec-banner">
-        <img 
-          src="/assets/exec-banner.png" 
-          alt="Executive Board Group Photo" 
-          className="exec-banner-image"
-          onError={(e) => e.target.style.display = 'none'}
-        />
-        <div className="exec-banner-overlay">
-          <h1 className="exec-page-title">EXECUTIVE BOARD</h1>
+      {/* Banner with scrolling effect */}
+      <motion.section 
+        className="exec-banner"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <div className="exec-banner-image-container">
+          <motion.div
+            style={{ 
+              position: "relative", 
+              width: "100%", 
+              height: "100%", 
+              overflow: "hidden" 
+            }}
+          >
+            <motion.img 
+              src="/assets/exec-banner.png" 
+              alt="Executive Board Group Photo" 
+              className="exec-banner-image"
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1 }}
+              style={{ 
+                y,
+                scale,
+                transformOrigin: "center center" 
+              }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              onError={(e) => e.target.style.display = 'none'}
+            />
+          </motion.div>
         </div>
-      </div>
+        
+        <motion.div 
+          className="exec-banner-overlay"
+          style={{ opacity }}
+        >
+          <motion.h1 
+            className="exec-page-title"
+            initial={{ opacity: 0.7, y: 3 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            EXECUTIVE BOARD
+          </motion.h1>
+        </motion.div>
+      </motion.section>
       
       {/* Executive cards section */}
       <div className="exec-content">
@@ -134,8 +188,6 @@ const ExecPage = () => {
           </div>
         ))}
       </div>
-      
-
     </div>
   );
 };

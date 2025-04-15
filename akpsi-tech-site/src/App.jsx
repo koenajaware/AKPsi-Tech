@@ -9,6 +9,7 @@ import Organizations from './components/Home/Organizations';
 import Pillars from './components/Home/Pillars';
 import PhotoWheel from './components/Home/PhotoWheel';
 import Awards from './components/Home/Awards';
+import BrotherPage from './components/Brother/BrotherPage';
 // import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -61,7 +62,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/exec" element={<ExecPage />} />
           <Route path="/recruitment" element={<div>Recruitment Page</div>} />
-          <Route path="/brothers" element={<div>Brothers Page</div>} />
+          <Route path="/brothers" element={<BrotherPage />} />
           <Route path="/alumni" element={<div>Alumni Page</div>} />
           <Route path="/contact" element={<div>Contact Page</div>} />
         </Routes>
