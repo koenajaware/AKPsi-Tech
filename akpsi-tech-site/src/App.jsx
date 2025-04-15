@@ -1,23 +1,75 @@
-import React from 'react';
-import Header from './components/Home/Header';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/Header/Header';
+import ExecPage from './components/Exec/ExecPage';
+import Footer from './components/Footer/Footer';
 import Banner from './components/Home/Banner';
 import Story from './components/Home/Story';
 import Organizations from './components/Home/Organizations';
 import Pillars from './components/Home/Pillars';
+import PhotoWheel from './components/Home/PhotoWheel';
 import Awards from './components/Home/Awards';
+// import Footer from './components/Footer/Footer';
 import './App.css';
 
-function App() {
+// Create a component to handle scrolling to hash elements
+const ScrollToHashElement = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // If there's a hash in the URL
+    if (location.hash) {
+      const elementId = location.hash.substring(1); // Remove the '#' character
+      
+      // Wait a bit for the DOM to fully load
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If no hash, scroll to top of the page
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return null;
+};
+
+const App = () => {
+  const Home = () => {
+    return (
+      <div className="app">
+        <Banner />
+        <Story />
+        <Organizations />
+        <Pillars />
+        <PhotoWheel />
+        <Awards />
+      </div>
+    );
+  };
+
   return (
-    <div className="app">
+    <Router>
       <Header />
-      <Banner />
-      <Story />
-      <Organizations />
-      <Pillars />
-      <Awards />
-    </div>
+      <ScrollToHashElement />
+      
+      <main className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/exec" element={<ExecPage />} />
+          <Route path="/recruitment" element={<div>Recruitment Page</div>} />
+          <Route path="/brothers" element={<div>Brothers Page</div>} />
+          <Route path="/alumni" element={<div>Alumni Page</div>} />
+          <Route path="/contact" element={<div>Contact Page</div>} />
+        </Routes>
+      </main>
+      
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
