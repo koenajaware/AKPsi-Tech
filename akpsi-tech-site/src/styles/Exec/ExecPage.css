@@ -1,0 +1,310 @@
+/* Exec Page Styling */
+.exec-page-design {
+  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.exec-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.exec-page-title {
+  font-family: var(--font-family-inria-serif, 'Inria Serif', serif);
+  font-weight: 700;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-rgb-0-93-171, rgba(0, 93, 171, 1));
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.exec-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.exec-card:hover {
+  transform: translateY(-5px);
+}
+
+.exec-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 2px solid rgba(0, 93, 171, 0.5);
+}
+
+.exec-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exec-name {
+  font-family: var(--font-family-inria-serif, 'Inria Serif', serif);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-black, rgba(0, 0, 0, 1));
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+.exec-position {
+  font-family: var(--font-family-thasadith, 'Thasadith', sans-serif);
+  font-size: 20px;
+  color: var(--text-rgb-30-30-30, rgba(30, 30, 30, 1));
+  margin: 0;
+  text-align: center;
+}
+
+/* Add a blue background for the top section to match the design */
+.exec-page-design::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(128, 174, 213, 1);
+  z-index: -1;
+}
+
+/* Responsive design */
+@media (max-width: 1440px) {
+  .exec-page-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exec-page-title {
+    font-size: 40px;
+  }
+  
+  .exec-page-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .exec-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .exec-name {
+    font-size: 20px;
+  }
+  
+  .exec-position {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .exec-page-title {
+    font-size: 36px;
+  }
+  
+  .exec-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .exec-image-container {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ExecPage styling with scrolling banner */
+.exec-page {
+  width: 100%;
+  background-color: #fff;
+}
+
+/* Banner styles with scrolling effect */
+.exec-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.exec-banner-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exec-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.5); /* Darken & convert to black and white */
+}
+
+.exec-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.exec-page-title {
+  font-family: 'Inria Serif', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Executive cards section */
+.exec-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.exec-card {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.exec-card:last-child {
+  border-bottom: none;
+}
+
+.exec-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-image {
+  flex-direction: row-reverse;
+}
+
+.right-image {
+  flex-direction: row;
+}
+
+.exec-card-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.exec-position {
+  font-family: 'Inria Serif', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.exec-name {
+  font-family: 'Inria Serif', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  margin: 0 0 15px 0;
+}
+
+.exec-description {
+  font-family: 'Thasadith', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 5px 0;
+}
+
+.exec-additional {
+  font-family: 'Thasadith', sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.exec-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 20px;
+  border: 2px solid rgba(0, 93, 171, 0.5);
+}
+
+.exec-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .exec-banner {
+    height: 400px;
+  }
+  
+  .exec-page-title {
+    font-size: 48px;
+  }
+  
+  .exec-card-content {
+    flex-direction: column;
+  }
+  
+  .exec-card-text {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .exec-image-container {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .exec-banner {
+    height: 300px;
+  }
+  
+  .exec-page-title {
+    font-size: 36px;
+  }
+  
+  .exec-position {
+    font-size: 20px;
+  }
+  
+  .exec-name {
+    font-size: 16px;
+  }
+} 
