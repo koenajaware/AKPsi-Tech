@@ -4,6 +4,7 @@ import LogoPhysics from '../LogoPhysics';
 
 import accenture from '../../assets/organization_logos/accenture.jpeg';
 import amazon from '../../assets/organization_logos/amazon.jpeg';
+import appian from '../../assets/organization_logos/appian.png';
 import apple from '../../assets/organization_logos/apple.jpeg';
 import bloomberg from '../../assets/organization_logos/bloomberg.jpeg';
 import bofa from '../../assets/organization_logos/bofa.jpeg';
@@ -22,6 +23,7 @@ import ibm from '../../assets/organization_logos/ibm.jpeg';
 import jpMorgan from '../../assets/organization_logos/jp_morgan.jpeg';
 import kpmg from '../../assets/organization_logos/kpmg.jpeg';
 import leidos from '../../assets/organization_logos/leidos.jpeg';
+import mathworks from '../../assets/organization_logos/mathworks.gif';
 import meta from '../../assets/organization_logos/meta.jpeg';
 import morganStanley from '../../assets/organization_logos/morgan_stanley.jpeg';
 import northropGrumman from '../../assets/organization_logos/northrop_grumman.jpeg';
@@ -39,6 +41,7 @@ const Organizations = () => {
   const orgLogos = [
     accenture,
     amazon,
+    appian,
     apple,
     bloomberg,
     bofa,
@@ -57,6 +60,7 @@ const Organizations = () => {
     jpMorgan,
     kpmg,
     leidos,
+    mathworks,
     meta,
     morganStanley,
     northropGrumman,
@@ -70,7 +74,6 @@ const Organizations = () => {
     walmart,
     wellsFargo,
   ];
-
   return (
     <section className="organizations">
       <LogoPhysics logos={orgLogos} />

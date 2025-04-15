@@ -21,26 +21,11 @@
   background-color: white
 }
 
-.center-box {
-  position: absolute;
-  background: #082c54;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  pointer-events: none;
-  border-color: gold;
-  border-width: 10px;
-}
-
-.center-box h2 {
-  font-family: 'Arial', sans-serif; /* Font family */
-  font-size: 30px; /* Font size */
+.impacted-organizations-text {
+  font-size: 3rem;
   font-weight: bold;
-  margin: 0;
-  padding: 20px;
   text-align: center;
-  color: white;
+  margin: 0 0 0 0; /* top | right | bottom | left */
+  padding: 0;
 }
 
