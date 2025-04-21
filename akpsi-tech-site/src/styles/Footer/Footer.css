@@ -1,8 +1,14 @@
+/* Full-Width Footer Styles */
 .footer {
   background-color: #7fb3d5;
   padding: 30px 0;
   color: white;
   text-align: center;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
 }
 
 .footer-content {
@@ -11,6 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 20px;
 }
 
 .footer-logo {
@@ -115,4 +122,26 @@
     font-size: 0.8rem;
     padding: 0 15px;
   }
-} 
+}
+
+/* Ensure the footer is displayed properly within the page layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.footer {
+  flex-shrink: 0;
+}

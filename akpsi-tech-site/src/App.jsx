@@ -9,6 +9,7 @@ import Organizations from './components/Home/Organizations';
 import Pillars from './components/Home/Pillars';
 import PhotoWheel from './components/Home/PhotoWheel';
 import Awards from './components/Home/Awards';
+import Sponsors from './components/Home/Sponsors';
 import BrotherPage from './components/Brother/BrotherPage';
 // import Footer from './components/Footer/Footer';
 import './App.css';
@@ -43,6 +44,7 @@ const App = () => {
     return (
       <div className="app">
         <Banner />
+        <Sponsors />
         <Story />
         <Organizations />
         <Pillars />

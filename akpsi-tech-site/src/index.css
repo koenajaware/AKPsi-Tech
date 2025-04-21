@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  flex-direction: column;
+  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -52,48 +52,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-#root {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Media Queries */
-@media screen and (max-width: 1440px) {
-  #root {
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 2.5em;
-  }
-
-  #root {
-    padding: 0 0.75rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  #root {
-    padding: 0 0.5rem;
-  }
 }
 
 @media (prefers-color-scheme: light) {

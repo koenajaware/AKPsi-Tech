@@ -12,11 +12,6 @@ const BrotherPage = () => {
       </header>
 
       <BrotherClass />
-
-      {/* 3. Footer */}
-      <footer className="footer-container">
-        <p>© 2025 Your Organization. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
