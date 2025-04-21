@@ -13,6 +13,7 @@ import Sponsors from './components/Home/Sponsors';
 import BrotherPage from './components/Brother/BrotherPage';
 // import Footer from './components/Footer/Footer';
 import './App.css';
+import AlumniPage from './components/Alumni/AlumniPage';
 
 // Create a component to handle scrolling to hash elements
 const ScrollToHashElement = () => {
@@ -65,7 +66,7 @@ const App = () => {
           <Route path="/exec" element={<ExecPage />} />
           <Route path="/recruitment" element={<div>Recruitment Page</div>} />
           <Route path="/brothers" element={<BrotherPage />} />
-          <Route path="/alumni" element={<div>Alumni Page</div>} />
+          <Route path="/alumni" element={<AlumniPage />} />
           <Route path="/contact" element={<div>Contact Page</div>} />
         </Routes>
       </main>
