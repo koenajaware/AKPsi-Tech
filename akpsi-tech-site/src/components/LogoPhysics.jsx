@@ -77,8 +77,8 @@ const LogoPhysics = ({ logos }) => {
 
       // apply a random velocty to each logo relative to the clamped scroll delta
       positions.current.forEach(pos => {
-        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
-        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
+        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
+        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
       });
 
       // starts the animation frame

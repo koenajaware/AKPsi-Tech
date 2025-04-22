@@ -25,6 +25,7 @@ import kpmg from '../../assets/organization_logos/kpmg.jpeg';
 import leidos from '../../assets/organization_logos/leidos.jpeg';
 import mathworks from '../../assets/organization_logos/mathworks.gif';
 import meta from '../../assets/organization_logos/meta.jpeg';
+import microsoft from '../../assets/organization_logos/microsoft.png';
 import morganStanley from '../../assets/organization_logos/morgan_stanley.jpeg';
 import northropGrumman from '../../assets/organization_logos/northrop_grumman.jpeg';
 import pwc from '../../assets/organization_logos/pwc.jpeg';
@@ -36,6 +37,7 @@ import uber from '../../assets/organization_logos/uber.jpeg';
 import walkerDunlop from '../../assets/organization_logos/walker_dunlop.jpeg';
 import walmart from '../../assets/organization_logos/walmart.jpeg';
 import wellsFargo from '../../assets/organization_logos/wells_fargo.jpeg';
+import youtube from '../../assets/organization_logos/youtube.webp';
 
 const Organizations = () => {
   const orgLogos = [
@@ -62,6 +64,7 @@ const Organizations = () => {
     leidos,
     mathworks,
     meta,
+    microsoft,
     morganStanley,
     northropGrumman,
     pwc,
@@ -73,6 +76,7 @@ const Organizations = () => {
     walkerDunlop,
     walmart,
     wellsFargo,
+    youtube,
   ];
   return (
     <section className="organizations">
