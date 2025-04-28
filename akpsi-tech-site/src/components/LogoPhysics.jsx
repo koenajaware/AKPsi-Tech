@@ -257,7 +257,7 @@ const LogoPhysics = ({ logos }) => {
   return (
     <div className="logo-physics-wrapper">
       <div className="logo-heading">
-        <h2 style={{ fontSize: '3rem', color: 'var(--color-white)' }}>Organizations we have impacted</h2>
+        <h2 style={{ fontSize: '3rem', color: 'var(--color-white)', fontFamily: "'Times New Roman', Times, serif" }}>Organizations We Have Impacted</h2>
       </div>
 
       <div className="logo-container">
