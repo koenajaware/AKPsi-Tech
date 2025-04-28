@@ -257,26 +257,23 @@ const LogoPhysics = ({ logos }) => {
   };
 
   return (
-    <div className="logo-container">
-      <div className="center-box"
-        style={{
-          width: centerBox.current.width,
-          height: centerBox.current.height,
-          transform: `translate(${centerBox.current.x}px, ${centerBox.current.y}px)`
-        }}>
-        <h2>Organizations we have impacted</h2>
+    <div className="logo-physics-wrapper">
+      <div className="logo-heading">
+        <h2 style={{ fontSize: '3rem', color: 'var(--color-white)' }}>Organizations we have impacted</h2>
       </div>
 
-      {logos.map((logo, i) => (
-        <img
-          key={i}
-          ref={el => logoRefs.current[i] = el}
-          className="logo organization-logo"
-          src={logo}
-          alt={`Organization ${i + 1}`}
-          style={{ borderRadius: '50%' }}
-        />
-      ))}
+      <div className="logo-container">
+        {logos.map((logo, i) => (
+          <img
+            key={i}
+            ref={el => logoRefs.current[i] = el}
+            className="logo organization-logo"
+            src={logo}
+            alt={`Organization ${i + 1}`}
+            style={{ borderRadius: '50%' }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
