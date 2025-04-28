@@ -1,69 +1,95 @@
 .pillars {
-    padding: 100px 150px;
-    display: flex;
-    gap: 75px;
-    width: 100vw; /* Set width to 100% of the viewport width */
-    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  padding: 4rem 6rem;
+}
+
+.section-title {
+  color: #14437D;
+  font-size: 48px;
+  margin-bottom: 3rem;
+}
+
+.pillars-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pillar-container {
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.pillar-container:first-child {
+  border-top: 1px solid #000;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.pillar-title {
+  font-size: 24px;
+  color: #000;
+  font-weight: normal;
+  margin: 0;
+}
+
+.expand-icon {
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  color: #000;
+}
+
+.pillar-dropdown {
+  padding: 0 0 1.5rem 0;
+  line-height: 1.6;
+  color: #000;
+}
+
+.pillar-dropdown p {
+  margin: 0;
+  max-width: 90%;
+  color: #000;
+}
+
+/* Hide the images section as per the design */
+.pillars-cards {
+  display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .pillars {
+    padding: 3rem 2rem;
   }
-  
-  .pillars-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+
+  .section-title {
+    font-size: 36px;
   }
-  
-  .pillars-list {
-    width: 100%;
-  }
-  
-  .pillar-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  
-  .pillar-line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: black;
-  }
-  
+
   .pillar-title {
-    font-size: 40px;
-    font-family: var(--font-family-thasadith);
-    padding: 0 20px;
-    text-align: center;
+    font-size: 20px;
   }
-  
-  .expand-icon {
-    position: absolute;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .pillars {
+    padding: 2rem 1rem;
   }
-  
-  .pillars-cards {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
+
+  .section-title {
+    font-size: 32px;
   }
-  
-  .pillar-card {
-    width: 400px;
-    height: 550px;
-    border-radius: 20px;
-    overflow: hidden;
+
+  .pillar-title {
+    font-size: 18px;
   }
-  
-  .pillar-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  .pillar-dropdown p {
+    max-width: 100%;
   }
+}
