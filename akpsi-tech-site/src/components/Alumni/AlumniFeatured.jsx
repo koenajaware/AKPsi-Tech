@@ -31,7 +31,6 @@ const AlumniFeatured = ({ items }) => {
                   <p className="company-description">{alum.companyDescription}</p>
                 </div>
                 <div className="alumni-quote">
-                  <p className="quote-title">Why Alpha Kappa Psi?</p>
                   <p className="quote-text">{alum.quote}</p>
                 </div>
               </div>
