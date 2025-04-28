@@ -31,30 +31,32 @@ const Banner = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
-      <div className="hero-image-container">
-        <motion.div
+    <div className="hero-image-container">
+      <motion.div
+        style={{ 
+          position: "relative", 
+          width: "100%", 
+          height: "100%", 
+          overflow: "hidden" 
+        }}
+      >
+        <motion.img 
+          src={fratPic} 
+          alt="Alpha Kappa Psi members" 
+          className="hero-image"
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
           style={{ 
-            position: "relative", 
-            width: "100%", 
-            height: "100%", 
-            overflow: "hidden" 
+            y,
+            scale,
+            transformOrigin: "center center" 
           }}
-        >
-          <motion.img 
-            src={fratPic} 
-            alt="Alpha Kappa Psi members" 
-            className="hero-image"
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            style={{ 
-              y,
-              scale,
-              transformOrigin: "center center" 
-            }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          />
-        </motion.div>
-      </div>
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        {/* NEW OVERLAY DIV */}
+        <div className="hero-overlay"></div>
+      </motion.div>
+    </div>
       
       <motion.div 
         className="hero-content"

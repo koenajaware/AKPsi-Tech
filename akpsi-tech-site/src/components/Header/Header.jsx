@@ -6,7 +6,6 @@ import logo from "/assets/Akpsi-emblem.png";
 const Header = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Handle scroll event to change header appearance
   useEffect(() => {
@@ -35,29 +34,11 @@ const Header = () => {
     }
   };
 
-  // Toggle mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
     <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-container">
-        <div className="emblem-container">
-          <img 
-            src={logo} 
-            alt="Alpha Kappa Psi logo" 
-            className="logo" 
-          />
-          <h1 className="logo-text">
-            ALPHA KAPPA PSI<br />OMEGA THETA
-          </h1>
-        </div>
-
-        
-        <div className={`header-right ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-
-          
+        {/* Left Navigation Links */}
+        <div className="left-section">
           <nav className="nav-links">
             <Link to="/#about" className="nav-link" onClick={handleAboutClick}>About</Link>
             <Link to="/recruitment" className="nav-link">Recruitment</Link>
@@ -65,24 +46,26 @@ const Header = () => {
             <Link to="/brothers" className="nav-link">Brothers</Link>
             <Link to="/alumni" className="nav-link">Alumni</Link>
           </nav>
-          
-          <Link to="/contact" className="contact-button">
-            CONTACT US
+        </div>
+
+        {/* Center Logo */}
+        <div className="center-section">
+          <Link to="/" className="center-logo">
+            <span className="center-text">OMEGA</span>
+            <img src={logo} alt="Alpha Kappa Psi logo" className="logo" />
+            <span className="center-text">THETA</span>
           </Link>
         </div>
 
-        <button 
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
+        {/* Right Button */}
+        <div className="right-section">
+          <div className="header-buttons">
+            <Link to="/contact" className="header-button">CONTACT US</Link>
+          </div>
+        </div>
       </div>
     </header>
   );
 };
 
-export default Header; 
+export default Header;

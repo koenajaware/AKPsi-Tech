@@ -1,153 +1,37 @@
 /* Exec Page Styling */
-.exec-page-design {
-  background-color: rgba(255, 255, 255, 1);
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 40px;
+:root {
+  --exec-primary-color: #005dab; /* AKPsi Blue */
+  --exec-secondary-color: #fdb927; /* AKPsi Gold */
+  --exec-text-color: #333;
+  --exec-light-text-color: #666;
+  --exec-background-color: #f9f9f9;
+  --exec-card-background: #ffffff;
+  --exec-border-color: #e0e0e0;
+  --exec-shadow-color: rgba(0, 0, 0, 0.08);
+  --exec-font-serif: 'Inria Serif', serif;
+  --exec-font-sans: 'Thasadith', sans-serif;
+  --exec-transition-speed: 0.3s;
 }
 
-.exec-page-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* Remove old styles if they exist */
+.exec-page-design, .exec-page-design::before {
+  /* Remove styles related to the old design if necessary */
+  /* This section might need adjustment based on previous state */
 }
 
-.exec-page-title {
-  font-family: var(--font-family-inria-serif, 'Inria Serif', serif);
-  font-weight: 700;
-  font-size: 64px;
-  text-decoration: none;
-  text-transform: none;
-  color: var(--text-rgb-0-93-171, rgba(0, 93, 171, 1));
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.exec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.exec-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.exec-card:hover {
-  transform: translateY(-5px);
-}
-
-.exec-image-container {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 15px;
-  border: 2px solid rgba(0, 93, 171, 0.5);
-}
-
-.exec-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.exec-name {
-  font-family: var(--font-family-inria-serif, 'Inria Serif', serif);
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--text-black, rgba(0, 0, 0, 1));
-  margin: 10px 0 5px;
-  text-align: center;
-}
-
-.exec-position {
-  font-family: var(--font-family-thasadith, 'Thasadith', sans-serif);
-  font-size: 20px;
-  color: var(--text-rgb-30-30-30, rgba(30, 30, 30, 1));
-  margin: 0;
-  text-align: center;
-}
-
-/* Add a blue background for the top section to match the design */
-.exec-page-design::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300px;
-  background-color: rgba(128, 174, 213, 1);
-  z-index: -1;
-}
-
-/* Responsive design */
-@media (max-width: 1440px) {
-  .exec-page-content {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .exec-page-title {
-    font-size: 40px;
-  }
-  
-  .exec-page-content {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  
-  .exec-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .exec-name {
-    font-size: 20px;
-  }
-  
-  .exec-position {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  .exec-page-title {
-    font-size: 36px;
-  }
-  
-  .exec-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-  }
-  
-  .exec-image-container {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* ExecPage styling with scrolling banner */
 .exec-page {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--exec-background-color);
+  padding-bottom: 60px; /* Add padding at the bottom */
 }
 
-/* Banner styles with scrolling effect */
+/* Banner styles */
 .exec-banner {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 450px; /* Slightly reduced height */
   overflow: hidden;
+  background-color: #222; /* Fallback background */
 }
 
 .exec-banner-image-container {
@@ -160,7 +44,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%) brightness(0.5); /* Darken & convert to black and white */
+  filter: grayscale(80%) brightness(0.6); /* Adjusted filter for a modern look */
 }
 
 .exec-banner-overlay {
@@ -172,93 +56,138 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); /* Softer overlay */
 }
 
 .exec-page-title {
-  font-family: 'Inria Serif', serif;
-  font-size: 64px;
+  font-family: var(--exec-font-serif);
+  font-size: 56px; /* Slightly smaller */
   font-weight: 700;
   color: #ffffff;
   text-align: center;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Refined shadow */
+  padding: 0 20px; /* Ensure text doesn't touch edges */
 }
 
 /* Executive cards section */
 .exec-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #fff;
+  max-width: 800px; /* Reduced max-width to make cards narrower */
+  margin: -50px auto 0; /* Adjust overlap slightly */
+  padding: 30px 15px 0; /* Adjust padding */
+  position: relative; /* Needed for overlap */
+  z-index: 10; /* Ensure content is above banner bottom */
 }
 
 .exec-card {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 30px;
+  background-color: var(--exec-card-background);
+  border-radius: 6px; /* Slightly smaller radius */
+  box-shadow: 0 3px 12px var(--exec-shadow-color); /* Slightly reduced shadow */
+  margin-bottom: 30px; /* Reduced spacing */
+  border: 1px solid var(--exec-border-color);
+  overflow: hidden; /* Ensure content respects border-radius */
+  transition: transform var(--exec-transition-speed) ease, box-shadow var(--exec-transition-speed) ease;
+}
+
+.exec-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1); /* Adjusted hover shadow */
 }
 
 .exec-card:last-child {
-  border-bottom: none;
+  margin-bottom: 0; /* Remove margin for the last card */
 }
 
 .exec-card-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  padding: 25px; /* Reduced padding */
+  /* Default direction is row, which we keep */
 }
 
-.left-image {
-  flex-direction: row-reverse;
+/* New Rules using Order */
+.left-image .exec-card-image-block {
+  order: 1; /* Image first */
+}
+.left-image .exec-card-text-block {
+  order: 2; /* Text second */
 }
 
-.right-image {
-  flex-direction: row;
+.right-image .exec-card-text-block {
+  order: 1; /* Text first */
+}
+.right-image .exec-card-image-block {
+  order: 2; /* Image second */
 }
 
-.exec-card-text {
+/* Align text to the right for cards with image on the right */
+.right-image .exec-card-text-block {
+  text-align: right;
+}
+
+.exec-card-text-block { /* Renamed from .exec-card-text */
   flex: 1;
-  padding: 20px;
+  padding: 0 25px; /* Reduced spacing between text and image */
 }
 
+/* Image block specific styles (if any needed) */
+.exec-card-image-block {
+  /* Styles specific to the image container wrapper if needed */
+  display: flex; /* Ensure proper alignment if needed */
+  justify-content: center;
+}
+
+/* Specific text styling */
 .exec-position {
-  font-family: 'Inria Serif', serif;
-  font-size: 24px;
+  font-family: var(--exec-font-serif);
+  font-size: 22px;
   font-weight: 700;
-  color: #333;
-  margin: 0 0 10px 0;
+  color: var(--exec-primary-color); /* Use primary color */
+  margin: 0 0 8px 0;
 }
 
 .exec-name {
-  font-family: 'Inria Serif', serif;
+  font-family: var(--exec-font-serif);
   font-size: 18px;
-  font-weight: 400;
-  color: #666;
+  font-weight: 600; /* Slightly bolder */
+  color: var(--exec-text-color);
   margin: 0 0 15px 0;
 }
 
-.exec-description {
-  font-family: 'Thasadith', sans-serif;
-  font-size: 16px;
-  color: #666;
+/* Apply padding based on order for consistent spacing */
+.left-image .exec-card-text-block {
+  padding-left: 25px; /* Reduced */
+  padding-right: 0;
+}
+.right-image .exec-card-text-block {
+  padding-right: 25px; /* Reduced */
+  padding-left: 0;
+}
+
+.exec-description,
+.exec-additional {
+  font-family: var(--exec-font-sans);
+  font-size: 15px;
+  color: var(--exec-light-text-color);
+  line-height: 1.6;
   margin: 0 0 5px 0;
+  object-fit: cover;
 }
 
 .exec-additional {
-  font-family: 'Thasadith', sans-serif;
   font-size: 14px;
-  color: #888;
-  margin: 0;
+  font-style: italic;
 }
 
+/* Image styling */
 .exec-image-container {
-  width: 120px;
-  height: 120px;
+  width: 150px; /* Increased size */
+  height: 150px; /* Increased size */
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 20px;
-  border: 2px solid rgba(0, 93, 171, 0.5);
+  flex-shrink: 0; /* Prevent image from shrinking */
+  border: 2px solid var(--exec-background-color); /* Slightly smaller border */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08); /* Reduced shadow */
 }
 
 .exec-image {
@@ -268,26 +197,61 @@
 }
 
 /* Responsive styles */
+@media (max-width: 992px) {
+  .exec-content {
+    max-width: 700px; /* Reduced max-width for tablets */
+  }
+}
+
 @media (max-width: 768px) {
   .exec-banner {
-    height: 400px;
+    height: 350px; /* Adjust banner height */
   }
-  
+
   .exec-page-title {
-    font-size: 48px;
+    font-size: 42px; /* Adjust title size */
   }
-  
+
+  .exec-content {
+    margin-top: -35px; /* Adjust overlap */
+    padding: 25px 10px 0;
+  }
+
   .exec-card-content {
-    flex-direction: column;
+    flex-direction: column !important; /* Stack content */
+    padding: 20px; /* Reduced padding */
+    order: initial !important;
   }
-  
-  .exec-card-text {
-    text-align: center;
-    padding: 20px 0;
+
+  .exec-card-image-block,
+  .exec-card-text-block {
+     order: initial !important; /* Ensure order is reset on mobile */
+     padding-left: 0 !important; /* Reset padding */
+     padding-right: 0 !important;
   }
-  
+
   .exec-image-container {
-    margin: 0 0 20px 0;
+    width: 125px; /* Increased size */
+    height: 125px; /* Increased size */
+    margin: 0 0 15px 0; /* Adjust margin */
+  }
+
+  .exec-card-text-block {
+    padding: 0; /* Remove horizontal padding */
+    text-align: center; /* Center text */
+  }
+
+  .exec-position {
+    font-size: 20px;
+  }
+
+  .exec-name {
+    font-size: 17px;
+  }
+
+  .exec-description,
+  .exec-additional {
+    font-size: 14px;
   }
 }
 
@@ -295,15 +259,34 @@
   .exec-banner {
     height: 300px;
   }
-  
+
   .exec-page-title {
-    font-size: 36px;
+    font-size: 34px;
   }
-  
+
+  .exec-content {
+     margin-top: -25px;
+     padding: 15px 8px 0;
+  }
+
+  .exec-card {
+     border-radius: 5px;
+     margin-bottom: 25px; /* Reduced margin */
+  }
+
+   .exec-card-content {
+     padding: 15px; /* Reduced padding */
+   }
+
+  .exec-image-container {
+    width: 110px; /* Increased size */
+    height: 110px; /* Increased size */
+  }
+
   .exec-position {
-    font-size: 20px;
+    font-size: 18px;
   }
-  
+
   .exec-name {
     font-size: 16px;
   }

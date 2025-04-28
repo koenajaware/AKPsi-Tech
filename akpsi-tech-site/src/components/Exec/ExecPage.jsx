@@ -22,8 +22,8 @@ const ExecPage = () => {
     },
     { 
       name: "Mallika Bhat", 
-      position: "Bachelor's in Operations Management and Business Analytics",
-      description: "B.S. in Information Systems & Marketing",
+      position: "Executive Vice President",
+      description: "Bachelor's in Operations Management and Business Analytics",
       additional: "Executive Board Member", 
       image: "/assets/mallika.jpg" 
     },
@@ -170,19 +170,21 @@ const ExecPage = () => {
         {executives.map((exec, index) => (
           <div className="exec-card" key={index}>
             <div className={`exec-card-content ${index % 2 === 0 ? 'left-image' : 'right-image'}`}>
-              <div className="exec-card-text">
+              <div className="exec-card-text-block">
                 <h2 className="exec-position">{exec.position}</h2>
                 <h3 className="exec-name">{exec.name}</h3>
                 <p className="exec-description">{exec.description}</p>
                 <p className="exec-additional">{exec.additional}</p>
               </div>
-              <div className="exec-image-container">
-                <img 
-                  src={exec.image} 
-                  alt={exec.name} 
-                  className="exec-image" 
-                  onError={handleImageError}
-                />
+              <div className="exec-card-image-block">
+                <div className="exec-image-container">
+                  <img 
+                    src={exec.image} 
+                    alt={exec.name} 
+                    className="exec-image" 
+                    onError={handleImageError}
+                  />
+                </div>
               </div>
             </div>
           </div>
