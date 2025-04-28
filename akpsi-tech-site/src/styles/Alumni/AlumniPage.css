@@ -51,7 +51,21 @@
     text-align: center; /* Center the chapter name */
   }
   
-  
+  /* make chapter‐names and the featured heading identical */
+.chapter-name,
+.section-title {
+  font-size:       1.5rem;
+  margin-bottom:   1rem;
+  text-transform:  uppercase;
+  color:           #333;
+  text-align:      center;
+}
+
+/* then only *extra* padding goes here: */
+.section-title {
+  padding-top: 1.5rem;
+}
+
   
   
   /* 3. Footer */
