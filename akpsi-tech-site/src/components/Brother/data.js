@@ -2,21 +2,69 @@
 
 export const chapters = [
     {
-      name: 'Alpha Nu',
-      members: [
-        {
-          id: 1,
-          name: 'John Smith',
-          // Replace with a real image URL or local asset
-          imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+1',
-        },
-        {
-          id: 2,
-          name: 'Jane Doe',
-          imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+2',
-        },
-        // Add as many as you need...
-      ],
+      name: 'Alpha Xi',
+    members: [
+    {
+      id: 1,
+      name: 'John Smith',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+1',
+    },
+    {
+      id: 2,
+      name: 'Jane Doe',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+2',
+    },
+    {
+      id: 3,
+      name: 'Alex Johnson',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+3',
+    },
+    {
+      id: 4,
+      name: 'Emily Davis',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+4',
+    },
+    {
+      id: 5,
+      name: 'Michael Brown',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+5',
+    },
+    {
+      id: 6,
+      name: 'Sarah Wilson',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+6',
+    },
+    {
+      id: 7,
+      name: 'Daniel Garcia',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+7',
+    },
+    {
+      id: 8,
+      name: 'Laura Martinez',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+8',
+    },
+    {
+      id: 9,
+      name: 'James Rodriguez',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+9',
+    },
+    {
+      id: 10,
+      name: 'Olivia Anderson',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+10',
+    },
+    {
+      id: 11,
+      name: 'William Thompson',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+11',
+    },
+    {
+      id: 12,
+      name: 'Sophia Hernandez',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+12',
+    },
+    ],
     },
     {
       name: 'Alpha Mu',

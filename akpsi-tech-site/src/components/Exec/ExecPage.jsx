@@ -13,6 +13,13 @@ const ExecPage = () => {
         additional: "Executive Board Member",
         image: "/assets/sydney.jpg" 
       },
+      { 
+        name: "Mallika Bhat", 
+        position: "Executive Vice President",
+        description: "B.S. in Information Systems & Marketing",
+        additional: "Executive Board Member", 
+        image: "/assets/mallika.jpg" 
+      },
     { 
       name: "João Eduardo Camargo de Miranda", 
       position: "Chief of Staff",

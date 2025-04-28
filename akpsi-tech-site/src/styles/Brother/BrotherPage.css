@@ -48,7 +48,9 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
   color: #333;
+  text-align: center; /* Center the chapter name */
 }
+
 
 
 
