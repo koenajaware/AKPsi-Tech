@@ -4,6 +4,7 @@ import '../../styles/Footer/Footer.css'; // Make sure to create this CSS file
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="footer-overlay"></div>
       <div className="footer-content">
         <h2 className="footer-logo">AKΨ</h2>
         <div className="social-icons">
