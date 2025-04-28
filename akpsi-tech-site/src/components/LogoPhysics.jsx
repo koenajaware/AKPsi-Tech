@@ -255,19 +255,20 @@ const LogoPhysics = ({ logos }) => {
   };
 
   return (
-    <div>
-      <div className="impacted-organizations-text">
-        Organizations we have impacted
+    <div className="logo-physics-wrapper">
+      <div className="logo-heading">
+        <h2 style={{ fontSize: '3rem', color: 'var(--color-white)' }}>Organizations we have impacted</h2>
       </div>
+
       <div className="logo-container">
         {logos.map((logo, i) => (
           <img
             key={i}
-            ref={(el) => (logoRefs.current[i] = el)}
+            ref={el => logoRefs.current[i] = el}
             className="logo organization-logo"
             src={logo}
             alt={`Organization ${i + 1}`}
-            style={{ borderRadius: "50%" }}
+            style={{ borderRadius: '50%' }}
           />
         ))}
       </div>
