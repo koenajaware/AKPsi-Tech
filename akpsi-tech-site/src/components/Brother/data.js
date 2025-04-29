@@ -1,4 +1,5 @@
 // data.js
+import jefferywei from "../../assets/brothers/Jeffery_Wei.jpeg";
 
 export const chapters = [
     {
@@ -6,13 +7,15 @@ export const chapters = [
     members: [
     {
       id: 1,
-      name: 'John Smith',
-      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+1',
+      name: 'Jeffery Wei',
+      imageUrl: jefferywei,
+      linkedin: 'https://www.linkedin.com/in/jefferywei/' , 
     },
     {
       id: 2,
       name: 'Jane Doe',
-      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+2',
+      imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+2'
+
     },
     {
       id: 3,
