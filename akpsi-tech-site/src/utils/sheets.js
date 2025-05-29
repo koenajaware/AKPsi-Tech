@@ -1,90 +1,133 @@
-import { google } from 'googleapis';
-
-// Replace these with your own credentials
-const CREDENTIALS = {
-  // TODO: Fill in your Google Sheets API credentials here
-  // You can get these from the Google Cloud Console
-  // https://console.cloud.google.com/apis/credentials
-  client_email: 'akpsi-website@akpsi-tech.iam.gserviceaccount.com', // Should look like: something@project-id.iam.gserviceaccount.com
-  private_key: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3R84BmUmPp5J6\nS7HmshoE8G0NLUFopJ+8/1VgxFlL8yAsFbedA4jl1BEDWo68t3UOs6sY51Xn9/fY\nGD+cfJhS9BkqzKeyLCVTRC9FykV/JAAdX8zV03mM6tq4hxZA/Arztg7SkwTeYiQp\nA9XGdg7KeMnQR5SAZ+Veks86krvQcZrLeFhQb0GET7RJR22cOrGi9lCTH8DHCu3s\nBb2sG6aTsoeFz+fqmRUiI53Je3MDrEghp2h/8Z7ec0tOCUoGbYqoFLjyzb1Rc/gP\nvBxonVjZ9HMIFVTALnle4uhAar4rJh4aE8N97f0aFvAFYL+o+X496X+xzV/0NWy+\n/2qCIRZvAgMBAAECgf8yrXE2kj5E1doGG1W6GM4Y/T0qDCKJ3vsnopbmqtG8948k\noW7s6R+V2rH+KR5OomuEt3Jg8HG+MlJnyXE7CqY4SbQZfOrhkAovxQYooWnfGUwT\nZXwro6kvO3f1sokZSk6YXdEEjTSUkiC2pEaKPj8h4Y1ZrnEqfdkAhE5a0YD4fNS1\nLW3361ZYnJanyStoUh40QCdMyHCrq7BlAal5sPEnpBUUAX5OKov7ZPPxnCUW7Y08\nUv9RV32CHc8e5T9yDTDvTThxSvXUXDitxkaVDduAA9ofpwwpgq0s906lhar79MC+\n8oGfWx58Koud3okt7O3T87uJGA6bkcgGYfENYJkCgYEA3blsm/UVYYtuZpEbczy5\n20xEnzepEtMgZuaZF1ye7+nlL5mWLdIttSdj7RQSa8w2+etSNj2zOWal8+kFD8Bb\nDXnXAM6UvmpXRe/LhAMEihCsMDavRv2K8k8svJ9FGDI3bxsJGlJuQPe2zWA/+85Y\noDSgVigNl5t0QtVEM4PAYgkCgYEA05z+lNJ4BstXVg2df76aD5jIrpddyYDRuCAZ\nhdPDiPrf3CrwGp3ptsHfLtcGBwMDY9YrBZJjxdlSQ63mOIYWYuGLbicEIdnPygH9\nKM1Ir9mAVfL23yg1jFRtYoD0+q4WH+3I6LlNASpim89JB1vuOyZjzytQHBbw1qY7\ndwkbcrcCgYEAnY8FcfIAJpf5dONKuWH+xKp23RmliN4E2XqmcWZ8/wmbtm6SvK7t\nkhySsscfrACrVH93pVnFAVZDOYdt9FqBmZrqQQWLx6AzslwLqByo3h+o7H3/ohfL\n5BKFPOiFJgORRt/UYSMQfBRLj7gE38ArVHTxNygxOHncbR214FGQpVkCgYEAm4Od\n6HsAcGXRilE5NR87E0lB+mUNLL/53+nfN+WXprxP9fqsN7NjhcbWoRKuwEprnFxR\ng6fAoS8D8O8E6PdJzmNY15vewo3S0e9CQFEVIP6j/QYwfXGMYNPPC3wgDXYQlmhm\npPlA6SFgFIdycPETk+6znRWEqxAE8Ip72xAbVuMCgYEAhvfY1nuWgW9C+P0eL2Hl\njfuG8ro4TgycZ+BWavl/C/ZyndrPYVvdnMwP/i5zaHAX4LZdlIVvkj0flz9sv4qH\nHFiDpw65Eo/Suon6UXrB7JaE3Hc1oFfv+3GmyjWvcTkWEYYMFMbpJOR2m09tIj1R\n8JLjjPqETHvTnSZtc3+2wGU=\n-----END PRIVATE KEY-----\n', // Should start with "-----BEGIN PRIVATE KEY-----"
-};
-
 const SPREADSHEET_ID = '1g-S4QGQxJHgnKwE9Ubj4wz-_hBVPJtQ00QiOsNCFWrw';
-const SHEET_NAME = 'Brother Contact Information (Responses)';
-
-// Define the column ranges for each field using A1 notation
-const COLUMN_RANGES = {
-  fullName: 'B2:B',  // Full Name column starting from row 2 (after header)
-  pc: 'C2:C',        // PC column starting from row 2
-  headshot: 'G2:G',  // Headshot column starting from row 2
-  linkedin: 'I2:I'   // LinkedIn column starting from row 2
-};
+const API_KEY = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY;
 
 async function readFromSheet() {
   try {
-    const auth = new google.auth.JWT(
-      CREDENTIALS.client_email,
-      null,
-      CREDENTIALS.private_key,
-      ['https://www.googleapis.com/auth/spreadsheets.readonly']
+    console.log('Starting readFromSheet function...');
+    console.log('API Key available:', !!API_KEY); // Logs true/false without exposing the key
+
+    if (!API_KEY) {
+      console.error('API Key is missing from environment variables');
+      throw new Error('Google Sheets API key is not defined in environment variables');
+    }
+    console.log(API_KEY)
+    // 1. Get the first sheet's name
+    console.log('Fetching spreadsheet metadata...');
+    const spreadsheetResponse = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?key=${API_KEY}`
     );
-
-    const sheets = google.sheets({ version: 'v4', auth });
-
-    // Get all data at once using the column ranges
-    const response = await sheets.spreadsheets.values.batchGet({
-      spreadsheetId: SPREADSHEET_ID,
-      ranges: Object.values(COLUMN_RANGES).map(range => `'${SHEET_NAME}'!${range}`),
-      valueRenderOption: 'UNFORMATTED_VALUE', // Get raw values without formatting
-      dateTimeRenderOption: 'FORMATTED_STRING' // Format dates as strings
+    console.log('Spreadsheet response status:', spreadsheetResponse.status);
+    
+    const spreadsheetData = await spreadsheetResponse.json();
+    console.log('Spreadsheet data received:', {
+      title: spreadsheetData.properties?.title,
+      sheetCount: spreadsheetData.sheets?.length
     });
 
-    // Extract the values from each range
-    const values = response.data.valueRanges;
-    if (!values || values.length === 0) {
-      throw new Error('No data found in sheet');
-    }
+    const firstSheetName = spreadsheetData.sheets[0].properties.title;
+    console.log('First sheet name:', firstSheetName);
 
-    // Get the number of rows (assuming all columns have the same number of rows)
-    const numRows = values[0].values?.length || 0;
-    if (numRows <= 0) {
-      throw new Error('No data rows found in sheet');
-    }
+    // 2. Get specific columns data
+    const ranges = [
+      `${firstSheetName}!B:B`,  // Full Name
+      `${firstSheetName}!C:C`,  // PC
+      `${firstSheetName}!G:G`,  // Headshot
+      `${firstSheetName}!I:I`   // LinkedIn
+    ].map(range => encodeURIComponent(range)).join('&ranges=');
 
-    // Process the data
-    const members = Array.from({ length: numRows }, (_, index) => {
-      return {
-        id: index + 1,
-        name: values[0].values?.[index]?.[0] || '', // Full Name (index 0 in values array)
-        pc: values[1].values?.[index]?.[0] || '',   // PC (index 1 in values array)
-        imageUrl: values[2].values?.[index]?.[0] || '', // Headshot (index 2 in values array)
-        linkedin: values[3].values?.[index]?.[0] || ''  // LinkedIn (index 3 in values array)
-      };
-    }).filter(member => member.name); // Filter out rows with no name
+    console.log('Fetching column data with ranges:', ranges);
+    const response = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values:batchGet?ranges=${ranges}&key=${API_KEY}`
+    );
+    console.log('Column data response status:', response.status);
+    
+    const data = await response.json();
+    console.log('Column data received:', {
+      valueRangeCount: data.valueRanges?.length,
+      firstRange: data.valueRanges?.[0]?.range,
+      firstRangeRowCount: data.valueRanges?.[0]?.values?.length
+    });
 
-    // Group members by PC
-    const chapters = members.reduce((acc, member) => {
-      const pc = member.pc || 'Unassigned';
+    // 3. Process the data
+    const values = data.valueRanges;
+    const names = values[0].values.slice(1); // Skip header
+    const pcs = values[1].values.slice(1);   // Skip header
+    const headshots = values[2].values.slice(1); // Skip header
+    const linkedins = values[3].values.slice(1); // Skip header
+
+    console.log('Processed data counts:', {
+      namesCount: names.length,
+      pcsCount: pcs.length,
+      headshotsCount: headshots.length,
+      linkedinsCount: linkedins.length
+    });
+
+    // 4. Create array of brother objects
+    const brothers = names.map((name, index) => ({
+      id: index + 1,
+      name: name[0],
+      pc: pcs[index][0].trim(), // Trim to handle any extra spaces
+      imageUrl: headshots[index][0],
+      linkedin: linkedins[index][0]
+    })).filter(brother => brother.name); // Filter out any empty entries
+
+    console.log('Created brothers array:', {
+      totalBrothers: brothers.length,
+      sampleBrother: brothers[0] // Log first brother as sample
+    });
+
+    // 5. Group by PC
+    const chapters = brothers.reduce((acc, brother) => {
+      const pc = (brother.pc || 'Unassigned').toLowerCase();
       if (!acc[pc]) {
         acc[pc] = [];
       }
-      acc[pc].push(member);
+      acc[pc].push(brother);
       return acc;
     }, {});
 
-    // Convert to array format
-    const chaptersArray = Object.entries(chapters).map(([name, members]) => ({
-      name,
-      members
-    }));
+    console.log('Grouped by PC:', {
+      chapterCount: Object.keys(chapters).length,
+      chapterNames: Object.keys(chapters),
+      sampleChapterSize: Object.values(chapters)[0]?.length
+    });
+
+    // 6. Convert to array format and sort chapters
+    const chaptersArray = Object.entries(chapters)
+      .map(([name, members]) => ({
+        name: name.charAt(0).toUpperCase() + name.slice(1), // Capitalize first letter
+        members: members.sort((a, b) => {
+          const lastNameA = a.name.split(' ').pop().toLowerCase();
+          const lastNameB = b.name.split(' ').pop().toLowerCase();
+          return lastNameA.localeCompare(lastNameB);
+        })
+      }))
+      .sort((a, b) => {
+        // Extract the class identifier (e.g., "xi", "nu", "mu" from "Alpha Xi", "Alpha Nu", "Alpha Mu")
+        const getClassIdentifier = (name) => {
+          const parts = name.toLowerCase().split(' ');
+          return parts[parts.length - 1]; // Get the last word
+        };
+        
+        const classA = getClassIdentifier(a.name);
+        const classB = getClassIdentifier(b.name);
+        
+        // Sort in reverse order so newer classes come first
+        return classB.localeCompare(classA);
+      });
+
+    console.log('Final chapters array (sorted):', {
+      totalChapters: chaptersArray.length,
+      chapterOrder: chaptersArray.map(c => c.name)
+    });
 
     return chaptersArray;
   } catch (error) {
-    console.error('Error reading from Google Sheets:', error);
-    if (error.response) {
-      console.error('Response data:', error.response.data);
-      console.error('Response status:', error.response.status);
-    }
+    console.error('Error in readFromSheet:', {
+      message: error.message,
+      stack: error.stack,
+      response: error.response?.data
+    });
     throw error;
   }
 }
