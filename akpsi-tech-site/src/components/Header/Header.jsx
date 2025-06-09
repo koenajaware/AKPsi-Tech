@@ -40,7 +40,7 @@ const Header = () => {
         {/* Left Navigation Links */}
         <div className="left-section">
           <nav className="nav-links">
-            <Link to="/#about" className="nav-link" onClick={handleAboutClick}>About</Link>
+            <Link to="/about" className="nav-link" >About</Link>
             <Link to="/recruitment" className="nav-link">Recruitment</Link>
             <Link to="/exec" className="nav-link">Exec</Link>
             <Link to="/brothers" className="nav-link">Brothers</Link>
