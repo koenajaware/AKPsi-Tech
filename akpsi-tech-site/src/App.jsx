@@ -14,6 +14,7 @@ import BrotherPage from './components/Brother/BrotherPage';
 // import Footer from './components/Footer/Footer';
 import './App.css';
 import AlumniPage from './components/Alumni/AlumniPage';
+import AboutPage from './components/About/AboutPage';
 
 // Create a component to handle scrolling to hash elements
 const ScrollToHashElement = () => {
@@ -63,6 +64,7 @@ const App = () => {
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage/>} />
           <Route path="/exec" element={<ExecPage />} />
           <Route path="/recruitment" element={<div>Recruitment Page</div>} />
           <Route path="/brothers" element={<BrotherPage />} />
