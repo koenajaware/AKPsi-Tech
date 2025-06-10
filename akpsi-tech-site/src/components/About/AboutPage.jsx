@@ -2,6 +2,7 @@ import React from "react";
 import Journey from "./Journey";
 import MsgPresident from "./MsgPresident";
 import AboutBanner from "./AboutBanner";
+import SponsorGallery from "./SponsorGallery/SponsorGallery";
 
 const AboutPage = () => {
     return (
@@ -10,6 +11,7 @@ const AboutPage = () => {
         <AboutBanner></AboutBanner>
         <MsgPresident></MsgPresident>
         <Journey></Journey>
+        <SponsorGallery></SponsorGallery>
       </div>
     );
   };
