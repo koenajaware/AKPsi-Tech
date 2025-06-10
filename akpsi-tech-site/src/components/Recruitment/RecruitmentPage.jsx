@@ -8,6 +8,7 @@ const RecruitmentPage = () => {
     <div className="brother-page">
       <header>
         <RecruitmentBanner />
+        <RecruitmentEvents />
       </header>
       <main>
         <RecruitmentLetter />
