@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/Recruitment/Recruitment.css'; // import your CSS
 import RecruitmentBanner from './RecruitmentBanner';
+import RecruitmentLetter from './RecruitmentLetter';
 
 const RecruitmentPage = () => {
   return (
@@ -8,6 +9,9 @@ const RecruitmentPage = () => {
       <header>
         <RecruitmentBanner />
       </header>
+      <main>
+        <RecruitmentLetter />
+      </main>
     </div>
   );
 };

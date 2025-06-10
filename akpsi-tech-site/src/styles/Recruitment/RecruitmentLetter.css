@@ -1,0 +1,84 @@
+/* MsgPresident.css */
+.msg-president {
+    position: relative;
+    width: 100%;
+    padding: 3rem 2rem;     /* ← increase padding here */
+    background: linear-gradient(to bottom, #ffffff, #80AED5);
+    color: #374151;
+    box-sizing: border-box;
+  }
+  
+  /* corner sizes */
+  .msg-president .corner {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-color: #9ca3af;
+  }
+
+  .mp-body-aligner {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 0; /* prevents affecting layout */
+  }
+  
+  
+  /* inset by the padding amounts */
+  .msg-president .corner.top-left {
+    top: -3.5rem;
+    left: -2rem;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  
+  .msg-president .corner.bottom-right {
+    bottom: -21.5rem;
+    right: -3rem;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+  
+  /* Title styling */
+  .mp-title {
+    font-family: 'Inria Serif', serif;
+    font-size: 2.5rem;
+    font-weight: "bold";
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000; /* gray-900 */
+  }
+  
+  /* Greeting */
+  .mp-greeting {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Body copy */
+  /* Constrain and center body + signature */
+  .mp-body-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .mp-body {
+    line-height: 1.25;
+    font-size: 1rem;
+  }
+  
+  .mp-body p {
+    margin-bottom: 1.125rem;
+  }
+  
+  /* Signature now inside the wrapper, right-aligned */
+  .mp-signature {
+    font-family: 'WindSong', cursive;
+    font-size: 1.75rem;
+    text-align: right;
+    color: #111827;
+    margin-top: 1rem;
+  }
