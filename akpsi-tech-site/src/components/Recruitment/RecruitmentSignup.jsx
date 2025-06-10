@@ -47,16 +47,15 @@ const RecruitmentSignup = () => {
 
                 <div className="recruitment-registration-img-container">
                     <img
-                        className="recruitment-registration-image"
                         src={RecruitmentRegistration}
                         alt="recruitment-registration-image"
+                        className="recruitment-registration-image"
                     />
-                    <button
-                        className="recruitment-registration-button"
-                    >
-                        Click Here
+                    <button className="recruitment-registration-button">
+                        Register
                     </button>
                 </div>
+
 
             </div>
 

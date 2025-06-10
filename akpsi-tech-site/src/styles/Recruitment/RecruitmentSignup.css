@@ -1,18 +1,18 @@
 .recruitment-hero {
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     width: 100%;
 }
 
 .recruitment-registration-container {
-    width:100%;
-    height:100%;
-    display:flex; 
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items:center;
 }
 
 .recruitment-registration-text-container {
-    height:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,12 +20,9 @@
 }
 
 .recruitment-register-title {
-    margin-top: 0;
     font-size: 64px;
     font-family: var(--font-family-inria-serif);
     font-weight: bold;
-    margin-top: 100px;
-    white-space: nowrap;
         color:black;
 }
 
@@ -36,17 +33,33 @@
         color:black;
 }
 
-.recruitment-registration-image {
-    height: 500px;
-    object-fit: cover;
+.recruitment-registration-img-container { 
+  display: flex;               /* Enable flexbox */
+  justify-content: center;     /* Center horizontally */
+  align-items: center;         /* Center vertically */
+  position: relative;
+  height: 500px;               /* Give it height so centering works */
+  width: 100%;                 /* Or fixed width if needed */
 }
+
+.recruitment-registration-image {
+  height: 100%;                /* or auto, depending on aspect ratio */
+  object-fit: cover;
+}
+
 
 .recruitment-registration-button {
-    position:absolute;
-    font-size: 24px;
-    font-family: var(--font-family-thasadith);
-    background-color: rgba(255, 255, 255, 0.5);
-    border-color: black;
-    color:black;
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-family: var(--font-family-thasadith);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
 }
+
