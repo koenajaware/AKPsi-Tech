@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/About/AboutHistory.css';
-import foundersImage from '../../assets/History.png'; // use your image path
+import foundersImage from '../../assets/History.png'; 
 
 const AboutHistory = () => {
   return (
