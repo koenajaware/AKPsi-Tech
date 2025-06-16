@@ -26,8 +26,10 @@ const Journey = () => {
 
   return (
     <section className="journey" id="about">
-      <h2 className="section-title">Omega Theta's <br />Journey</h2>
+      <h2 className="section-title">Omega Theta's Journey</h2>
       <div className="carousel-container">
+         <div className="carousel-gradient left-gradient"></div>
+        <div className="carousel-gradient right-gradient"></div>
         <button className="carousel-arrow left-arrow" onClick={prevSlide}>
              &#8249;
         </button>
