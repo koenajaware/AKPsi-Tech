@@ -29,7 +29,7 @@
 .exec-banner {
   position: relative;
   width: 100%;
-  height: 450px; /* Slightly reduced height */
+  height: 1000px; 
   overflow: hidden;
   background-color: #222; /* Fallback background */
 }
@@ -61,7 +61,7 @@
 
 .exec-page-title {
   font-family: var(--exec-font-serif);
-  font-size: 56px; /* Slightly smaller */
+  font-size: 86px; 
   font-weight: 700;
   color: #ffffff;
   text-align: center;

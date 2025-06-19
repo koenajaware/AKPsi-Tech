@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../../styles/Recruitment/RecruitmentEvents.css';
 
 const RecruitmentEvents = () => {
-  const [windowHeight, setWindowHeight] = useState(0);
-
-//   useEffect(() => {
-//     setWindowHeight(window.innerHeight);
-//     const handleResize = () => setWindowHeight(window.innerHeight);
-//     window.addEventListener('resize', handleResize);
-//     return () => window.removeEventListener('resize', handleResize);
-//    }, []);
 
    const events = [
     {

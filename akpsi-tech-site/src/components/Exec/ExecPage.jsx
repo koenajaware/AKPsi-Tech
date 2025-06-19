@@ -16,23 +16,16 @@ const ExecPage = () => {
       { 
         name: "Mallika Bhat", 
         position: "Executive Vice President",
-        description: "B.S. in Information Systems & Marketing",
+        description: "Bachelor's in Operations Management and Business Analytics",
         additional: "Executive Board Member", 
         image: "/assets/mallika.jpg" 
       },
     { 
       name: "João Eduardo Camargo de Miranda", 
       position: "Chief of Staff",
-      description: "Bachelor's in Government and Politics, International Business",
+      description: "Bachelor's in Government and Politics and International Business",
       additional: "Executive Board Member",
       image: "/assets/joao.jpg" 
-    },
-    { 
-      name: "Mallika Bhat", 
-      position: "Executive Vice President",
-      description: "Bachelor's in Operations Management and Business Analytics",
-      additional: "Executive Board Member", 
-      image: "/assets/mallika.jpg" 
     },
     { 
       name: "Rahul Harish", 
@@ -44,14 +37,14 @@ const ExecPage = () => {
     { 
       name: "Abhiram Sreeramaneni", 
       position: "VP Membership",
-      description: "Bachelor's in Philosophy, Politics, Economics, Social Data Science",
+      description: "Bachelor's in Philosophy, Politics, Economics and Social Data Science",
       additional: "Executive Board Member", 
       image: "/assets/abhis.jpg" 
     },
     { 
       name: "Alma Hagstrom", 
       position: "VP Finance",
-      description: "B.S. in Computer Science and Finance",
+      description: "Bachelor's in Computer Science and Finance",
       additional: "Executive Board Member", 
       image: "/assets/alma.jpg" 
     },
@@ -79,14 +72,14 @@ const ExecPage = () => {
     { 
       name: "Avni Kaushik", 
       position: "VP Alumni Affairs",
-      description: "B.S. in Computer Science and Neuroscience",
+      description: "Bachelor's in Computer Science and Neuroscience",
       additional: "Executive Board Member", 
       image: "/assets/avni.jpg" 
     },
     { 
       name: "Ethan Grossman", 
       position: "Master of Rituals",
-      description: "Bachelor's in Finance & Information Systems",
+      description: "Bachelor's in Finance and Information Systems",
       additional: "Executive Board Member", 
       image: "/assets/ethan.jpg" 
     },
@@ -167,7 +160,7 @@ const ExecPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            EXECUTIVE BOARD
+            Executive Board
           </motion.h1>
         </motion.div>
       </motion.section>
