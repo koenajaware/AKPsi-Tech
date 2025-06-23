@@ -1,12 +1,12 @@
 .story {
     display: flex;
-    padding: 100px 150px;
+    padding: 4rem 6rem;
     gap: 75px;
     width: 100vw; /* Set width to 100% of the viewport width */
     max-width: 100%; /* Ensure it doesn't exceed the viewport width */
   }
   
-  .section-title {
+  .story .section-title {
     font-size: 80px;
     font-family: var(--font-family-inria-serif);
     font-weight: bold;
