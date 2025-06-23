@@ -14,6 +14,9 @@
   color: var(--color-primary);
   text-align: center;
   flex-shrink: 0;
+  place-self: center;
+  margin: 0;
+  padding: 0;
 }
 
 .pillars-content {
