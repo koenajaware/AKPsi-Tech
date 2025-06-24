@@ -31,10 +31,17 @@
 }
 
 .sponsor-track img {
-  height: 80px; /* Adjust for logo size */
+  height: 75px; /* Adjust for logo size */
   width: auto;
   display: inline-block;
 }
+
+.sponsor-track img.kpmg {
+  transform: scale(1.4); 
+  transform-origin: center;
+}
+
+
 
 /* Animation for smooth scrolling effect */
 @keyframes scroll {

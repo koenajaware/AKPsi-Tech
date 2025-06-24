@@ -8,15 +8,15 @@ const Footer = () => {
       <div className="footer-content">
         <h2 className="footer-logo">AKΨ</h2>
         <div className="social-icons">
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+          <a href="https://www.linkedin.com/company/akpsiot/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
             <div className="social-icon linkedin-icon">in</div>
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+          <a href="https://www.instagram.com/akpsiot/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
             <div className="social-icon instagram-icon">
               <span className="instagram-inner"></span>
             </div>
           </a>
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+          <a href="https://www.tiktok.com/@umdakpsi" target="_blank" rel="noopener noreferrer" className="social-icon-link">
             <div className="social-icon">
               <img src="/assets/tiktok.png" alt="TikTok" className="tiktok-logo" />
             </div>

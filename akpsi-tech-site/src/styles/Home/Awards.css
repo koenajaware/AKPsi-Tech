@@ -1,15 +1,26 @@
 .awards {
+  display: flex;
   padding: 4rem 6rem;
+  gap: 75px;
+  width: 100vw;
+  max-width: 100%;
 }
 
-.section-title {
+.awards .section-title {
   color: #14437D;
-  font-size: 48px;
-  margin-bottom: 3rem;
+  font-size: 80px;
+  font-family: var(--font-family-inria-serif);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+  flex-shrink: 0;
+  place-self: center;
+  margin: 0;
+  padding: 0;
 }
 
 .awards-content {
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -28,9 +39,12 @@
   padding: 1.5rem 0;
   cursor: pointer;
   position: relative;
+
 }
 
 .award-title {
+  text-align: center;
+  width: 100%;
   font-size: 24px;
   color: #000;
   font-weight: normal;
@@ -240,12 +254,12 @@
     gap: 2rem;
     align-items: center;
   }
-  
+
   .award-column {
     width: 100%;
     max-width: 280px;
   }
-  
+
   .award-subtitle {
     font-size: 20px;
   }
@@ -254,7 +268,7 @@
     flex-wrap: wrap;
     gap: 2rem;
   }
-  
+
   .year-circle {
     width: 120px;
     height: 120px;
