@@ -1,0 +1,68 @@
+/* Title styling */
+.photo-wheel-title {
+  font-family: 'Inria Serif', serif;
+  font-size: 2.5rem;
+  font-weight: bold; /* Remove quotes – they break the value */
+  text-align: center;
+  margin-top: 2rem;   /* Add space above the title */
+  margin-bottom: 2rem;
+  color: #000000; /* gray-900 */
+}
+
+.photo-wheel {
+  width: 100%;
+  padding: 2rem 0;
+  background: linear-gradient(to bottom, white, #80AED5, white);
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  animation: scroll 30s linear infinite;
+}
+
+.photo-slide {
+  flex: 0 0 auto;
+  padding: 0 10px;
+}
+
+.photo-slide img {
+  height: 300px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half of the total width (original set of images) */
+  }
+}
+
+/* Pause animation on hover (optional) */
+.photo-track:hover {
+  animation-play-state: paused;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .photo-slide img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .photo-slide img {
+    height: 200px;
+  }
+  
+  .photo-wheel {
+    padding: 1.5rem 0;
+  }
+}

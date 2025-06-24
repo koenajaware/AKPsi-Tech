@@ -39,3 +39,9 @@
     font-family: var(--font-family-thasadith);
     white-space: nowrap;
   }
+
+.section-divider {
+  border-bottom: 1px solid black;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}

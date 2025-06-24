@@ -44,6 +44,7 @@
 
 .recruitment-registration-image {
   height: 100%;                /* or auto, depending on aspect ratio */
+  width: auto;
   object-fit: cover;
 }
 
@@ -62,4 +63,3 @@
   cursor: pointer;
   z-index: 10;
 }
-
