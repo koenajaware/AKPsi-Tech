@@ -1,46 +1,33 @@
-.blue-bar {
-  color: white;
-  text-align: center;
-  padding: 15px;
-  height: 200px;
-  font-size: 24px;
-  font-weight: bold;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .sponsor-slider {
   display: flex;
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 70px;
+  margin-bottom: 70px;
   position: relative;
 }
 
 .sponsor-track {
   display: flex;
-  gap: 40px;
-  animation: scroll 10s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 
 .sponsor-track img {
-  height: 80px; /* Adjust for logo size */
-  width: auto;
+  height: 400px; /* Adjust for logo size */
+  width: 300px;
   display: inline-block;
+  margin-right: 40px;
+  flex-shrink: 0;
 }
 
 /* Animation for smooth scrolling effect */
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
