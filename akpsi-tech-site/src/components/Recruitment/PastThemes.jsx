@@ -3,11 +3,11 @@ import '../../styles/Recruitment/PastThemes.css';
 
 const PastThemes = () => {
   const photos = [
-    '/assets/RecruitmentPhoto1.jpeg',
-    '/assets/RecruitmentPhoto2.jpeg',
-    '/assets/RecruitmentPhoto3.jpeg',
-    '/assets/bb67344540950299936d4053fe88d129.jpg',
-    '/assets/e739404f89b76a198ba76291ec9bbe87.jpg'
+    '/assets/squidgame.png',
+    '/assets/wonka.png',
+    '/assets/tuneIn.png',
+    '/assets/bond.png',
+    '/assets/spiderman.png'
   ];
 
   const duplicatedPhotos = [...photos, ...photos];
