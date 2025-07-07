@@ -16,24 +16,12 @@ const RecruitmentPage = () => {
         <RecruitmentBanner />
       </header>
       <main>
-        <div className="section-divider">
           <RecruitmentLetter />
-        </div>
-        <div className="section-divider">
           <RecruitmentSignup />
-        </div>
-        <div className="section-divider">
           <RecruitmentEvents />
-        </div>
-        <div className="section-divider">
           <Tip />
-        </div>
-        <div className="section-divider">
           <RecruitmentPhotoWheel />
-        </div>
-        <div className="section-divider">
           <PastThemes />
-        </div>
       </main>
     </div>
   );
