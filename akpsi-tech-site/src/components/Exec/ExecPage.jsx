@@ -9,84 +9,84 @@ const ExecPage = () => {
     { 
         name: "Sydney Richman", 
         position: "President",
-        description: "Bachelor's in Computer Science and Economics",
+        description: "B.S in Computer Science and Economics",
         additional: "Executive Board Member",
         image: "/assets/sydney.jpg" 
       },
       { 
         name: "Mallika Bhat", 
         position: "Executive Vice President",
-        description: "Bachelor's in Operations Management and Business Analytics",
+        description: "B.S in Operations Management and Business Analytics",
         additional: "Executive Board Member", 
         image: "/assets/mallika.jpg" 
       },
     { 
       name: "João Eduardo Camargo de Miranda", 
       position: "Chief of Staff",
-      description: "Bachelor's in Government and Politics and International Business",
+      description: "B.S in Government and Politics and International Business",
       additional: "Executive Board Member",
       image: "/assets/joao.jpg" 
     },
     { 
       name: "Rahul Harish", 
       position: "Controller",
-      description: "Bachelor's in Computer Science and Statistics",
+      description: "B.S in Computer Science and Statistics",
       additional: "Executive Board Member", 
       image: "/assets/rahul.jpg" 
     },
     { 
       name: "Abhiram Sreeramaneni", 
       position: "VP Membership",
-      description: "Bachelor's in Philosophy, Politics, Economics and Social Data Science",
+      description: "B.A in Philosophy, Politics, Economics and B.S Social Data Science",
       additional: "Executive Board Member", 
       image: "/assets/abhis.jpg" 
     },
     { 
       name: "Alma Hagstrom", 
       position: "VP Finance",
-      description: "Bachelor's in Computer Science and Finance",
+      description: "B.S in Computer Science and Finance",
       additional: "Executive Board Member", 
       image: "/assets/alma.jpg" 
     },
     { 
       name: "Walid Khokhar", 
       position: "VP Professional",
-      description: "Bachelor's in Finance and Information Systems",
+      description: "B.S in Finance and Information Systems",
       additional: "Executive Board Member", 
       image: "/assets/walid.jpg" 
     },
     { 
       name: "Arsha Garg", 
       position: "VP Pledging",
-      description: "Bachelor's in Computer Science",
+      description: "B.S in Computer Science",
       additional: "Executive Board Member", 
       image: "/assets/arsha.jpg" 
     },
     { 
       name: "Uzochi Njiaju", 
       position: "VP Community Service",
-      description: "Bachelor's in Information Systems",
+      description: "B.S in Information Systems",
       additional: "Executive Board Member", 
       image: "/assets/uzochi.jpg" 
     },
     { 
       name: "Avni Kaushik", 
       position: "VP Alumni Affairs",
-      description: "Bachelor's in Computer Science and Neuroscience",
+      description: "B.S in Computer Science and Neuroscience",
       additional: "Executive Board Member", 
       image: "/assets/avni.jpg" 
     },
     { 
       name: "Ethan Grossman", 
       position: "Master of Rituals",
-      description: "Bachelor's in Finance and Information Systems",
+      description: "B.S in Finance and Information Systems",
       additional: "Executive Board Member", 
       image: "/assets/ethan.jpg" 
     },
     { 
       name: "Emily Craig", 
       position: "VP Diversity, Equity, and Inclusion",
-      description: "Bachelor's in Politics, Philosophy, Economics, and Business Management",
+      description: "B.A in Politics, Philosophy, Economics, and Business Management",
       additional: "Executive Board Member", 
       image: "/assets/emily.jpg" 
     },
