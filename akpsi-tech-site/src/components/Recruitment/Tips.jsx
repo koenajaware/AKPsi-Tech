@@ -67,14 +67,6 @@ const Tips = () => {
               </div>
             ))}
           </div>
-          <div className="tip-dots">
-            {photos.map((_, idx) => (
-              <span
-                key={idx}
-                className={`dot ${idx === currentIndex ? 'active' : ''}`}
-              />
-            ))}
-          </div>
         </section>
       </div>
     </>

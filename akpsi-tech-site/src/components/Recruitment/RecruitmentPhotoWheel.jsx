@@ -6,8 +6,12 @@ const RecruitmentPhotoWheel = () => {
     '/assets/RecruitmentPhoto1.jpeg',
     '/assets/RecruitmentPhoto2.jpeg',
     '/assets/RecruitmentPhoto3.jpeg',
-    '/assets/bb67344540950299936d4053fe88d129.jpg',
-    '/assets/e739404f89b76a198ba76291ec9bbe87.jpg'
+    
+    '/assets/rush/DSC06653.JPG',
+    '/assets/rush/DSC06610.jpg',
+    '/assets/rush/DSC03166.JPG',
+    '/assets/rush/DSC03127.JPG',
+    '/assets/rush/DSC03126.JPG'
   ];
 
   // Duplicate the photos array to create seamless loop

@@ -19,7 +19,7 @@ const RecruitmentPage = () => {
           <RecruitmentLetter />
           <RecruitmentSignup />
           <RecruitmentEvents />
-          <Tip />
+          {/*<Tip />*/}
           <RecruitmentPhotoWheel />
           <PastThemes />
       </main>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import '../../styles/Recruitment/PastThemes.css';
 
 const PastThemes = () => {
@@ -6,80 +6,18 @@ const PastThemes = () => {
     '/assets/squidgame.png',
     '/assets/wonka.png',
     '/assets/tuneIn.png',
-    '/assets/bond.png',
-    '/assets/spiderman.png'
+    '/assets/bond.png'
   ];
 
-  const duplicatedPhotos = [...photos, ...photos];
-
-  const trackRefTop = useRef(null);
-  const trackRefBottom = useRef(null);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const photoWidth = 520; // match CSS width + margin
-
-  const maxIndex = photos.length;
-
-  const moveLeft = () => {
-    if (currentIndex === 0) return;
-    const newIndex = currentIndex - 1;
-    setCurrentIndex(newIndex);
-    const translateX = -photoWidth * newIndex;
-    if (trackRefTop.current) {
-      trackRefTop.current.style.transform = `translateX(${translateX}px)`;
-    }
-    if (trackRefBottom.current) {
-      trackRefBottom.current.style.transform = `translateX(${translateX}px)`;
-    }
-  };
-
-  const moveRight = () => {
-    if (currentIndex === maxIndex - 1) return;
-    const newIndex = currentIndex + 1;
-    setCurrentIndex(newIndex);
-    const translateX = -photoWidth * newIndex;
-    if (trackRefTop.current) {
-      trackRefTop.current.style.transform = `translateX(${translateX}px)`;
-    }
-    if (trackRefBottom.current) {
-      trackRefBottom.current.style.transform = `translateX(${translateX}px)`;
-    }
-  };
-
   return (
-    <div className="photo-wheel">
-      <div className="previous-themes-wrapper">
-        <h2 className="previous-themes-title">Previous Themes</h2>
-        <div className="previous-themes-container">
-          <section className="previous-wheel top-wheel">
-            <div className="previous-track" ref={trackRefTop}>
-              {duplicatedPhotos.map((photo, idx) => (
-                <div key={idx} className="photo-slide">
-                  <img src={photo} alt={`Top Slide ${idx + 1}`} />
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="previous-wheel bottom-wheel">
-            <div className="previous-track" ref={trackRefBottom}>
-              {duplicatedPhotos.map((photo, idx) => (
-                <div key={idx} className="photo-slide">
-                  <img src={photo} alt={`Bottom Slide ${idx + 1}`} />
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        <div className="previous-themes-controls">
-          <button onClick={moveLeft} disabled={currentIndex === 0} aria-label="Scroll Left">
-            &lt;
-          </button>
-          <button onClick={moveRight} disabled={currentIndex === maxIndex - 1} aria-label="Scroll Right">
-            &gt;
-          </button>
-        </div>
+    <div className="photo-grid">
+      <h2 className="previous-themes-title">Previous Themes</h2>
+      <div className="photo-grid-container">
+        {photos.map((photo, idx) => (
+          <div key={idx} className="photo-grid-box">
+            <img src={photo} alt={`Theme ${idx + 1}`} />
+          </div>
+        ))}
       </div>
     </div>
   );
