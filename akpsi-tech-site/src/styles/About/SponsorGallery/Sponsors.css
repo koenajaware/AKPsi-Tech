@@ -1,4 +1,4 @@
-.sponsor-slider {
+.about-sponsor-slider {
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -9,12 +9,12 @@
   position: relative;
 }
 
-.sponsor-track {
+.about-sponsor-track {
   display: flex;
   animation: scroll 70s linear infinite;
 }
 
-.sponsor-track img {
+.about-sponsor-track img {
   height: 400px;
   width: 600px;
   display: inline-block;

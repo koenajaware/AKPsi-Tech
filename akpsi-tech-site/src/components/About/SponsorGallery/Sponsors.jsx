@@ -29,8 +29,8 @@ const sponsorImages = [
 
 const Sponsors = () => {
   return (
-    <div className="sponsor-slider">
-      <div className="sponsor-track">
+    <div className="about-sponsor-slider">
+      <div className="about-sponsor-track">
         {sponsorImages.concat(sponsorImages).map((src, idx) => (
           <img key={idx} src={src} alt={`Sponsor ${idx + 1}`} />
         ))}
