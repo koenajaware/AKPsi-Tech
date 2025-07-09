@@ -11,22 +11,22 @@ const Sponsors = () => {
           <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
           <img src="/assets/sponsors/EY.png"  alt="EY" />
           <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
-          <img src="/assets/sponsors/KPMG.png" alt="KPMG" className="kpmg"/>
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
           {/* Second set */}
           <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
           <img src="/assets/sponsors/EY.png" alt="EY" />
           <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
-          <img src="/assets/sponsors/KPMG.png" alt="KPMG" className="kpmg"/>
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
           {/* Third set */}
           <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
           <img src="/assets/sponsors/EY.png" alt="EY" />
           <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
-          <img src="/assets/sponsors/KPMG.png" alt="KPMG" className="kpmg"/>
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
           {/* Fourth set */}
           <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
           <img src="/assets/sponsors/EY.png" alt="EY" />
           <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
-          <img src="/assets/sponsors/KPMG.png" alt="KPMG" className="kpmg"/>
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
         </div>
       </div>
     </div>

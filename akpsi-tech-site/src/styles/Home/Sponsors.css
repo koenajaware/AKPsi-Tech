@@ -35,29 +35,25 @@
 
 .sponsor-track {
   display: flex;
-  gap: 40px;
-  animation: scroll 10s linear infinite;
+  gap: 1%;
+  animation: scrollsponsor 10s linear infinite;
 }
 
 .sponsor-track img {
-  height: 75px; /* Adjust for logo size */
-  width: auto;
-  display: inline-block;
+  max-width: 11.5%;  
+  width: 100%;       
+  height: auto;     
+  max-height: 75px;  
+  object-fit: contain; 
   flex-shrink: 0;
 }
 
-.sponsor-track img.kpmg {
-  transform: scale(1.4); 
-  transform-origin: center;
-  margin: 0 20px;
-}
-
 /* Animation for smooth scrolling effect */
-@keyframes scroll {
+@keyframes scrollsponsor {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-25%);
+    transform: translateX(-50%);
   }
 }
