@@ -35,8 +35,85 @@ body {
   background-color: var(--color-white);
 }
 
+/* Mobile-first App Styles */
 .app {
-  position: relative;
-  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding-top: 60px; /* Account for fixed header */
+}
+
+/* Mobile-specific styles */
+.mobile-device {
+  /* Prevent horizontal scrolling */
   overflow-x: hidden;
+}
+
+.mobile-device .content {
+  padding-top: 60px;
+}
+
+/* Touch-friendly improvements */
+.mobile-device button,
+.mobile-device .header-button,
+.mobile-device .nav-link {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smooth scrolling for mobile */
+.mobile-device {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text selection on mobile */
+.mobile-device * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific elements */
+.mobile-device p,
+.mobile-device h1,
+.mobile-device h2,
+.mobile-device h3,
+.mobile-device h4,
+.mobile-device h5,
+.mobile-device h6 {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Tablet and Desktop adjustments */
+@media (min-width: 768px) {
+  .content {
+    padding-top: 70px;
+  }
+  
+  .mobile-device .content {
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding-top: 80px;
+  }
+  
+  .mobile-device .content {
+    padding-top: 80px;
+  }
 }

@@ -11,7 +11,6 @@ import PhotoWheel from './components/Home/PhotoWheel';
 import Awards from './components/Home/Awards';
 import Sponsors from './components/Home/Sponsors';
 import BrotherPage from './components/Brother/BrotherPage';
-// import Footer from './components/Footer/Footer';
 import './App.css';
 import AlumniPage from './components/Alumni/AlumniPage';
 import RecruitmentPage from './components/Recruitment/RecruitmentPage';
@@ -42,6 +41,50 @@ const ScrollToHashElement = () => {
   return null;
 };
 
+// Mobile optimization component
+const MobileOptimizer = () => {
+  useEffect(() => {
+    // Add mobile-specific classes
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+      document.body.classList.add('mobile-device');
+    }
+
+    // Prevent zoom on double tap
+    const preventZoom = (e) => {
+      let lastTouchEnd = 0;
+      const now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+      }
+      lastTouchEnd = now;
+    };
+
+    document.addEventListener('touchend', preventZoom, false);
+
+    // Add touch feedback to buttons
+    const buttons = document.querySelectorAll('button, .header-button, .nav-link');
+    buttons.forEach(button => {
+      button.addEventListener('touchstart', () => {
+        button.style.opacity = '0.7';
+      });
+      button.addEventListener('touchend', () => {
+        button.style.opacity = '1';
+      });
+    });
+
+    return () => {
+      document.removeEventListener('touchend', preventZoom);
+      buttons.forEach(button => {
+        button.removeEventListener('touchstart', () => {});
+        button.removeEventListener('touchend', () => {});
+      });
+    };
+  }, []);
+
+  return null;
+};
+
 const App = () => {
   const Home = () => {
     return (
@@ -59,6 +102,7 @@ const App = () => {
 
   return (
     <Router>
+      <MobileOptimizer />
       <Header />
       <ScrollToHashElement />
       
