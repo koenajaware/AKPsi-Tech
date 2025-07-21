@@ -8,7 +8,7 @@ export const chapters = [
           id: 1,
           name: 'John Smith',
           // Replace with a real image URL or local asset
-          imageUrl: 'https://via.placeholder.com/150?text=Alpha+Nu+1',
+          imageUrl: 'https://drive.google.com/open?id=1ZIoG2M0nzMQ7C7-oU63EZ0WwujA-JtNm',
         },
         {
           id: 2,

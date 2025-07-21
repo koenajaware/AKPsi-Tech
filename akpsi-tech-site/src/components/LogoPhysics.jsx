@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/LogoPhysics.css';
 
 const LogoPhysics = ({ logos }) => {
@@ -21,6 +21,13 @@ const LogoPhysics = ({ logos }) => {
     vx: 0,
     vy: 0
   })));
+  // track original window size
+  const originalWindowSize = useRef({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  // state to control logo visibility
+  const [logosVisible, setLogosVisible] = useState(true);
 
   /*
   in HTML, the coordinate system is (0,0) at the top left corner, 
@@ -59,8 +66,24 @@ const LogoPhysics = ({ logos }) => {
 
     // makes sure the website works when the window is resized
     const handleResize = () => {
-      updateInitialPositions();
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      
+      // Check if window size has changed from original
+      if (currentWidth !== originalWindowSize.current.width || 
+          currentHeight !== originalWindowSize.current.height) {
+        setLogosVisible(false);
+      } else {
+        /*
+        setLogosVisible(true);
+        updateInitialPositions();
+        */
+       // SCUFFED: instead of the above two lines (which don't work as intended), the entire page is reloaded
+       // when the window is reverted back to its original size.
+       window.location.reload();
+      }
     };
+    
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -68,6 +91,8 @@ const LogoPhysics = ({ logos }) => {
   // changes velocity and position of each logo relative to the amount scrolled
   useEffect(() => {
     const handleScroll = () => {
+      if (!logosVisible) return;
+      
       // figure out the amount scrolled
       const scrollDelta = window.scrollY - scrollPosition.current;
       // limit the max scroll so that logos don't jump around too much
@@ -90,7 +115,7 @@ const LogoPhysics = ({ logos }) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [logosVisible]);
 
   const animate = () => {
     const container = logoRefs.current[0]?.parentElement;
@@ -98,9 +123,6 @@ const LogoPhysics = ({ logos }) => {
     const containerRect = container.getBoundingClientRect();
     const containerLeft = containerRect.left;
     const containerTop = containerRect.top;
-    /* const box = centerBox.current;
-    const boxCenterX = box.x + box.width / 2;
-    const boxCenterY = box.y + box.height / 2; */
 
     // First apply velocity and damping
     positions.current.forEach((pos) => {
@@ -120,66 +142,6 @@ const LogoPhysics = ({ logos }) => {
       // Calculate logo center
       const logoCenterX = containerLeft + initial.left + pos.x + radius;
       const logoCenterY = containerTop + initial.top + pos.y + radius;
-
-      // 1. Center box collision - as a soft force field
-      /* const boxRepulsionForce = 0.25; // Softer repulsion
-      const boxPadding = 10; // Extra space around box
-
-      // Calculate distance from logo to box edges
-      const boxLeft = boxCenterX - box.width / 2 - boxPadding;
-      const boxRight = boxCenterX + box.width / 2 + boxPadding;
-      const boxTop = boxCenterY - box.height / 2 - boxPadding;
-      const boxBottom = boxCenterY + box.height / 2 + boxPadding; */
-
-      /* const checkCenterBoxCollision = (rx, ry, rw, rh, lx, ly, lr) => {
-        // calculate x and y distances between circle center and rectangle center
-        // abs collapses 4 quadrants to 1
-        let circleDistance = {
-          x: Math.abs(lx - rx),
-          y: Math.abs(ly - ry)
-        };
-
-        // if circle is beyond top or right edges of the rectangle, it is definitely not intersecting
-        if (circleDistance.x > (rw / 2 + lr)) { return false; }
-        if (circleDistance.y > (rh / 2 + lr)) { return false; }
-
-        // if circle is within top of right edges of the rectangle, it is definitely intersecting
-        if (circleDistance.x <= (rw / 2)) { return true; }
-        if (circleDistance.y <= (rh / 2)) { return true; }
-
-        // cover edge case where circle is intersecting top right corner of the rectangle
-        let cornerDistance_sq = Math.pow(circleDistance.x - (rw / 2), 2) +
-          Math.pow(circleDistance.y - (rh / 2), 2);
-
-        return (cornerDistance_sq <= Math.pow(lr, 2));
-      }
-
-      // Check if logo is overlapping with padded box
-      if (checkCenterBoxCollision(boxCenterX, boxCenterY, boxRight - boxLeft, boxBottom - boxTop, logoCenterX, logoCenterY, radius)) {
-
-        // Find closest box edge
-        const distToLeft = Math.abs(logoCenterX - boxLeft);
-        const distToRight = Math.abs(logoCenterX - boxRight);
-        const distToTop = Math.abs(logoCenterY - boxTop);
-        const distToBottom = Math.abs(logoCenterY - boxBottom);
-
-        const minDist = Math.min(distToLeft, distToRight, distToTop, distToBottom);
-
-        // Apply repulsion force away from closest edge
-        if (minDist === distToLeft) {
-          pos.vx -= boxRepulsionForce * (distToLeft);
-          pos.vx *= 0.75;
-        } else if (minDist === distToRight) {
-          pos.vx += boxRepulsionForce * (distToRight);
-          pos.vx *= 0.75;
-        } else if (minDist === distToTop) {
-          pos.vy -= boxRepulsionForce * (distToTop);
-          pos.vy *= 0.75;
-        } else {
-          pos.vy += boxRepulsionForce * (distToBottom);
-          pos.vy *= 0.75;
-        }
-      } */
 
       // 2. Boundary constraints (container edges)
       const minX = -initial.left;
@@ -268,7 +230,11 @@ const LogoPhysics = ({ logos }) => {
             className="logo organization-logo"
             src={logo}
             alt={`Organization ${i + 1}`}
-            style={{ borderRadius: '50%' }}
+            style={{ 
+              borderRadius: '50%',
+              opacity: logosVisible ? 1 : 0,
+              transition: 'opacity 0.3s ease'
+            }}
           />
         ))}
       </div>
