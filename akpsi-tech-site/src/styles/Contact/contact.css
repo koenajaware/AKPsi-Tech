@@ -12,7 +12,8 @@
   position: relative;
   width: 100%;
   color: #ffffff;
-  padding-top: 40px
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .contact-content h1 {
