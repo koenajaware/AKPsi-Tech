@@ -18,11 +18,12 @@
 
 .contact-content h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   margin-bottom: 40px;
   color: #ffffff;
   width: 100%;
+  font-weight: lighter; 
 }
 
 .contact-body {
@@ -41,8 +42,7 @@
 }
 
 .contact-person h2 {
-  font-weight: bolder;
-  width:max-content
+  width: max-content
 }
 
 .contact-person a {
