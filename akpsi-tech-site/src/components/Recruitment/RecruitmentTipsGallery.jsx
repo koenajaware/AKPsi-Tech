@@ -8,27 +8,27 @@ const RecruitmentTipsGallery = () => {
     {
       id: 1,
       question: "WHAT IS ALPHA KAPPA PSI?",
-      answer: "Alpha kappa psi is the oldest and largest international professional co-ed business fraternity. Our purpose is to develop our members into principled business leaders. We are the omega theta chapter and there are a total of 268 active chapters worldwide!"
+      answer: "Alpha Kappa Psi is the oldest and largest international professional co-ed business fraternity. Our purpose is to develop our members into principled business leaders. We are the Omega Theta chapter and there are a total of 268 active chapters worldwide!"
     },
     {
       id: 2,
       question: "HOW CAN I PREPARE FOR RECRUITMENT?",
-      answer: "Make sure you follow our instagram, linkedin and our other social media platforms for all of the updates, events, and information. Dress code, room number, and dates will also be listed on our infographics. Make sure to register yourself on our form once it comes out. It will requre your personal information, headshot, and resume."
+      answer: "Make sure you follow our Instagram, LinkedIn and our other social media platforms for all of the updates, events, and information. Dress code, room number, and dates will also be listed on our infographics. Make sure to register yourself on our form once it comes out. It will require your personal information, headshot, and resume."
     },
     {
       id: 3,
       question: "HOW MANY EVENTS ARE REQUIRED?",
-      answer: "Try to attend as many events as you can for the entirety of the time. We recommend attending our interfrat panel, info night, community service night. Our invite only events must be attended."
+      answer: "Try to attend as many events as you can for the entirety of the time. We recommend attending our Interfrat Panel, Info Night, and Community Service Night. Our invite only events must be attended."
     },
     {
       id: 4,
       question: "WHAT ARE THE TIME COMMITMENTS?",
-      answer: "As an active member, you'll attend weekly chapter meetings, participate in professional development events, community service projects, and social activities. We understand academic priorities and work to balance commitments."
+      answer: "As an active member, you’ll attend weekly chapter meetings and participate in professional development events, community service projects, and social activities. We understand the importance of academic priorities and strive to help members balance their commitments."
     },
     {
       id: 5,
       question: "WHAT ARE THE BENEFITS OF JOINING?",
-      answer: "Members gain access to professional networking opportunities, leadership development, career resources, lifelong friendships, and exclusive events with industry professionals and alumni."
+      answer: "Members will gain access to professional networking opportunities, leadership development, career resources, lifelong friendships, and exclusive events with industry professionals and alumni."
     },
     {
       id: 6,
