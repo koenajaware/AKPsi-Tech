@@ -22,9 +22,14 @@ const ContactPage = () => {
                 </a>
               </div>
               <div className="contact-person">
-                <h2>Abhiram Sriramaneni</h2>
+                <h2>Abhiram Sreeramaneni</h2>
                 <p>Vice President of Membership</p>
                 <a href="mailto:akpsiotrush@gmail.com">akpsiotrush@gmail.com</a>
+              </div>
+              <div className="contact-person">
+                <h2>Alpha Kappa Psi</h2>
+                <p>Omega Theta Chapter</p>
+                <a href="mailto:akpsiomegatheta@gmail.com">akpsiomegatheta@gmail.com</a>
               </div>
             </div>
             <div className="contact-form-container">
