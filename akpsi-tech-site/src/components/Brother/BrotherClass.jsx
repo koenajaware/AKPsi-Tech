@@ -1,5 +1,5 @@
 import React from 'react';
-import { chapters } from './data'; // import your data array
+import { chapters } from './data2'; // import your data array
 import '../../styles/Brother/BrotherClass.css'; // import your CSS
 
 const BrotherClass = () => (
