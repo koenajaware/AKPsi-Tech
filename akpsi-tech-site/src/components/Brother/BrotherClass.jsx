@@ -1,7 +1,9 @@
 import React from 'react';
-import '../../styles/Brother/BrotherClass.css';
+import { chapters } from './data_with_photos'; // scraper image update
+// import {chapters} from './data2'; // manual image update
+import '../../styles/Brother/BrotherClass.css'; // import your CSS
 
-const BrotherClass = ({ chapters }) => (
+const BrotherClass = () => (
   <main className="chapters-container">
     {chapters.map((chapter) => (
       <section key={chapter.name} className="chapter-section">
@@ -10,15 +12,11 @@ const BrotherClass = ({ chapters }) => (
           {chapter.members.map((member) => (
             <div key={member.id} className="member-wrapper">
               <div className="member-photo">
-                {member.imageUrl ? (
-                  <img
-                    className="photo"
-                    src={member.imageUrl}
-                    alt={member.name}
-                  />
-                ) : (
-                  <div className="photo-placeholder">No photo</div>
-                )}
+                <img
+                  className="photo"
+                  src={member.imageUrl}
+                  alt={member.name}
+                />
                 <div className="photo-overlay">
                   <p className="overlay-name">{member.name}</p>
                   <a
