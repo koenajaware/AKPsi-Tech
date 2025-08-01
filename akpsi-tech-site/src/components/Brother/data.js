@@ -147,54 +147,48 @@ export const chapters = [
       },
       {
         "id": 7,
-        "name": "Nancy",
+        "name": "Nancy Puthenpurayil",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/nancy-puthenpurayil/"
       },
       {
         "id": 8,
-        "name": "Ritika Pokharel",
-        "imageUrl": "",
-        "linkedin": "https://www.linkedin.com/in/ritika-pokharel133/"
-      },
-      {
-        "id": 9,
         "name": "Hamid Shabbir",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/hamidshabbir1/"
       },
       {
-        "id": 10,
+        "id": 9,
         "name": "Aditya Waikar",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/aditya-waikar-998373211/"
       },
       {
-        "id": 11,
+        "id": 10,
         "name": "Megan Walker",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/mwalker3155/"
       },
       {
-        "id": 12,
+        "id": 11,
         "name": "Jeffery Wei",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/jefferywei/"
       },
       {
-        "id": 13,
+        "id": 12,
         "name": "Nihar Xavier",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/niharxavier/"
       },
       {
-        "id": 14,
+        "id": 13,
         "name": "Sreenidhi Yaratha",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/sreenidhi-yaratha-4b0795203/"
       },
       {
-        "id": 15,
+        "id": 14,
         "name": "Aria Zutshi",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/aria-zutshi/"
@@ -248,18 +242,24 @@ export const chapters = [
       },
       {
         "id": 8,
+        "name": "Ritika Pokharel",
+        "imageUrl": "",
+        "linkedin": "https://www.linkedin.com/in/ritika-pokharel133/"
+      },
+      {
+        "id": 9,
         "name": "Sydney Richman",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/sydney-richman-8246b01b4/"
       },
       {
-        "id": 9,
+        "id": 10,
         "name": "Olevia Tinpaw",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/olevia-tinpaw-a115451aa/"
       },
       {
-        "id": 10,
+        "id": 11,
         "name": "Eileen Zhang",
         "imageUrl": "",
         "linkedin": "https://www.linkedin.com/in/eileen-zh/"

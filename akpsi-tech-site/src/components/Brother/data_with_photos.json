@@ -1,0 +1,671 @@
+{
+  "chapters": [
+    {
+      "name": "Alpha Xi",
+      "members": [
+        {
+          "id": 1,
+          "name": "Abhinav Bapanapalli",
+          "linkedin": "https://www.linkedin.com/in/abhinav-bapanapalli",
+          "imageUrl": null
+        },
+        {
+          "id": 2,
+          "name": "Agnik Banerjee",
+          "linkedin": "https://www.linkedin.com/in/agnikbanerjee/",
+          "imageUrl": null
+        },
+        {
+          "id": 3,
+          "name": "Alan Deng",
+          "linkedin": "https://www.linkedin.com/in/alandeng1/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEDAFnlYLZxIQ/profile-displayphoto-shrink_200_200/B4DZUV7zNCG8AY-/0/1739829752915?e=1756944000&v=beta&t=YGSAygVdwrG7mVw9NaJJVt700bKZ2Oo47l0VrzJNAVo"
+        },
+        {
+          "id": 4,
+          "name": "Amir Edris",
+          "linkedin": "https://www.linkedin.com/in/amir-edris-5a7946329/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFsdV8qAYgLgA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727284557626?e=1756944000&v=beta&t=3AEQ5bi_nbSGZZzEWE9ng-r-k6MMsGnczbKl9tp4Ggg"
+        },
+        {
+          "id": 5,
+          "name": "Ankit Nakhawa",
+          "linkedin": "https://www.linkedin.com/in/ankit-nakhawa",
+          "imageUrl": null
+        },
+        {
+          "id": 6,
+          "name": "Anna Lim",
+          "linkedin": "https://www.linkedin.com/in/anna-lim27/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFdDZ3Z-LT0iQ/profile-displayphoto-shrink_200_200/B4EZN.jb08HEAc-/0/1732995039191?e=1756944000&v=beta&t=b_pP7Bd2IT_d-S0qAeI3nY8JPBFXYzeH8n7JyE9EEu8"
+        },
+        {
+          "id": 7,
+          "name": "Anya Zhang",
+          "linkedin": "https://www.linkedin.com/in/anyazhng/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGlcY5m252n4w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1691034197469?e=1756944000&v=beta&t=m2y76yeIkxEJeeZyOpcHwSaIbUVA6VF_1zAjnNZvDxI"
+        },
+        {
+          "id": 8,
+          "name": "Aryan Jain",
+          "linkedin": "https://www.linkedin.com/in/aryan-jain",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHihPaemKQDrA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726707434638?e=1756944000&v=beta&t=AUlLS0koZ2n4GB5AObfdfwQQs2jeutAVgW-4JVkZpYc"
+        },
+        {
+          "id": 9,
+          "name": "Ben Henigan",
+          "linkedin": "https://www.linkedin.com/in/benhenigan/",
+          "imageUrl": null
+        },
+        {
+          "id": 10,
+          "name": "Bryce Powell",
+          "linkedin": "https://www.linkedin.com/in/powellbryce/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHJJ7Qhp6lDaQ/profile-displayphoto-shrink_200_200/B4EZULiDWmHgAc-/0/1739655232791?e=1756944000&v=beta&t=7RnnAdrw83KfkSCL8bZJWJ3a6gSUhxCI1lpOiXfpov4"
+        },
+        {
+          "id": 11,
+          "name": "Cayetana (Cate) Areas Barcenas",
+          "linkedin": "https://www.linkedin.com/in/cayetana-areas-0889472a5/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQF0w9jxGDZz2A/profile-displayphoto-shrink_200_200/B4EZUUj0vpHgAc-/0/1739806690722?e=1756944000&v=beta&t=Rzapzj5Rr1wclueLcC93M_vCtCxanbBcuFoDnCDONpc"
+        },
+        {
+          "id": 12,
+          "name": "Dennise Lopez Gonzales",
+          "linkedin": "https://www.linkedin.com/in/dennise-lopez-gonzales",
+          "imageUrl": null
+        },
+        {
+          "id": 13,
+          "name": "Edwin Cao",
+          "linkedin": "https://www.linkedin.com/in/edwin-cao0/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGI89hHyqcBGA/profile-displayphoto-shrink_200_200/B56ZRzVT8OHwAY-/0/1737101756879?e=1756944000&v=beta&t=xZVY2CHSx_qcsIrzl1guRvpXy2tuca26mzYkIJV_QDc"
+        },
+        {
+          "id": 14,
+          "name": "Emely Martinez",
+          "linkedin": "https://www.linkedin.com/in/emely-martinez",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGmv97Ek1nJBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1673382221404?e=1756944000&v=beta&t=WYEGcG9-bhiAxICz3CwmGc0rBIvJ0rZwKtW4VB9zsSw"
+        },
+        {
+          "id": 15,
+          "name": "Hashem Alomar",
+          "linkedin": "https://www.linkedin.com/in/hashem-alomar/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFbZDeEhe4kDA/profile-displayphoto-shrink_200_200/B4EZULme2rHgAY-/0/1739656393004?e=1756944000&v=beta&t=G78YP-iCgny_jyLZvF3sRFT7xO9TE5a8ZEdTv0Vme-k"
+        },
+        {
+          "id": 16,
+          "name": "Jack Mason",
+          "linkedin": "https://www.linkedin.com/in/jackmason13/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQF6KmKZpja3pA/profile-displayphoto-shrink_200_200/B4DZSoo5PEHkAc-/0/1737996080295?e=1756944000&v=beta&t=P0tUU5UCTL8VHL0Doz6FYjxxs32vzsD1Zv77ePQgFcQ"
+        },
+        {
+          "id": 17,
+          "name": "Linh Ngo",
+          "linkedin": "https://www.linkedin.com/in/linh-ngo",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHDcftItdx6hQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1698918688877?e=1756944000&v=beta&t=j4L9CWmMOXL9Nq-YEioIz8_IzrgSboyE2dT8TckvCC8"
+        },
+        {
+          "id": 18,
+          "name": "Nidhin Gangisetty",
+          "linkedin": "https://www.linkedin.com/in/nidhin-gangisetty",
+          "imageUrl": null
+        },
+        {
+          "id": 19,
+          "name": "Noah Combatir",
+          "linkedin": "https://www.linkedin.com/in/noah-combatir/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHNCqTuEHtuqg/profile-displayphoto-shrink_200_200/B4EZUV_rkyGgAc-/0/1739830770565?e=1756944000&v=beta&t=bp1fxDXDVfzBZtVQf6LDKO2huTwEG8355cTbswMTSqQ"
+        },
+        {
+          "id": 20,
+          "name": "Patrick Zhang",
+          "linkedin": "https://www.linkedin.com/in/patrick-zhang",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/C5603AQH37WgFVjzYPQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1630858277729?e=1756944000&v=beta&t=qqphqOpHSEG5hacPVfO_PG9QHFvmhPf7eQb7NjDdKv4"
+        },
+        {
+          "id": 21,
+          "name": "Rishi Chudasama",
+          "linkedin": "https://www.linkedin.com/in/rishi-chudasama/",
+          "imageUrl": null
+        },
+        {
+          "id": 22,
+          "name": "Riyana Patel",
+          "linkedin": "https://www.linkedin.com/in/riyana-patel-9488aa326/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGNelPTtVMQ-w/profile-displayphoto-shrink_200_200/B56ZZw.2eIHgAY-/0/1745652247548?e=1756944000&v=beta&t=8N5oYGHxzphGBkIQimOtzjGgV34eId6YIItkCG7Vmi8"
+        },
+        {
+          "id": 23,
+          "name": "Ryan Krucenski",
+          "linkedin": "https://www.linkedin.com/in/ryankrucenski/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQF9c-_N3pgilQ/profile-displayphoto-shrink_200_200/B4EZX9eIL7HYAY-/0/1743714288744?e=1756944000&v=beta&t=Mxz8tjAxKICw511q9DNhiwgAUfpLilV0dzKioAWAIwM"
+        },
+        {
+          "id": 24,
+          "name": "Shengyu Tan",
+          "linkedin": "https://www.linkedin.com/in/shengyutan/",
+          "imageUrl": null
+        },
+        {
+          "id": 25,
+          "name": "Sriman Sista",
+          "linkedin": "https://www.linkedin.com/in/sriman-sista",
+          "imageUrl": null
+        },
+        {
+          "id": 26,
+          "name": "Vaishnavi Banda",
+          "linkedin": "https://www.linkedin.com/in/vaishnavi-banda/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHd_GBdh93prw/profile-displayphoto-shrink_200_200/B4EZWPmXO4HMAY-/0/1741870954409?e=1756944000&v=beta&t=PenxJTj4FBghoacT_RPpQGLTtY37tFZcM8yKQnSaFcE"
+        }
+      ]
+    },
+    {
+      "name": "Alpha Nu",
+      "members": [
+        {
+          "id": 1,
+          "name": "Aditya Waikar",
+          "linkedin": "https://www.linkedin.com/in/aditya-waikar-998373211/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHzkxNcaYDQew/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726988878602?e=1756944000&v=beta&t=ZLd8iVvHBqyGa2rkRNz2b4SrBwXQuxgAYFVDbiH9Oh8"
+        },
+        {
+          "id": 2,
+          "name": "Alexis Iwuchukwu",
+          "linkedin": "https://www.linkedin.com/in/alexisiwuchukwu/",
+          "imageUrl": null
+        },
+        {
+          "id": 3,
+          "name": "Ashley Woo",
+          "linkedin": "https://www.linkedin.com/in/ashley-woo",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/C4E03AQHnWNGtztQaFg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1520820755750?e=1756944000&v=beta&t=GCSPwXZMO1WDTzBqLv7OsOsPZNFbPAPoGZso2dlqtkI"
+        },
+        {
+          "id": 4,
+          "name": "Ayush Gawane",
+          "linkedin": "https://www.linkedin.com/in/ayush-gawane/",
+          "imageUrl": null
+        },
+        {
+          "id": 5,
+          "name": "Bryan Haddad",
+          "linkedin": "https://www.linkedin.com/in/bryanhaddad/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGsWOskfenSLg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728179766065?e=1756944000&v=beta&t=zAj-hKk79iZ2swKuWUtxgVWw-2UMSbgo-nFrI3-gpVA"
+        },
+        {
+          "id": 6,
+          "name": "Hasan Ege",
+          "linkedin": "https://www.linkedin.com/in/hasan-ege-2aa35921b/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGGnNGalZHwRQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731386894957?e=1756944000&v=beta&t=X_xkmb7ZmeEuvKqDjrN9xv4mu9mIantZ-pvuP_BGK1Y"
+        },
+        {
+          "id": 7,
+          "name": "Hamid Shabbir",
+          "linkedin": "https://www.linkedin.com/in/hamidshabbir1/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQEk2cFErfAzWg/profile-displayphoto-shrink_200_200/B56ZTm3wp9GsAY-/0/1739040164893?e=1756944000&v=beta&t=nZiFUY6wO8HfR-Crlt4Pj_6ncC0I8GgMn-nadzRiMdA"
+        },
+        {
+          "id": 8,
+          "name": "Inaya Siddiqi",
+          "linkedin": "https://www.linkedin.com/in/inaya-siddiqi",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFNOGTkFe3Wtw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1716144108664?e=1756944000&v=beta&t=j05Q-8mOHk-huJtz4lZHJOyliCGC22gq3_BMMDxAbnk"
+        },
+        {
+          "id": 9,
+          "name": "Jeffery Wei",
+          "linkedin": "https://www.linkedin.com/in/jefferywei/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFPVPPXX9vyUw/profile-displayphoto-shrink_200_200/B4EZP7g.Y7HgAY-/0/1735091546008?e=1756944000&v=beta&t=2a8G4JC3h7CaR3HEyjVQUgvyf2ceCG7eNK2W4jSvbyA"
+        },
+        {
+          "id": 10,
+          "name": "Joao Eduardo Camargo de Miranda",
+          "linkedin": "https://www.linkedin.com/in/joao-eduardo-camargo-de-miranda-80b902258/",
+          "imageUrl": null
+        },
+        {
+          "id": 11,
+          "name": "Julianne Tinana",
+          "linkedin": "https://www.linkedin.com/in/julianne-tinana",
+          "imageUrl": null
+        },
+        {
+          "id": 12,
+          "name": "Megan Walker",
+          "linkedin": "https://www.linkedin.com/in/mwalker3155/",
+          "imageUrl": null
+        },
+        {
+          "id": 13,
+          "name": "Nancy Puthenpurayil",
+          "linkedin": "https://www.linkedin.com/in/nancy-puthenpurayil/",
+          "imageUrl": null
+        },
+        {
+          "id": 14,
+          "name": "Nihar Xavier",
+          "linkedin": "https://www.linkedin.com/in/niharxavier/",
+          "imageUrl": null
+        },
+        {
+          "id": 15,
+          "name": "Nikhita Karthikesan",
+          "linkedin": "https://www.linkedin.com/in/nikhita-karthikesan",
+          "imageUrl": null
+        },
+        {
+          "id": 16,
+          "name": "Odera Okafor",
+          "linkedin": "https://www.linkedin.com/in/odera-okafor",
+          "imageUrl": null
+        },
+        {
+          "id": 17,
+          "name": "Rishika Patibandla",
+          "linkedin": "https://www.linkedin.com/in/rishika-patibandla",
+          "imageUrl": null
+        },
+        {
+          "id": 18,
+          "name": "Ritika Pokharel",
+          "linkedin": "https://www.linkedin.com/in/ritika-pokharel133/",
+          "imageUrl": null
+        },
+        {
+          "id": 19,
+          "name": "Rubani Singh",
+          "linkedin": "https://www.linkedin.com/in/rubani-singh",
+          "imageUrl": null
+        },
+        {
+          "id": 20,
+          "name": "Shravya Kundavaram",
+          "linkedin": "https://www.linkedin.com/in/shravya-kundavaram",
+          "imageUrl": null
+        },
+        {
+          "id": 21,
+          "name": "Sreenidhi Yaratha",
+          "linkedin": "https://www.linkedin.com/in/sreenidhi-yaratha-4b0795203/",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "name": "Alpha Mu",
+      "members": [
+        {
+          "id": 1,
+          "name": "Abhiram Sreeramaneni",
+          "linkedin": "https://www.linkedin.com/in/abhiram-sreeramaneni",
+          "imageUrl": null
+        },
+        {
+          "id": 2,
+          "name": "Arsha Garg",
+          "linkedin": "https://www.linkedin.com/in/arsha-garg/",
+          "imageUrl": null
+        },
+        {
+          "id": 3,
+          "name": "Avni Kaushik",
+          "linkedin": "https://www.linkedin.com/in/avni-kaushik",
+          "imageUrl": null
+        },
+        {
+          "id": 4,
+          "name": "Eileen Zhang",
+          "linkedin": "https://www.linkedin.com/in/eileen-zh/",
+          "imageUrl": null
+        },
+        {
+          "id": 5,
+          "name": "Ethan Grossman",
+          "linkedin": "https://www.linkedin.com/in/ethan-grossman",
+          "imageUrl": null
+        },
+        {
+          "id": 6,
+          "name": "Fynn Anderson",
+          "linkedin": "https://www.linkedin.com/in/fynn-anderson-50a78722b/",
+          "imageUrl": null
+        },
+        {
+          "id": 7,
+          "name": "Gurnoor Gill",
+          "linkedin": "https://www.linkedin.com/in/gurnoor-gill",
+          "imageUrl": null
+        },
+        {
+          "id": 8,
+          "name": "Jake Hofmann",
+          "linkedin": "https://www.linkedin.com/in/jakeh04/",
+          "imageUrl": null
+        },
+        {
+          "id": 9,
+          "name": "Jinan Yousuf",
+          "linkedin": "https://www.linkedin.com/in/jinan-yousuf",
+          "imageUrl": null
+        },
+        {
+          "id": 10,
+          "name": "Kayla Cohen-Rohrbaugh",
+          "linkedin": "https://www.linkedin.com/in/kayla-cohen-rohrbaugh",
+          "imageUrl": null
+        },
+        {
+          "id": 11,
+          "name": "Mallika Bhat",
+          "linkedin": "https://www.linkedin.com/in/mallika-bhat",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHOVJp4XNgaBA/profile-displayphoto-shrink_200_200/B4EZVs.aIXHUAY-/0/1741290055214?e=1756944000&v=beta&t=4X6DugxhLNtMDhfLzD_CoEbv5i3KAdpL8VMYSKrqqkc"
+        },
+        {
+          "id": 12,
+          "name": "Madelyn Morales",
+          "linkedin": "https://www.linkedin.com/in/madelyn-r-morales/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGCaQQYZxyRLA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726673387613?e=1756944000&v=beta&t=EV_QGMnmpLKfu6EuAws0wuXU9x5BNyg3G5MGOomljrs"
+        },
+        {
+          "id": 13,
+          "name": "Olevia Tinpaw",
+          "linkedin": "https://www.linkedin.com/in/olevia-tinpaw-a115451aa/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGeSLgispmQlg/profile-displayphoto-shrink_200_200/B4EZSUnJo9HcAY-/0/1737660079340?e=1756944000&v=beta&t=-3fmyw5DJP8PaoI_gEVTAm7IMoW6r12ZW510QurYvB8"
+        },
+        {
+          "id": 14,
+          "name": "Pedro Del Rio do Valle Coutinho",
+          "linkedin": "https://www.linkedin.com/in/pedro-del-rio-do-valle-coutinho",
+          "imageUrl": null
+        },
+        {
+          "id": 15,
+          "name": "Ritika Pokharel",
+          "linkedin": "https://www.linkedin.com/in/ritika-pokharel133/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHJ_WVaqTQexw/profile-displayphoto-shrink_200_200/B4EZazax7NHYAY-/0/1746766864500?e=1756944000&v=beta&t=NhwdIDAv4cyYix7Hls_ZWbDvNHr_t77CZiidD2lZMBQ"
+        },
+        {
+          "id": 16,
+          "name": "Ryne Acheson",
+          "linkedin": "https://www.linkedin.com/in/ryneacheson/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEOqDUmrIxocg/profile-displayphoto-shrink_200_200/B4EZVfrhK7HgAc-/0/1741066998728?e=1756944000&v=beta&t=eF32S3TVldQ6fvdxU9uSXAHA1wd9peAre3PnpUXTDF0"
+        },
+        {
+          "id": 17,
+          "name": "Sydney Richman",
+          "linkedin": "https://www.linkedin.com/in/sydney-richman-8246b01b4/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFsH6O1PFUOhg/profile-displayphoto-shrink_200_200/B4EZVtB9VEHMAc-/0/1741290986294?e=1756944000&v=beta&t=BJzTIc2QD1RZVL2vrKCBhgysFwyZjLga3jCGy0_T0Fc"
+        },
+        {
+          "id": 18,
+          "name": "Uzochi Njiaju",
+          "linkedin": "https://www.linkedin.com/in/uzochi-njiaju/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFshT4WFqlhTg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1708719451151?e=1756944000&v=beta&t=_9P3hN7WOjvwA9NuzGnc5P1uNSz_VPBoiFeYFtH2BRQ"
+        },
+        {
+          "id": 19,
+          "name": "Walid Khokhar",
+          "linkedin": "https://www.linkedin.com/in/walid-khokhar/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEPHPcqSRfHnQ/profile-displayphoto-shrink_200_200/B4EZd2UB2lHsAY-/0/1750036652115?e=1756944000&v=beta&t=Tw1Lov2XejK9YtXbw4qAF75a5Lo7rbz1PnyixWZ_IS0"
+        },
+        {
+          "id": 20,
+          "name": "Zavian Johnson",
+          "linkedin": "https://www.linkedin.com/in/zavian-johnson",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "name": "Alpha Lambda",
+      "members": [
+        {
+          "id": 1,
+          "name": "Aaron Ren",
+          "linkedin": "https://www.linkedin.com/in/aaron-ren",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHQ-vIICmgTRw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700186405552?e=1756944000&v=beta&t=4cTkuXXGiwt25q_i27ojr7esJ_s5ZDniHxfSYvVWLig"
+        },
+        {
+          "id": 2,
+          "name": "Alma Hagstrom",
+          "linkedin": "https://www.linkedin.com/in/alma-hagstrom/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQE5BHvU3tNXzA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721239294348?e=1756944000&v=beta&t=7_OKT080rvuX4xdCZePUYWgFHgtw3CH1RKhz-AtVjgo"
+        },
+        {
+          "id": 3,
+          "name": "Andrew Kim",
+          "linkedin": "https://www.linkedin.com/in/andrew-kim",
+          "imageUrl": null
+        },
+        {
+          "id": 4,
+          "name": "Angela Luo",
+          "linkedin": "https://www.linkedin.com/in/angela-y-luo/",
+          "imageUrl": null
+        },
+        {
+          "id": 5,
+          "name": "Ankit Penmatcha",
+          "linkedin": "https://www.linkedin.com/in/ankit-penmatcha",
+          "imageUrl": null
+        },
+        {
+          "id": 6,
+          "name": "Arun Crispino",
+          "linkedin": "https://www.linkedin.com/in/aruncrispino/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGQBUL9kG2J-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720464580401?e=1756944000&v=beta&t=r8Cy51Dhwgq6lamvico5FI8X1DU-8E3hw3sAYyZmFRU"
+        },
+        {
+          "id": 7,
+          "name": "Ben Weatherhead",
+          "linkedin": "https://www.linkedin.com/in/benjamin-weatherhead-35b8a125b/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHgEo8Z7U5q4g/profile-displayphoto-shrink_400_400/B4EZXIbeABHgAg-/0/1742824401788?e=1756944000&v=beta&t=ZZGlY2VOBK0v16zs7nwYFDA0QgQR-U-jftTHz1bjQZk"
+        },
+        {
+          "id": 8,
+          "name": "Daniel Samuel",
+          "linkedin": "https://www.linkedin.com/in/daniel-samuel",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/C4D03AQGqBAS6PBxNEw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1614959682280?e=1756944000&v=beta&t=qtKQg3UY_tgVE131CL6JSomUacRZMUYEAQxoehy5kdY"
+        },
+        {
+          "id": 9,
+          "name": "Emily Craig",
+          "linkedin": "https://www.linkedin.com/in/emily-craig",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFFvBxrWFtv8w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697739704882?e=1756944000&v=beta&t=YAB55EkBui2ZEBrcz-6BX5mZ_r9F2bINASgVB3HuoJs"
+        },
+        {
+          "id": 10,
+          "name": "Eric Yao",
+          "linkedin": "https://www.linkedin.com/in/eric-yao",
+          "imageUrl": null
+        },
+        {
+          "id": 11,
+          "name": "Jason Jia",
+          "linkedin": "https://www.linkedin.com/in/jason-z-jia/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFyvzPnpG56wQ/profile-displayphoto-shrink_200_200/B4EZWKk9FjHMAY-/0/1741786699735?e=1756944000&v=beta&t=gfrXpOE9fW8aTPcg9UnoLG7LUu2S6Je_nPOB9XBfaU4"
+        },
+        {
+          "id": 12,
+          "name": "Juhi Parikh",
+          "linkedin": "https://www.linkedin.com/in/juhi-parikh/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEaq2UHFikdDw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726989789571?e=1756944000&v=beta&t=VDxJ0tCJ2gMXrNu538fiz7VaD6ZxruLTfLqDXjuH64E"
+        },
+        {
+          "id": 13,
+          "name": "Julia Beato",
+          "linkedin": "https://www.linkedin.com/in/julia-beato",
+          "imageUrl": null
+        },
+        {
+          "id": 14,
+          "name": "Koena Jaware",
+          "linkedin": "https://www.linkedin.com/in/koena-jaware",
+          "imageUrl": null
+        },
+        {
+          "id": 15,
+          "name": "Laticia Vyapuri",
+          "linkedin": "https://www.linkedin.com/in/laticia-vyapuri",
+          "imageUrl": null
+        },
+        {
+          "id": 16,
+          "name": "Nikhail Mann",
+          "linkedin": "https://www.linkedin.com/in/nikhailmann/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/C4E03AQEyhC5pwItDIg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1662958791650?e=1756944000&v=beta&t=Je-CA2zOl7yD40BGuHeo6n1olpxoIJR0oQtb9WB9KNw"
+        },
+        {
+          "id": 17,
+          "name": "Rahul Harish",
+          "linkedin": "https://www.linkedin.com/in/rahul-harish1/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGa0-PlPF_BLg/profile-displayphoto-shrink_200_200/B4EZVuMjlWH0AY-/0/1741310540416?e=1756944000&v=beta&t=PdDLrsl7zmOZrQ9Jm0sbD49-4iINoBiOZxFU-68NdOg"
+        },
+        {
+          "id": 18,
+          "name": "Ritvik Venkat",
+          "linkedin": "https://www.linkedin.com/in/ritvik-venkat",
+          "imageUrl": null
+        },
+        {
+          "id": 19,
+          "name": "Siri Adusumilli",
+          "linkedin": "https://www.linkedin.com/in/siri-adusumilli",
+          "imageUrl": null
+        },
+        {
+          "id": 20,
+          "name": "Suhaib Matar",
+          "linkedin": "https://www.linkedin.com/in/suhaib-matar",
+          "imageUrl": null
+        },
+        {
+          "id": 21,
+          "name": "Tej Mehta",
+          "linkedin": "https://www.linkedin.com/in/tej-mehta",
+          "imageUrl": null
+        },
+        {
+          "id": 22,
+          "name": "Vyshnav Kandamath",
+          "linkedin": "https://www.linkedin.com/in/vyshnav-kandamath",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "name": "Alpha Kappa",
+      "members": [
+        {
+          "id": 1,
+          "name": "Abhinav Mukherjee",
+          "linkedin": "https://www.linkedin.com/in/amukherjee1/",
+          "imageUrl": null
+        },
+        {
+          "id": 2,
+          "name": "Alex Dong",
+          "linkedin": "https://www.linkedin.com/in/alexjdong/",
+          "imageUrl": null
+        },
+        {
+          "id": 3,
+          "name": "Bennett Eric",
+          "linkedin": "https://www.linkedin.com/in/bennett-eric",
+          "imageUrl": null
+        },
+        {
+          "id": 4,
+          "name": "Chen Eileen",
+          "linkedin": "https://www.linkedin.com/in/eileennchenn/",
+          "imageUrl": null
+        },
+        {
+          "id": 5,
+          "name": "Chris Moon",
+          "linkedin": "https://www.linkedin.com/in/chris-moon-/",
+          "imageUrl": null
+        },
+        {
+          "id": 6,
+          "name": "Grill Hudson",
+          "linkedin": "https://www.linkedin.com/in/grill-hudson",
+          "imageUrl": null
+        },
+        {
+          "id": 7,
+          "name": "Gudwani Rohan",
+          "linkedin": "https://www.linkedin.com/in/rohan-gudwani/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEv08MtvtBumA/profile-displayphoto-shrink_200_200/B4EZUQXJrQHgAY-/0/1739736259792?e=1756944000&v=beta&t=aSZ9tAceBpSnd5YN71TXFcYF8GkL9TfpfI_6sttLuBs"
+        },
+        {
+          "id": 8,
+          "name": "Hannah Li",
+          "linkedin": "https://www.linkedin.com/in/hannah-li",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHR_WcC9YYvwA/profile-displayphoto-shrink_200_200/B56ZR9BSMiHQAc-/0/1737264276667?e=1756944000&v=beta&t=B2KF4i0h20eym2l5GPh_qEshGENaCUMwpneC03O8AWs"
+        },
+        {
+          "id": 9,
+          "name": "Herman Jimmy",
+          "linkedin": "https://www.linkedin.com/in/jimmyherman1/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHG7TBDqxb7jg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730523437324?e=1756944000&v=beta&t=6cE21Khfv7shfs7nvFlvqvQ5zpM59YF4E0rmT0P2X3k"
+        },
+        {
+          "id": 10,
+          "name": "Jiayi Wang",
+          "linkedin": "https://www.linkedin.com/in/jiayi-wangg/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFbPz5AF31Gxg/profile-displayphoto-shrink_200_200/B56ZUcgiM6HEAY-/0/1739940046016?e=1756944000&v=beta&t=PbZHxU16m0jGFNjgrRMG98l3cbqgSHQ3dAmc4ebkYQ8"
+        },
+        {
+          "id": 11,
+          "name": "Kamana Karki",
+          "linkedin": "https://www.linkedin.com/in/kamana-karki",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQH6zf7DKIA-iA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1679469537110?e=1756944000&v=beta&t=ETw09kPyjxgNMH5kWf8Ez86XS27n0e4_U3b-7ZMCSho"
+        },
+        {
+          "id": 12,
+          "name": "Marvi Shroff",
+          "linkedin": "https://www.linkedin.com/in/marvishroff/",
+          "imageUrl": null
+        },
+        {
+          "id": 13,
+          "name": "Meilin Yuan",
+          "linkedin": "https://www.linkedin.com/in/meilinyuan/",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQG7fetmTLKa1g/profile-displayphoto-shrink_200_200/B4EZUXQ7DbHMAY-/0/1739852068035?e=1756944000&v=beta&t=56DX8KXeAuwYmINdQVs7rFkBpXg9SpWxd_tKAGnRLy4"
+        },
+        {
+          "id": 14,
+          "name": "Robert Xu",
+          "linkedin": "https://www.linkedin.com/in/robert-xu",
+          "imageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHGJHWWGaSEcg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1675297258718?e=1756944000&v=beta&t=D_exwyrrRZRdAmQ-DtnF5iPymvzjOJX7oHQsZZj3zEA"
+        },
+        {
+          "id": 15,
+          "name": "So Eun Kim",
+          "linkedin": "https://www.linkedin.com/in/soekim/",
+          "imageUrl": null
+        },
+        {
+          "id": 16,
+          "name": "Summer Sims",
+          "linkedin": "https://www.linkedin.com/in/summer-sims",
+          "imageUrl": null
+        },
+        {
+          "id": 17,
+          "name": "Tushar Garg",
+          "linkedin": "https://www.linkedin.com/in/tushar-garg",
+          "imageUrl": null
+        },
+        {
+          "id": 18,
+          "name": "Yusra Khan",
+          "linkedin": "https://www.linkedin.com/in/yusra-khan",
+          "imageUrl": null
+        }
+      ]
+    }
+  ]
+}
