@@ -7,6 +7,7 @@ import RecruitmentEvents from './RecruitmentEvents';
 import RecruitmentPhotoWheel from './RecruitmentPhotoWheel';
 import Tip from './Tips';
 import PastThemes from './PastThemes';
+import RecruitmentTipsGallery from './RecruitmentTipsGallery';
 
 
 const RecruitmentPage = () => {
@@ -19,9 +20,10 @@ const RecruitmentPage = () => {
           <RecruitmentLetter />
           <RecruitmentSignup />
           <RecruitmentEvents />
-          {/*<Tip />*/}
+          <RecruitmentTipsGallery />
           <RecruitmentPhotoWheel />
           <PastThemes />
+          
       </main>
     </div>
   );
