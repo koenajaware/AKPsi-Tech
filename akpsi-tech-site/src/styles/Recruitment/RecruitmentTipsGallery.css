@@ -1,0 +1,435 @@
+.recruitment-tips-gallery {
+  width: 100%;
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 80px;
+  font-family: var(--font-family-inria-serif);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0 0 4rem 0;
+  padding: 0;
+}
+
+/* DID YOU KNOW Card */
+.did-you-know-card {
+  background: linear-gradient(135deg, #4a7eb8, #2e5294) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+}
+
+.did-you-know-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: subtle-pulse 8s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+}
+
+.did-you-know-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.did-you-know-title {
+  font-family: var(--font-family-inria-serif);
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 2px;
+}
+
+.did-you-know-bubble {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.did-you-know-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  transform: rotate(45deg);
+  border-radius: 0 0 20px 0;
+}
+
+.did-you-know-bubble p {
+  font-family: var(--font-family-thasadith);
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Slider Container */
+.tips-slider-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.tips-slider {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.tips-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.tip-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}
+
+/* Individual Tip Cards */
+.tip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4a7eb8, #2e5294);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+}
+
+.tip-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #4a7eb8, #2e5294);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(74, 126, 184, 0.3);
+}
+
+.tip-number span {
+  font-family: var(--font-family-inria-serif);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.tip-content {
+  flex: 1;
+}
+
+.tip-question {
+  font-family: var(--font-family-inria-serif);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2e5294;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.tip-answer {
+  font-family: var(--font-family-thasadith);
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Navigation Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.slider-arrow svg path {
+  stroke: #333 !important;
+  stroke-width: 2 !important;
+  fill: none !important;
+}
+
+.slider-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #4a7eb8;
+  border-color: #4a7eb8;
+}
+
+.slider-arrow:hover svg path {
+  stroke: white !important;
+}
+
+.slider-arrow-left {
+  left: 10px;
+}
+
+.slider-arrow-right {
+  right: 10px;
+}
+
+/* Dots Navigation */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot:hover {
+  background: #4a7eb8;
+  transform: scale(1.2);
+}
+
+.slider-dot.active {
+  background: #2e5294;
+  transform: scale(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tips-slider-container {
+    padding: 0 50px;
+  }
+  
+  .section-title {
+    font-size: 60px;
+  }
+  
+  .did-you-know-title {
+    font-size: 2.8rem;
+  }
+  
+  .tip-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recruitment-tips-gallery {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 50px;
+    margin-bottom: 3rem;
+  }
+  
+  .did-you-know-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .did-you-know-bubble {
+    padding: 1rem 1.5rem;
+    max-width: 300px;
+  }
+  
+  .did-you-know-bubble p {
+    font-size: 1rem;
+  }
+  
+  .tips-slider-container {
+    padding: 0 40px;
+  }
+  
+  .tip-slide {
+    padding: 0 0.5rem;
+  }
+  
+  .tip-card {
+    padding: 2rem 1.5rem;
+    height: 320px;
+  }
+  
+  .tip-number {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tip-number span {
+    font-size: 1.5rem;
+  }
+  
+  .tip-question {
+    font-size: 1.2rem;
+  }
+  
+  .tip-answer {
+    font-size: 0.95rem;
+  }
+  
+  .slider-arrow {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .slider-arrow svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 40px;
+    margin-bottom: 2rem;
+  }
+  
+  .did-you-know-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .did-you-know-bubble {
+    border-radius: 15px;
+    padding: 1rem;
+    max-width: 280px;
+  }
+  
+  .did-you-know-bubble p {
+    font-size: 0.9rem;
+  }
+  
+  .tips-slider-container {
+    padding: 0 30px;
+  }
+  
+  .tip-card {
+    padding: 1.5rem 1rem;
+    height: 280px;
+  }
+  
+  .tip-number {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .tip-number span {
+    font-size: 1.2rem;
+  }
+  
+  .tip-question {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tip-answer {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .slider-arrow {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .slider-arrow-left {
+    left: 5px;
+  }
+  
+  .slider-arrow-right {
+    right: 5px;
+  }
+  
+  .slider-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Focus states for accessibility */
+.slider-arrow:focus,
+.slider-dot:focus {
+  outline: 2px solid #4a7eb8;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .tips-track {
+    scroll-behavior: smooth;
+  }
+} 

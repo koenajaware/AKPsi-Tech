@@ -1,7 +1,38 @@
+/* Mobile-first Organizations Styles */
 .organizations {
-  padding: 4rem 0;
+  padding: 2rem 0;
   text-align: center;
-  width: 100vw; /* Set width to 100% of the viewport width */
-  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-  background-color: #082c54
+  width: 100%;
+  max-width: 100%;
+  background-color: #082c54;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .organizations {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
+  .organizations {
+    padding: 2rem 0;
+  }
+}
+
+/* Tablet and desktop layout */
+@media (min-width: 768px) {
+  .organizations {
+    padding: 3rem 0;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .organizations {
+    padding: 4rem 0;
+  }
 }
