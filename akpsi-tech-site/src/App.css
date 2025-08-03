@@ -33,6 +33,7 @@
 body {
   font-family: var(--font-family-thasadith);
   background-color: var(--color-white);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Mobile-first App Styles */
@@ -40,11 +41,14 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .content {
   flex: 1;
   padding-top: 60px; /* Account for fixed header */
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Mobile-specific styles */
@@ -95,6 +99,37 @@ body {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+}
+
+/* General mobile improvements */
+@media (max-width: 768px) {
+  /* Ensure all text can wrap properly */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Prevent horizontal overflow */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Better text sizing for mobile */
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+  }
+  
+  p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
 }
 
 /* Tablet and Desktop adjustments */
