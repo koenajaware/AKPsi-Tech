@@ -46,7 +46,6 @@ body {
 
 .content {
   flex: 1;
-  padding-top: 60px; /* Account for fixed header */
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -55,10 +54,6 @@ body {
 .mobile-device {
   /* Prevent horizontal scrolling */
   overflow-x: hidden;
-}
-
-.mobile-device .content {
-  padding-top: 60px;
 }
 
 /* Touch-friendly improvements */

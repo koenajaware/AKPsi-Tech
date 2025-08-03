@@ -1,36 +1,94 @@
-/* Mobile-first Brother Grid */
+/* Mobile-first Brother Grid - Focus on Functionality and Error Avoidance */
+
+/* Container - Prevent overflow and ensure proper spacing */
 .chapters-container {
-  padding: 2rem 1rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 0.5rem;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
 }
 
+/* Chapter sections - Clean spacing */
 .chapter-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
+/* Chapter names - Responsive and readable */
 .chapter-name {
   font-family: 'Inria Serif', serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  word-wrap: break-word; /* Prevent text overflow */
 }
 
+/* Mobile roster view */
+.mobile-roster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.roster-item {
+  width: 100%;
+  text-align: center;
+}
+
+.roster-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #0077cc;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.roster-link:hover {
+  background-color: #f0f8ff;
+  color: #0056b3;
+}
+
+.roster-link:active {
+  background-color: #e6f3ff;
+}
+
+/* Members container - 1-column grid on mobile */
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  justify-items: center;
-}
-
-.member-wrapper {
-  text-align: center;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem;
   width: 100%;
-  max-width: 150px;
+  max-width: 300px; /* Limit width for better mobile layout */
+  margin: 0 auto;
+  justify-items: center; /* Center items in grid */
 }
 
+/* Individual member wrapper */
+.member-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+/* Member photo container */
 .member-photo {
   width: 120px;
   height: 120px;
@@ -38,24 +96,20 @@
   overflow: hidden;
   border: 2px solid #ccc;
   background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
   position: relative;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-.member-photo:hover {
-  transform: scale(1.05);
-}
-
+/* Member photo image */
 .member-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* Remove any inline spacing */
 }
 
+/* Photo overlay for LinkedIn link */
 .photo-overlay {
   position: absolute;
   top: 0;
@@ -69,91 +123,209 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
-.member-photo:hover .photo-overlay {
-  opacity: 1;
+/* Show overlay on hover for desktop */
+@media (hover: hover) {
+  .member-photo:hover .photo-overlay {
+    opacity: 1;
+  }
 }
 
+/* Always show overlay on touch devices */
+@media (hover: none) {
+  .photo-overlay {
+    opacity: 0.8;
+  }
+}
+
+/* Overlay name text */
 .overlay-name {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  text-align: center;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
+/* LinkedIn link in overlay */
 .overlay-link {
   color: #0077cc;
   font-size: 12px;
   text-decoration: underline;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  display: inline-block;
+  min-height: 44px; /* Touch-friendly minimum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Member name below photo */
 .member-name {
-  margin-top: 0.5rem;
   font-size: 14px;
   color: #555;
   font-weight: 500;
+  line-height: 1.2;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0 0.5rem;
 }
 
-/* Tablet Styles */
-@media (min-width: 768px) {
+/* Mobile-first: Show roster, hide grid */
+.mobile-roster {
+  display: flex;
+}
+
+.members-grid {
+  display: none !important;
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
   .chapters-container {
-    padding: 3rem 2rem;
+    padding: 0.75rem 0.25rem;
   }
-
+  
   .chapter-name {
-    font-size: 28px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
+  
+  .mobile-roster {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .roster-link {
+    font-size: 14px;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  /* Ensure grid is hidden on mobile */
+  .members-grid {
+    display: none !important;
+  }
+}
 
+/* Medium mobile - ensure grid is hidden */
+@media (min-width: 481px) and (max-width: 767px) {
+  .members-grid {
+    display: none !important;
+  }
+  
+  .mobile-roster {
+    display: flex;
+  }
+}
+
+/* Tablet and up: Show grid, hide roster */
+@media (min-width: 768px) {
+  .mobile-roster {
+    display: none !important;
+  }
+  
+  .members-grid {
+    display: grid !important;
+  }
+  
+  .chapters-container {
+    padding: 2rem 1rem;
+  }
+  
+  .chapter-name {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
   .members-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    max-width: none;
   }
-
+  
   .member-wrapper {
     max-width: 180px;
   }
-
+  
   .member-photo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
-
+  
+  .overlay-name {
+    font-size: 14px;
+  }
+  
+  .overlay-link {
+    font-size: 12px;
+  }
+  
   .member-name {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
-/* Desktop Styles */
+/* Desktop layout - 4-column grid */
 @media (min-width: 1024px) {
   .members-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
-
+  
   .member-wrapper {
     max-width: 200px;
   }
+  
+  .member-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .overlay-name {
+    font-size: 16px;
+  }
+  
+  .overlay-link {
+    font-size: 14px;
+  }
+  
+  .member-name {
+    font-size: 16px;
+  }
+}
 
+/* Large desktop layout - 5-column grid */
+@media (min-width: 1200px) {
+  .members-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .member-wrapper {
+    max-width: 220px;
+  }
+  
   .member-photo {
     width: 180px;
     height: 180px;
   }
-}
-
-/* Large Desktop Styles */
-@media (min-width: 1200px) {
-  .members-grid {
-    grid-template-columns: repeat(5, 1fr);
+  
+  .overlay-name {
+    font-size: 18px;
   }
-
-  .member-wrapper {
-    max-width: 220px;
+  
+  .overlay-link {
+    font-size: 16px;
   }
-
-  .member-photo {
-    width: 200px;
-    height: 200px;
+  
+  .member-name {
+    font-size: 18px;
   }
 }
   

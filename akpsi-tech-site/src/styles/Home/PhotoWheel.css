@@ -1,9 +1,11 @@
+/* Mobile-first PhotoWheel Styles */
 .photo-wheel {
   width: 100%;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .photo-track {
@@ -14,14 +16,15 @@
 
 .photo-slide {
   flex: 0 0 auto;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 .photo-slide img {
-  height: 300px;
+  height: 200px;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
 @keyframes scroll {
@@ -38,19 +41,50 @@
   animation-play-state: paused;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .photo-wheel {
+    padding: 1rem 0;
+  }
+  
+  .photo-slide {
+    padding: 0 6px;
+  }
+  
+  .photo-slide img {
+    height: 150px;
+  }
+}
+
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
+  .photo-wheel {
+    padding: 1.25rem 0;
+  }
+  
+  .photo-slide img {
+    height: 180px;
+  }
+}
+
+/* Tablet and desktop layout */
+@media (min-width: 768px) {
+  .photo-wheel {
+    padding: 2rem 0;
+  }
+  
+  .photo-slide {
+    padding: 0 10px;
+  }
+  
   .photo-slide img {
     height: 250px;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Desktop layout */
+@media (min-width: 1024px) {
   .photo-slide img {
-    height: 200px;
-  }
-  
-  .photo-wheel {
-    padding: 1.5rem 0;
+    height: 300px;
   }
 } 

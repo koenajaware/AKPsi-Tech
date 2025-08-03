@@ -1,12 +1,14 @@
 .about-hero {
   position: relative;
   width: 100%;
+  margin-top: 0; /* Remove margin to eliminate whitespace */
 }
 
 .about-hero-image-container {
   width: 100%;
   height: 400px; /* Reduced height for mobile */
   overflow: hidden;
+  position: relative;
 }
 
 .about-banner-image {
@@ -25,6 +27,7 @@
   color: var(--color-white);
   width: 90%; /* Ensure content doesn't overflow */
   max-width: 600px;
+  z-index: 2;
 }
 
 .about-hero-title {
@@ -44,8 +47,42 @@
   line-height: 1.4;
 }
 
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .about-hero {
+    margin-top: 0;
+  }
+  
+  .about-hero-image-container {
+    height: 350px;
+  }
+  
+  .about-hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
+  .about-hero {
+    margin-top: 0;
+  }
+  
+  .about-hero-image-container {
+    height: 400px;
+  }
+  
+  .about-hero-title {
+    font-size: 2.2rem;
+  }
+}
+
 /* Tablet styles */
 @media (min-width: 768px) {
+  .about-hero {
+    margin-top: 0;
+  }
+  
   .about-hero-image-container {
     height: 500px;
   }
@@ -62,6 +99,10 @@
 
 /* Desktop styles */
 @media (min-width: 1024px) {
+  .about-hero {
+    margin-top: 0;
+  }
+  
   .about-hero-image-container {
     height: 600px;
   }
@@ -78,6 +119,10 @@
 
 /* Large desktop styles */
 @media (min-width: 1200px) {
+  .about-hero {
+    margin-top: 0;
+  }
+  
   .about-hero-image-container {
     height: 700px;
   }

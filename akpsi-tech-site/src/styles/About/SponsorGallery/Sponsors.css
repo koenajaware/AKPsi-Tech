@@ -4,22 +4,24 @@
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  margin-top: 70px;
-  margin-bottom: 70px;
+  margin-top: 40px; /* Reduced margin for mobile */
+  margin-bottom: 40px; /* Reduced margin for mobile */
   position: relative;
 }
 
 .about-sponsor-track {
   display: flex;
-  animation: scroll 70s linear infinite;
+  animation: scroll 30s linear infinite; /* Faster animation */
 }
 
 .about-sponsor-track img {
-  height: 400px;
-  width: 600px;
+  height: 200px; /* Smaller height for mobile */
+  width: 300px; /* Smaller width for mobile */
   display: inline-block;
-  margin-right: 40px;
+  margin-right: 20px; /* Reduced margin for mobile */
   flex-shrink: 0;
+  object-fit: cover; /* Prevent stretching */
+  border-radius: 8px; /* Add some rounded corners */
 }
 
 /* Animation for smooth scrolling effect */
@@ -29,5 +31,72 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .about-sponsor-slider {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .about-sponsor-track img {
+    height: 250px;
+    width: 375px;
+    margin-right: 25px;
+  }
+  
+  .about-sponsor-track {
+    animation: scroll 40s linear infinite; /* Slightly slower on tablet */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .about-sponsor-slider {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  .about-sponsor-track img {
+    height: 300px;
+    width: 450px;
+    margin-right: 30px;
+  }
+  
+  .about-sponsor-track {
+    animation: scroll 50s linear infinite; /* Slower on desktop */
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+  .about-sponsor-slider {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  
+  .about-sponsor-track img {
+    height: 350px;
+    width: 525px;
+    margin-right: 35px;
+  }
+  
+  .about-sponsor-track {
+    animation: scroll 60s linear infinite; /* Even slower on large desktop */
+  }
+}
+
+/* Extra large desktop styles */
+@media (min-width: 1400px) {
+  .about-sponsor-track img {
+    height: 400px;
+    width: 600px;
+    margin-right: 40px;
+  }
+  
+  .about-sponsor-track {
+    animation: scroll 70s linear infinite; /* Original speed for very large screens */
   }
 }

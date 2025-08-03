@@ -1,59 +1,114 @@
-/* Grid of members */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns per row */
-    gap: 0.5rem; /* Reduced gap between grid items */
-    justify-items: center; /* Center items horizontally in each cell */
-  }
-  
-  .member-wrapper {
-    text-align: center;
-  }
-  
-  /* Increased circle size to 200px */
-  .member-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden; /* Crops the image to a circle */
-    border: 2px solid #ccc;
-    background-color: #f0f0f0; /* Fallback background if image is missing */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .member-name {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
+/* Mobile-first Alumni Grid - Focus on Functionality and Error Avoidance */
 
-  /* make the photo container a perfect circle and establish stacking context */
-.member-photo {
-  position: relative;
-  width: 200px;      /* adjust to your desired diameter */
-  height: 200px;     /* same as width */
-  border-radius: 50%;
-  overflow: hidden;
+/* Container - Prevent overflow and ensure proper spacing */
+.chapters-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
 }
 
-/* the actual <img> fills the circle */
-.member-photo .photo {
+/* Chapter sections - Clean spacing */
+.chapter-section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Chapter names - Responsive and readable */
+.chapter-name {
+  font-family: 'Inria Serif', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+/* Mobile roster view */
+.mobile-roster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.roster-item {
+  width: 100%;
+  text-align: center;
+}
+
+.roster-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #0077cc;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.roster-link:hover {
+  background-color: #f0f8ff;
+  color: #0056b3;
+}
+
+.roster-link:active {
+  background-color: #e6f3ff;
+}
+
+/* Members container - Grid layout */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+  gap: 0.5rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Individual member wrapper */
+.member-wrapper {
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Member photo container */
+.member-photo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Member photo image */
+.member-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* the overlay sits on top, initially transparent */
-.member-photo .photo-overlay {
+/* Photo overlay for LinkedIn link */
+.photo-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -63,8 +118,6 @@
   color: #fff;
   opacity: 0;
   transition: opacity 0.3s ease;
-  
-  /* center the text */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,27 +127,160 @@
   font-size: 0.9rem;
 }
 
-/* on hover, fade it in */
-.member-photo:hover .photo-overlay {
-  opacity: 1;
+/* Show overlay on hover for desktop */
+@media (hover: hover) {
+  .member-photo:hover .photo-overlay {
+    opacity: 1;
+  }
 }
 
-/* (optional) tweak overlay name style */
-.photo-overlay .overlay-name {
+/* Always show overlay on touch devices */
+@media (hover: none) {
+  .photo-overlay {
+    opacity: 0.8;
+  }
+}
+
+/* Overlay name text */
+.overlay-name {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
-.photo-overlay .overlay-link {
+/* LinkedIn link in overlay */
+.overlay-link {
   display: inline-block;
   margin: 0.5rem 0;
-  color: #1da1f2;           /* a light blue, or whatever brand color */
+  color: #1da1f2;
   text-decoration: underline;
   font-weight: bold;
 }
 
-.photo-overlay .overlay-link:hover {
+.overlay-link:hover {
   color: #fff;
+}
+
+/* Member name below photo */
+.member-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Mobile-first: Show roster, hide grid */
+.mobile-roster {
+  display: flex;
+}
+
+.members-grid {
+  display: none !important;
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .chapters-container {
+    padding: 0.75rem 0.25rem;
+  }
+  
+  .chapter-name {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-roster {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .roster-link {
+    font-size: 14px;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  /* Ensure grid is hidden on mobile */
+  .members-grid {
+    display: none !important;
+  }
+}
+
+/* Medium mobile - ensure grid is hidden */
+@media (min-width: 481px) and (max-width: 767px) {
+  .members-grid {
+    display: none !important;
+  }
+  
+  .mobile-roster {
+    display: flex;
+  }
+}
+
+/* Tablet and up: Show grid, hide roster */
+@media (min-width: 768px) {
+  .mobile-roster {
+    display: none !important;
+  }
+  
+  .members-grid {
+    display: grid !important;
+  }
+  
+  .chapters-container {
+    padding: 2rem 1rem;
+  }
+  
+  .chapter-name {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .members-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .member-wrapper {
+    max-width: 180px;
+  }
+  
+  .member-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Desktop layout - 5-column grid */
+@media (min-width: 1024px) {
+  .members-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .member-wrapper {
+    max-width: 200px;
+  }
+  
+  .member-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Large desktop layout */
+@media (min-width: 1200px) {
+  .members-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+  }
+  
+  .member-wrapper {
+    max-width: 220px;
+  }
+  
+  .member-photo {
+    width: 200px;
+    height: 200px;
+  }
 }
 
   

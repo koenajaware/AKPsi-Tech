@@ -1,45 +1,121 @@
 .history-section {
-  padding: 3rem 5%; /* vertical space and responsive horizontal padding */
+  padding: 2rem 1rem; /* Reduced padding for mobile */
   text-align: center;
   background-color: white;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .history-title {
   font-family: 'Times New Roman', serif;
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font for mobile */
   font-weight: bold;
   text-align: center;
-  margin-bottom: 4rem; 
+  margin-bottom: 2rem; /* Reduced margin for mobile */
   color: #111827; /* gray-900 */
+  line-height: 1.2;
 }
 
 .history-content {
   display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
   justify-content: center;
-  align-items: flex-start;
-  gap: 3rem;
-  max-width: 73rem; 
+  align-items: center;
+  gap: 2rem; /* Reduced gap for mobile */
+  max-width: 100%;
   margin: 0 auto;
   color: black;
 }
 
 .history-image {
-  max-width: 35rem;
+  max-width: 100%; /* Full width on mobile */
   width: 100%;
   border-radius: 0.5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  order: 1; /* Image first on mobile */
 }
 
 .history-text {
-  font-size: 15px;
+  font-size: 1rem; /* Responsive font size */
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  max-width: 50rem;
+  max-width: 100%; /* Full width on mobile */
   width: 100%;
   text-align: center;
-  margin-left: auto;
+  order: 2; /* Text second on mobile */
+  padding: 0 1rem; /* Add some padding */
 }
 
 .history-text p {
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  text-align: left; /* Left align text for better readability */
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .history-section {
+    padding: 3rem 2rem;
+  }
+  
+  .history-title {
+    font-size: 2.25rem;
+    margin-bottom: 3rem;
+  }
+  
+  .history-content {
+    gap: 2.5rem;
+  }
+  
+  .history-text {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .history-section {
+    padding: 3rem 5%;
+  }
+  
+  .history-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .history-content {
+    flex-direction: row; /* Side by side on desktop */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 73rem;
+  }
+  
+  .history-image {
+    max-width: 35rem;
+    order: 1;
+  }
+  
+  .history-text {
+    font-size: 15px;
+    max-width: 50rem;
+    order: 2;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .history-text p {
+    text-align: center; /* Center text on desktop */
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+  .history-content {
+    gap: 4rem;
+  }
+  
+  .history-text {
+    font-size: 16px;
+  }
 }

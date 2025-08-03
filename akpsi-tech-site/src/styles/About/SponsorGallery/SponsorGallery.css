@@ -1,17 +1,41 @@
 .sponsor-gallery {
   position: relative;
   width: 100%;
-  padding: 3rem 2rem;     /* ← increase padding here */
+  padding: 2rem 1rem; /* Reduced padding for mobile */
   background: linear-gradient(to bottom, #ffffff 0%, #e0f2ff 50%, #ffffff 100%);
   color: #374151;
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .sg-title {
   font-family: 'Times New Roman', serif;
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font for mobile */
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
   color: #111827; /* gray-900 */
+  line-height: 1.2;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .sponsor-gallery {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .sg-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .sponsor-gallery {
+    padding: 3rem 2rem;
+  }
+  
+  .sg-title {
+    font-size: 2.5rem;
+  }
 }

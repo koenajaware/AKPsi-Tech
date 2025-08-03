@@ -3,34 +3,40 @@
     margin-bottom: 20px;
     position: relative;
     width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .recruitment-registration-container {
-    display:grid; 
-    grid-template-columns: 1fr 1fr;
+    display: grid; 
+    grid-template-columns: 1fr; /* Single column on mobile */
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    gap: 2rem; /* Add gap between elements */
 }
 
 .recruitment-registration-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align:center; 
+    text-align: center; 
+    padding: 0 1rem; /* Add padding for mobile */
 }
 
 .recruitment-register-title {
-    font-size: 64px;
+    font-size: 2.5rem; /* Responsive font size */
     font-family: var(--font-family-inria-serif);
     font-weight: bold;
-        color:black;
+    color: black;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .recruitment-semester-subtitle {
-    font-size: 32px;
+    font-size: 1.25rem; /* Responsive font size */
     font-family: var(--font-family-thasadith);
-    white-space: nowrap;
-        color:black;
+    white-space: normal; /* Allow text to wrap */
+    color: black;
+    line-height: 1.4;
 }
 
 .recruitment-registration-img-container { 
@@ -38,7 +44,7 @@
   justify-content: center;     /* Center horizontally */
   align-items: center;         /* Center vertically */
   position: relative;
-  height: 500px;               /* Give it height so centering works */
+  height: 300px;               /* Reduced height for mobile */
   width: 100%;                 /* Or fixed width if needed */
 }
 
@@ -48,18 +54,95 @@
   object-fit: cover;
 }
 
-
 .recruitment-registration-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 1.1rem; /* Responsive font size */
   font-family: var(--font-family-thasadith);
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   color: black;
-  padding: 10px 20px;
+  padding: 8px 16px; /* Reduced padding for mobile */
   cursor: pointer;
   z-index: 10;
+  white-space: nowrap; /* Keep button text on one line */
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .recruitment-registration-container {
+    grid-template-columns: 1fr 1fr; /* Side by side on tablet */
+    gap: 3rem;
+  }
+  
+  .recruitment-register-title {
+    font-size: 3.5rem;
+  }
+  
+  .recruitment-semester-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .recruitment-registration-img-container {
+    height: 400px;
+  }
+  
+  .recruitment-registration-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .recruitment-register-title {
+    font-size: 4.5rem;
+  }
+  
+  .recruitment-semester-subtitle {
+    font-size: 2rem;
+  }
+  
+  .recruitment-registration-img-container {
+    height: 500px;
+  }
+  
+  .recruitment-registration-button {
+    font-size: 1.75rem;
+    padding: 12px 24px;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+  .recruitment-register-title {
+    font-size: 5.5rem;
+  }
+  
+  .recruitment-semester-subtitle {
+    font-size: 2.5rem;
+  }
+  
+  .recruitment-registration-button {
+    font-size: 2rem;
+    padding: 15px 30px;
+  }
+}
+
+/* Extra large desktop styles */
+@media (min-width: 1400px) {
+  .recruitment-register-title {
+    font-size: 64px; /* Original size */
+  }
+  
+  .recruitment-semester-subtitle {
+    font-size: 32px; /* Original size */
+  }
+  
+  .recruitment-registration-button {
+    font-size: 24px; /* Original size */
+    padding: 10px 20px;
+  }
 }
