@@ -22,7 +22,6 @@ const ContactPage = () => {
                 </a>
               </div>
               <div className="contact-person">
-<<<<<<< HEAD
                 <h2>Abhiram Sreeramaneni</h2>
                 <p>Vice President of Membership</p>
                 <a href="mailto:akpsiotrush@gmail.com">akpsiotrush@gmail.com</a>
@@ -32,12 +31,6 @@ const ContactPage = () => {
                 <p>Omega Theta Chapter</p>
                 <a href="mailto:akpsiomegatheta@gmail.com">akpsiomegatheta@gmail.com</a>
               </div>
-=======
-                <h2>Abhiram Sriramaneni</h2>
-                <p>Vice President of Membership</p>
-                <a href="mailto:akpsiotrush@gmail.com">akpsiotrush@gmail.com</a>
-              </div>
->>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
             </div>
             <div className="contact-form-container">
               <form action="#" method="POST"> {/* NOTE: I need the form handling logic to go here (like the URL) */}
