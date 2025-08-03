@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 /* Mobile-first Contact Page Styles */
 
 .contact-page-container {
   width: 100%;
   min-height: 100vh;
+=======
+.contact-page-container {
+  width: 100%;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
+<<<<<<< HEAD
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -22,31 +28,51 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
+=======
+  position: relative;
+  padding: 40px 0px;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-content {
   position: relative;
   width: 100%;
+<<<<<<< HEAD
   max-width: 1200px;
   color: #ffffff;
   padding: 20px;
   z-index: 2;
   box-sizing: border-box;
+=======
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 40px;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-content h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+<<<<<<< HEAD
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 30px;
   color: #ffffff;
   width: 100%;
   line-height: 1.2;
+=======
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffffff;
+  width: 100%;
+  font-weight: lighter; 
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-body {
   width: 100%;
   display: flex;
+<<<<<<< HEAD
   flex-direction: column;
   gap: 30px;
   max-width: 100%;
@@ -87,6 +113,26 @@
   text-decoration: none;
   font-size: 0.9rem;
   word-break: break-word;
+=======
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.contact-person h2 {
+  width: max-content
+}
+
+.contact-person a {
+  color: white;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-person a:hover {
@@ -94,14 +140,21 @@
 }
 
 .contact-form-container {
+<<<<<<< HEAD
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+=======
+  flex: 2;
+  min-width: 300px;
+  max-width: 500px;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-form-container form {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   gap: 15px;
   color: white;
   width: 100%;
@@ -123,24 +176,45 @@
 
 .contact-form-container button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+=======
+  gap: 20px;
+  color: white;
+}
+
+.contact-form-container button {
+  width:min-content;
+  background-color: rgb(255, 255, 255, 0.25);
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 24px;
+  font-size: 1rem;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-form-container input,
 .contact-form-container textarea {
   font-family: var(--font-family-thasadith);
+<<<<<<< HEAD
   background-color: rgba(255, 255, 255, 0.1);
+=======
+  background-color: rgb(255, 255, 255, 0.25);
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
   border: 1px solid white;
   border-radius: 10px;
   padding: 12px 15px;
   font-size: 1rem;
+<<<<<<< HEAD
   color: white;
   width: 100%;
   box-sizing: border-box;
   backdrop-filter: blur(5px);
+=======
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }
 
 .contact-form-container input::placeholder, 
 .contact-form-container textarea::placeholder {
+<<<<<<< HEAD
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -272,4 +346,7 @@
     width: min-content;
     padding: 5px 24px;
   }
+=======
+  color: white
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
 }

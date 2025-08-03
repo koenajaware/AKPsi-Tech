@@ -39,16 +39,28 @@
 
 .sponsor-track {
   display: flex;
+<<<<<<< HEAD
   gap: 0.5rem;
+=======
+  gap: 1%;
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
   animation: scrollsponsor 10s linear infinite;
 }
 
 .sponsor-track img {
+<<<<<<< HEAD
   max-width: 20%;
   width: 100%;
   height: auto;
   max-height: 50px;
   object-fit: contain;
+=======
+  max-width: 11.5%;  
+  width: 100%;       
+  height: auto;     
+  max-height: 75px;  
+  object-fit: contain; 
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
   flex-shrink: 0;
 }
 
@@ -59,6 +71,7 @@
   }
   100% {
     transform: translateX(-50%);
+<<<<<<< HEAD
   }
 }
 
@@ -154,5 +167,7 @@
   .sponsor-track img {
     max-width: 12%;
     max-height: 75px;
+=======
+>>>>>>> f1f7a63c4a5e09bef6a4c4648489d6d3056b6a27
   }
 }
