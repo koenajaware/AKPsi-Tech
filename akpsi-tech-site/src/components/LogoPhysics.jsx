@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/LogoPhysics.css';
+import staticLogos from '../assets/LogoPhysicsStaticLogos.png';
 
 const LogoPhysics = ({ logos }) => {
   // array that stores references to each logo
@@ -27,13 +28,7 @@ const LogoPhysics = ({ logos }) => {
     height: window.innerHeight
   });
   // state to control logo visibility
-  const [logosVisible, setLogosVisible] = useState(true);
-
-  /*
-  in HTML, the coordinate system is (0,0) at the top left corner, 
-  and the x-coordinate increases as you go right, 
-  and the y-coordinate increases as you go down.
-  */
+  const [showStaticImage, setShowStaticImage] = useState(false);
 
   // update initial positions
   useEffect(() => {
@@ -64,35 +59,31 @@ const LogoPhysics = ({ logos }) => {
 
     updateInitialPositions();
 
-    // makes sure the website works when the window is resized
     const handleResize = () => {
-      const currentWidth = window.innerWidth;
-      const currentHeight = window.innerHeight;
+      const isOriginalSize = 
+        window.innerWidth === originalWindowSize.current.width && 
+        window.innerHeight === originalWindowSize.current.height;
       
-      // Check if window size has changed from original
-      if (currentWidth !== originalWindowSize.current.width || 
-          currentHeight !== originalWindowSize.current.height) {
-        setLogosVisible(false);
+      if (isOriginalSize) {
+        // If back to original size, show logos and reload
+        if (showStaticImage) {
+          window.location.reload();
+        }
       } else {
-        /*
-        setLogosVisible(true);
-        updateInitialPositions();
-        */
-       // SCUFFED: instead of the above two lines (which don't work as intended), the entire page is reloaded
-       // when the window is reverted back to its original size.
-       window.location.reload();
+        // If not original size, show static image
+        setShowStaticImage(true);
       }
     };
     
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [showStaticImage]);
 
   // changes velocity and position of each logo relative to the amount scrolled
   useEffect(() => {
+    if (showStaticImage) return;
+    
     const handleScroll = () => {
-      if (!logosVisible) return;
-      
       // figure out the amount scrolled
       const scrollDelta = window.scrollY - scrollPosition.current;
       // limit the max scroll so that logos don't jump around too much
@@ -115,7 +106,7 @@ const LogoPhysics = ({ logos }) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [logosVisible]);
+  }, [showStaticImage]);
 
   const animate = () => {
     const container = logoRefs.current[0]?.parentElement;
@@ -223,20 +214,28 @@ const LogoPhysics = ({ logos }) => {
       </div>
 
       <div className="logo-container">
-        {logos.map((logo, i) => (
-          <img
-            key={i}
-            ref={el => logoRefs.current[i] = el}
-            className="logo organization-logo"
-            src={logo}
-            alt={`Organization ${i + 1}`}
-            style={{ 
-              borderRadius: '50%',
-              opacity: logosVisible ? 1 : 0,
-              transition: 'opacity 0.3s ease'
-            }}
+        {showStaticImage ? (
+          <img 
+            src={staticLogos} 
+            alt="Organizations we've impacted" 
+            style={{ width: '100%', height: 'auto' }}
           />
-        ))}
+        ) : (
+          logos.map((logo, i) => (
+            <img
+              key={i}
+              ref={el => logoRefs.current[i] = el}
+              className="logo organization-logo"
+              src={logo}
+              alt={`Organization ${i + 1}`}
+              style={{ 
+                borderRadius: '50%',
+                opacity: showStaticImage ? 0 : 1,
+                transition: 'opacity 0.3s ease'
+              }}
+            />
+          ))
+        )}
       </div>
     </div>
   );

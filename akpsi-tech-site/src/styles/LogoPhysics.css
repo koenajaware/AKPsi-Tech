@@ -1,11 +1,13 @@
 .logo-container {
   position: relative;
   min-height: 600px;
+  height: 60vh; /* Use viewport height for responsive scaling */
   margin: 2rem auto;
   width: 100vw; /* Set width to 100% of the viewport width */
   max-width: 100%; /* Ensure it doesn't exceed the viewport width */
   box-sizing: border-box; /* Include padding and border in the width calculation */
-  background-color: #082c54
+  background-color: #082c54;
+  overflow: hidden; /* Prevent logos from overflowing during animation */
 }
 
 .organization-logo {
