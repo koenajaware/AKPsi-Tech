@@ -56,7 +56,6 @@
 .contact-form-container {
   flex: 2;
   min-width: 300px;
-  max-width: 500px;
 }
 
 .contact-form-container form {
