@@ -5,6 +5,9 @@ import '../../styles/Alumni/AlumniClass.css';
 
 const AlumniClass = () => (
   <main className="chapters-container">
+    {/* Alumni Section Heading */}
+    <h2 className="section-title alumni-heading">Alumni</h2>
+
     <div className="members-grid">
       {chapters.flatMap((chapter) =>
         chapter.members.map((member) => (
