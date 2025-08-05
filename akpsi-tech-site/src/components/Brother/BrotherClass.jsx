@@ -1,6 +1,6 @@
 import React from 'react';
-import { chapters } from './data_with_photos'; // scraper image update
-// import {chapters} from './data2'; // manual image update
+// import { chapters } from './data_with_photos'; // scraper image update
+import {chapters} from './data2'; // manual image update
 import '../../styles/Brother/BrotherClass.css'; // import your CSS
 
 const BrotherClass = () => (
