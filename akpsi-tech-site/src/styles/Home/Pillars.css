@@ -1,15 +1,26 @@
 .pillars {
+  display: flex;
   padding: 4rem 6rem;
+  gap: 75px;
+  width: 100vw;
+  max-width: 100%;
 }
 
-.section-title {
+.pillars .section-title {
   color: #14437D;
-  font-size: 48px;
-  margin-bottom: 3rem;
+  font-size: 80px;
+  font-family: var(--font-family-inria-serif);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+  flex-shrink: 0;
+  place-self: center;
+  margin: 0;
+  padding: 0;
 }
 
 .pillars-content {
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -30,7 +41,9 @@
   position: relative;
 }
 
-.pillar-title {
+.pillar-title {  
+  text-align: center;
+  width: 100%;
   font-size: 24px;
   color: #000;
   font-weight: normal;

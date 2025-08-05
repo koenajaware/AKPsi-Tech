@@ -1,22 +1,23 @@
 /* Grid of members */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns per row */
+    gap: 0.5rem; /* Reduced gap between grid items */
+    justify-items: center; /* Center items horizontally in each cell */
   }
   
   .member-wrapper {
     text-align: center;
   }
   
+  /* Increased circle size to 200px */
   .member-photo {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    overflow: hidden; /* ensures the photo is cropped to a circle */
+    overflow: hidden; /* Crops the image to a circle */
     border: 2px solid #ccc;
-    background-color: #f0f0f0; /* fallback if no image is provided */
+    background-color: #f0f0f0; /* Fallback background if image is missing */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,3 +34,4 @@
     font-size: 0.9rem;
     color: #555;
   }
+  

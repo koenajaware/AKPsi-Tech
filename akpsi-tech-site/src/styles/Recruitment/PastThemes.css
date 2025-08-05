@@ -1,0 +1,127 @@
+.previous-themes-wrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
+  font-family: 'Inria Serif', serif;
+  color: #000;
+}
+  
+  .previous-themes-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .previous-themes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+  }
+  
+  .previous-wheel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .previous-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  
+  .previous-slide {
+    flex: 0 0 500px;
+    margin: 0 10px;
+  }
+  
+  .previous-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  
+  .previous-themes-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .previous-themes-controls button {
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 0.5rem 1rem;
+    border: 2px solid #999;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .previous-themes-controls button:hover:not(:disabled) {
+    background-color: #d5d5d5;
+  }
+  
+  .previous-themes-controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: #eee;
+    border-color: #ccc;
+  }
+.previous-themes-section {
+  width: 100%;
+  background: linear-gradient(to bottom, white 0%, #80AED5 50%, white 100%);
+  padding: 2rem 0;
+}
+.previous-theme {
+  width: 100%;
+  padding: 2rem 0;
+  background: linear-gradient(to bottom, white, #80AED5, white);
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem; /* Adds space below the grid */
+}
+
+.photo-grid-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.photo-grid-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  aspect-ratio: 1 / 1;
+  width: 100%; /* 4 boxes with gap, fits in 90% container */
+  min-width: 120px;
+  max-width: 400px; /* Increased from 350px */
+  overflow: hidden;
+}
+
+.photo-grid-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}

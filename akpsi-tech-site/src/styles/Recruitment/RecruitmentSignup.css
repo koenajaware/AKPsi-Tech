@@ -1,0 +1,65 @@
+.recruitment-hero {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.recruitment-registration-container {
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items:center;
+}
+
+.recruitment-registration-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center; 
+}
+
+.recruitment-register-title {
+    font-size: 64px;
+    font-family: var(--font-family-inria-serif);
+    font-weight: bold;
+        color:black;
+}
+
+.recruitment-semester-subtitle {
+    font-size: 32px;
+    font-family: var(--font-family-thasadith);
+    white-space: nowrap;
+        color:black;
+}
+
+.recruitment-registration-img-container { 
+  display: flex;               /* Enable flexbox */
+  justify-content: center;     /* Center horizontally */
+  align-items: center;         /* Center vertically */
+  position: relative;
+  height: 500px;               /* Give it height so centering works */
+  width: 100%;                 /* Or fixed width if needed */
+}
+
+.recruitment-registration-image {
+  height: 100%;                /* or auto, depending on aspect ratio */
+  width: auto;
+  object-fit: cover;
+}
+
+
+.recruitment-registration-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-family: var(--font-family-thasadith);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+}

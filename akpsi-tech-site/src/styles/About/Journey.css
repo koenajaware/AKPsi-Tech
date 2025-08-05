@@ -1,0 +1,223 @@
+.journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+    gap: 50px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-bottom: 10px;
+    text-transform: none;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 28px;
+    color: #333;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .left-arrow {
+    left: 100px; 
+  }
+  
+  .right-arrow {
+    right: 100px;
+  }
+  
+  .carousel-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  .carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    gap: 40px;
+    position: relative;
+    padding: 0 140px;
+  }
+  
+  /* individual slides */
+  .carousel-slide {
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .current-slide {
+    width: 700px;
+    z-index: 3;
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .prev-slide{
+    width: 25%;
+    z-index: 1;
+    transform: scale(1.0);
+    opacity: 0.7;
+  }
+  .next-slide {
+    width: 25%;
+    z-index: 1;
+    transform: scale(1.0);
+    opacity: 0.7;
+  }
+  
+
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease-in-out;
+  }
+
+
+  .journey-text {
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  .journey-text p {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: black;
+    margin-top: 10px;
+  }
+
+  /* Media Queries */
+  @media screen and (max-width: 1200px) {
+    .carousel-track {
+      height: 500px;
+      padding: 0 120px;
+    }
+    
+    .carousel-slide {
+      height: 400px;
+    }
+    
+    .current-slide {
+      width: 600px;
+    }
+    
+    .prev-slide,
+    .next-slide {
+      width: 250px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .carousel-track {
+      height: 400px;
+      padding: 0 80px;
+    }
+    
+    .carousel-slide {
+      height: 300px;
+    }
+    
+    .current-slide {
+      width: 450px;
+    }
+    
+    .prev-slide,
+    .next-slide {
+      width: 200px;
+    }
+    
+    .carousel-arrow {
+      width: 80px;
+      height: 80px;
+      font-size: 32px;
+    }
+    
+    .left-arrow {
+      left: 15px;
+    }
+    
+    .right-arrow {
+      right: 15px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .carousel-track {
+      height: 300px;
+      padding: 0 60px;
+    }
+    
+    .carousel-slide {
+      height: 250px;
+    }
+    
+    .current-slide {
+      width: 350px;
+    }
+    
+    .prev-slide,
+    .next-slide {
+      width: 150px;
+    }
+    
+    .carousel-arrow {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+    
+    .left-arrow {
+      left: 10px;
+    }
+    
+    .right-arrow {
+      right: 10px;
+    }
+  }
+  
+ 

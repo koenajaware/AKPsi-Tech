@@ -4,20 +4,29 @@ import "../../styles/Home/Sponsors.css";
 const Sponsors = () => {
   return (
     <div className="blue-bar">
-      <h2>Sponsors</h2>
+      <h2 className="sponsor-header">Sponsors</h2>
       <div className="sponsor-slider">
         <div className="sponsor-track">
-          <img src="/sponsors/sponsor1.png" alt="Sponsor 1" />
-          <img src="/sponsors/sponsor2.png" alt="Sponsor 2" />
-          <img src="/sponsors/sponsor3.png" alt="Sponsor 3" />
-          <img src="/sponsors/sponsor4.png" alt="Sponsor 4" />
-          <img src="/sponsors/sponsor5.png" alt="Sponsor 5" />
-          {/* Duplicate logos for continuous scrolling */}
-          <img src="/sponsors/sponsor1.png" alt="Sponsor 1" />
-          <img src="/sponsors/sponsor2.png" alt="Sponsor 2" />
-          <img src="/sponsors/sponsor3.png" alt="Sponsor 3" />
-          <img src="/sponsors/sponsor4.png" alt="Sponsor 4" />
-          <img src="/sponsors/sponsor5.png" alt="Sponsor 5" />
+          {/* First set */}
+          <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
+          <img src="/assets/sponsors/EY.png"  alt="EY" />
+          <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
+          {/* Second set */}
+          <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
+          <img src="/assets/sponsors/EY.png" alt="EY" />
+          <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
+          {/* Third set */}
+          <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
+          <img src="/assets/sponsors/EY.png" alt="EY" />
+          <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
+          {/* Fourth set */}
+          <img src="/assets/sponsors/CapitalOne.png" alt="Capital One" />
+          <img src="/assets/sponsors/EY.png" alt="EY" />
+          <img src="/assets/sponsors/Crowe.png" alt="Crowe" />
+          <img src="/assets/sponsors/KPMG.png" alt="KPMG"/>
         </div>
       </div>
     </div>

@@ -1,29 +1,33 @@
 .story {
-    display: flex;
-    padding: 100px 150px;
-    gap: 75px;
-    width: 100vw; /* Set width to 100% of the viewport width */
-    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-  }
-  
-  .section-title {
-    font-size: 80px;
-    font-family: var(--font-family-inria-serif);
-    font-weight: bold;
-    color: var(--color-primary);
-    text-align: center;
-    flex-shrink: 0;
-    width: 245px;
-  }
-  
-  .story-content {
-    max-width: 980px;
-  }
-  
-  .story-content p {
-    font-size: 15px;
-    font-family: var(--font-family-thasadith);
-    line-height: 1.6;
-    text-align: center;
-    color:black
-  }
+  display: flex;
+  padding: 4rem 6rem;
+  gap: 75px;
+  width: 100vw;
+  /* Set width to 100% of the viewport width */
+  max-width: 100%;
+  /* Ensure it doesn't exceed the viewport width */
+}
+
+.story .section-title {
+  font-size: 80px;
+  font-family: var(--font-family-inria-serif);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+  flex-shrink: 0;
+  place-self: center;
+  margin: 0;
+  padding: 0;
+}
+
+.story-content {
+  max-width: 980px;
+}
+
+.story-content p {
+  font-size: 15px;
+  font-family: var(--font-family-thasadith);
+  line-height: 1.6;
+  text-align: center;
+  color: black
+}

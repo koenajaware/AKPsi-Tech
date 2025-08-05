@@ -1,0 +1,17 @@
+.sponsor-gallery {
+  position: relative;
+  width: 100%;
+  padding: 3rem 2rem;     /* ← increase padding here */
+  background: linear-gradient(to bottom, #ffffff 0%, #e0f2ff 50%, #ffffff 100%);
+  color: #374151;
+  box-sizing: border-box;
+}
+
+.sg-title {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #111827; /* gray-900 */
+}

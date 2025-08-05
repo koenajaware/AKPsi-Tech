@@ -14,6 +14,15 @@
   overflow: hidden;
 }
 
+.sponsor-header {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.5rem;
+  /* font-weight: bold; */
+  text-align: center;
+  margin-bottom: 1rem;
+  /* color: black; gray-900 */
+}
+
 .sponsor-slider {
   display: flex;
   align-items: center;
@@ -26,22 +35,25 @@
 
 .sponsor-track {
   display: flex;
-  gap: 40px;
-  animation: scroll 10s linear infinite;
+  gap: 1%;
+  animation: scrollsponsor 10s linear infinite;
 }
 
 .sponsor-track img {
-  height: 80px; /* Adjust for logo size */
-  width: auto;
-  display: inline-block;
+  max-width: 11.5%;  
+  width: 100%;       
+  height: auto;     
+  max-height: 75px;  
+  object-fit: contain; 
+  flex-shrink: 0;
 }
 
 /* Animation for smooth scrolling effect */
-@keyframes scroll {
-  from {
+@keyframes scrollsponsor {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }

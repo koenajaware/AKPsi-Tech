@@ -9,9 +9,14 @@ import Organizations from './components/Home/Organizations';
 import Pillars from './components/Home/Pillars';
 import PhotoWheel from './components/Home/PhotoWheel';
 import Awards from './components/Home/Awards';
+import Sponsors from './components/Home/Sponsors';
 import BrotherPage from './components/Brother/BrotherPage';
 // import Footer from './components/Footer/Footer';
 import './App.css';
+import AlumniPage from './components/Alumni/AlumniPage';
+import RecruitmentPage from './components/Recruitment/RecruitmentPage';
+import AboutPage from './components/About/AboutPage';
+import ContactPage from './components/Contact/contact';
 
 // Create a component to handle scrolling to hash elements
 const ScrollToHashElement = () => {
@@ -43,6 +48,7 @@ const App = () => {
     return (
       <div className="app">
         <Banner />
+        <Sponsors />
         <Story />
         <Organizations />
         <Pillars />
@@ -60,11 +66,12 @@ const App = () => {
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage/>} />
           <Route path="/exec" element={<ExecPage />} />
-          <Route path="/recruitment" element={<div>Recruitment Page</div>} />
+          <Route path="/recruitment" element={<RecruitmentPage />} />
           <Route path="/brothers" element={<BrotherPage />} />
-          <Route path="/alumni" element={<div>Alumni Page</div>} />
-          <Route path="/contact" element={<div>Contact Page</div>} />
+          <Route path="/alumni" element={<AlumniPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       

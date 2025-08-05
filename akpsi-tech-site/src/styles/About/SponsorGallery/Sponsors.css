@@ -1,0 +1,33 @@
+.about-sponsor-slider {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.about-sponsor-track {
+  display: flex;
+  animation: scroll 70s linear infinite;
+}
+
+.about-sponsor-track img {
+  height: 400px;
+  width: 600px;
+  display: inline-block;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+/* Animation for smooth scrolling effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
