@@ -9,15 +9,17 @@
     justify-content: center; 
     align-items:center; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 50px 10px; 
 }
 
 .notfound-container h1 {
+    margin-top: 10px;
     font-size: 10rem; 
     font-weight: 700; 
 }
 
 .notfound-container h2 {
-    font-size: 5rem; 
+    font-size: 4rem; 
     font-weight: 400; 
 }
 
