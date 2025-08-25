@@ -25,10 +25,12 @@ const AlumniFeatured = ({ items }) => {
 
             {expandedIndex === idx && (
               <div className="alumni-details">
-                <div className="alumni-class">{alum.classYear}</div>
-                <div className="alumni-logo-container">
-                  <img src={alum.logo} alt={`${alum.name} logo`} className="company-logo" />
-                  <p className="company-description">{alum.companyDescription}</p>
+                <div className="alumni-info-vertical">
+                  <div className="alumni-class">{alum.classYear}</div>
+                  <div className="alumni-logo-container">
+                    <img src={alum.logo} alt={`${alum.name} logo`} className="company-logo" />
+                    <p className="company-description">{alum.companyDescription}</p>
+                  </div>
                 </div>
                 <div className="alumni-quote">
                   <p className="quote-text">{alum.quote}</p>
