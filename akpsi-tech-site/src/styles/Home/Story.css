@@ -1,132 +1,115 @@
-/* Mobile-first Story Styles */
+/* Story Styles - Original Desktop Layout */
 .story {
   display: flex;
-  flex-direction: column;
-  padding: 2rem 1rem;
-  gap: 2rem;
-  width: 100%;
+  padding: 4rem 6rem;
+  gap: 75px;
+  width: 100vw;
+  /* Set width to 100% of the viewport width */
   max-width: 100%;
-  box-sizing: border-box;
+  /* Ensure it doesn't exceed the viewport width */
 }
 
 .story .section-title {
-  font-size: 2.5rem;
+  font-size: 80px;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
   color: var(--color-primary);
   text-align: center;
+  flex-shrink: 0;
+  place-self: center;
   margin: 0;
   padding: 0;
-  line-height: 1.2;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .story-content {
-  max-width: 100%;
-  box-sizing: border-box;
+  max-width: 980px;
 }
 
 .story-content p {
-  font-size: 0.9rem;
+  font-size: 15px;
   font-family: var(--font-family-thasadith);
   line-height: 1.6;
   text-align: center;
   color: black;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  margin: 0;
 }
 
-/* Small mobile optimizations */
-@media (max-width: 480px) {
+/* Mobile Responsive Styles */
+@media (max-width: 1200px) {
   .story {
-    padding: 1.5rem 0.75rem;
-    gap: 1.5rem;
+    padding: 3rem 4rem;
+    gap: 60px;
   }
+  
+  .story .section-title {
+    font-size: 70px;
+  }
+}
 
-  .section-title {
-    font-size: 2rem;
+@media (max-width: 992px) {
+  .story {
+    padding: 2.5rem 3rem;
+    gap: 50px;
+  }
+  
+  .story .section-title {
+    font-size: 60px;
   }
   
   .story-content p {
-    font-size: 0.85rem;
+    font-size: 14px;
   }
 }
 
-/* Medium mobile optimizations */
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 768px) {
   .story {
-    padding: 2rem 1rem;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    align-items: center;
   }
   
-  .story-content p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Tablet and desktop layout - Two column layout */
-@media (min-width: 768px) {
-  .story {
-    flex-direction: row;
-    padding: 3rem 2rem;
-    gap: 3rem;
-    align-items: flex-start;
-  }
-
-  .section-title {
-    font-size: 3rem;
-    text-align: left;
-    flex-shrink: 0;
-    width: 30%;
-    margin: 0;
+  .story .section-title {
+    font-size: 48px;
+    text-align: center;
   }
   
   .story-content {
-    flex: 1;
-    text-align: left;
+    max-width: 100%;
+    text-align: center;
   }
   
   .story-content p {
-    font-size: 1rem;
-    text-align: left;
+    font-size: 14px;
+    text-align: center;
   }
 }
 
-/* Desktop layout */
-@media (min-width: 1024px) {
+@media (max-width: 576px) {
   .story {
-    padding: 4rem 3rem;
-    gap: 4rem;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
   }
-
-  .section-title {
-    font-size: 4rem;
-    width: 25%;
+  
+  .story .section-title {
+    font-size: 36px;
   }
   
   .story-content p {
-    font-size: 1.1rem;
+    font-size: 13px;
   }
 }
 
-/* Large desktop layout */
-@media (min-width: 1200px) {
+@media (max-width: 480px) {
   .story {
-    padding: 4rem 6rem;
-    gap: 5rem;
+    padding: 1rem 0.75rem;
+    gap: 1rem;
   }
-
-  .section-title {
-    font-size: 5rem;
-    width: 20%;
+  
+  .story .section-title {
+    font-size: 32px;
   }
   
   .story-content p {
-    font-size: 1.2rem;
+    font-size: 12px;
   }
 }

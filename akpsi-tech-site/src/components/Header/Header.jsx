@@ -8,6 +8,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Handle scroll event to change header appearance
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 50;
@@ -17,6 +18,22 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Function to scroll to a specific element by ID
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Handle the About link click
+  const handleAboutClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      scrollToSection('our-story');
+    }
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -34,6 +51,17 @@ const Header = () => {
           <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}></span>
         </button>
 
+        {/* Left Navigation Links */}
+        <div className="left-section">
+          <nav className="nav-links">
+            <Link to="/about" className="nav-link" onClick={handleAboutClick}>About</Link>
+            <Link to="/recruitment" className="nav-link">Recruitment</Link>
+            <Link to="/exec" className="nav-link">Exec</Link>
+            <Link to="/brothers" className="nav-link">Brothers</Link>
+            <Link to="/alumni" className="nav-link">Alumni</Link>
+          </nav>
+        </div>
+
         {/* Center Logo */}
         <div className="center-section">
           <Link to="/" className="center-logo" onClick={closeMobileMenu}>
@@ -43,18 +71,11 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="nav-links desktop-nav">
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/recruitment" className="nav-link">Recruitment</Link>
-          <Link to="/exec" className="nav-link">Exec</Link>
-          <Link to="/brothers" className="nav-link">Brothers</Link>
-          <Link to="/alumni" className="nav-link">Alumni</Link>
-        </nav>
-
-        {/* Desktop Contact Button */}
+        {/* Right Button */}
         <div className="right-section">
-          <Link to="/contact" className="header-button">CONTACT US</Link>
+          <div className="header-buttons">
+            <Link to="/contact" className="header-button">CONTACT US</Link>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}

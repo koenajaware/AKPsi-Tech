@@ -198,6 +198,7 @@
   .contact-form-container textarea {
     min-height: 100px;
   }
+
 }
 
 /* Small mobile optimizations */
@@ -230,6 +231,7 @@
     padding: 8px 10px;
     font-size: 0.85rem;
   }
+
 }
 
 /* Tablet and desktop layout */

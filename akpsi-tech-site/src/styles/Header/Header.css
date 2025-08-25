@@ -1,29 +1,171 @@
-/* Mobile-first Header Styles */
+:root {
+  --header-height: 70px;
+  --header-height-mobile: 60px;
+  --primary-color: #0077cc;
+  --text-color: #333;
+  --background-color: #fff;
+  --border-color: #e0e0e0;
+  --transition-speed: 0.3s;
+}
+
+/* Header Base */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: var(--header-height);
+  background-color: var(--background-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
+}
+
+.header-scrolled {
+  height: calc(var(--header-height) - 10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
+  max-width: 1300px;
   height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Grid to center the logo */
+  align-items: center;
+  justify-items: center; /* Center items within their grid areas */
+}
+
+/* Left Section */
+.left-section {
+  justify-self: start;
+  align-self: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 100%;
+}
+
+/* Center Section */
+.center-section {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.center-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* Adjust Logo Size */
+.logo {
+  height: 50px; /* Bigger logo */
+  width: auto;
+  transition: height var(--transition-speed) ease;
+  display: block; /* Ensure proper alignment */
+}
+
+.header-scrolled .logo {
+  height: 45px; /* Slightly smaller when scrolled */
+}
+
+.center-text {
+  font-family: 'Inria Serif', serif;
+  font-size: 18px; /* Slightly bigger text */
+  font-weight: bold;
+  color: var(--text-color);
+  line-height: 1; /* Ensure consistent line height */
+}
+
+/* Right Section */
+.right-section {
+  justify-self: end;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Left Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  font-family: 'Inria Serif', serif;
+  font-size: 15px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  line-height: 1; /* Ensure consistent line height */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link:hover {
+  color: #005fa3;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Right Button */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-button {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  padding: 8px 16px;
+  font-family: 'Inria Serif', serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all var(--transition-speed) ease;
+  border-radius: 4px;
+  line-height: 1; /* Ensure consistent line height */
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+.header-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
-  display: flex;
+  display: none; /* Hidden by default on desktop */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -71,70 +213,6 @@
 
 .hamburger.active::after {
   transform: rotate(-45deg);
-}
-
-/* Center Logo */
-.center-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-}
-
-.center-text {
-  font-family: 'Inria Serif', serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Desktop Navigation */
-.desktop-nav {
-  display: none;
-  gap: 2rem;
-}
-
-.nav-link {
-  font-family: 'Inria Serif', serif;
-  font-size: 14px;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #005fa3;
-}
-
-/* Right Section */
-.right-section {
-  display: none;
-}
-
-.header-button {
-  background-color: transparent;
-  border: 1px solid #333;
-  padding: 8px 16px;
-  font-family: 'Inria Serif', serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border-radius: 4px;
-}
-
-.header-button:hover {
-  background-color: #333;
-  color: #fff;
 }
 
 /* Mobile Menu Overlay */
@@ -186,57 +264,48 @@
   margin-top: 1rem;
 }
 
-/* Tablet Styles */
-@media (min-width: 768px) {
+/* Responsive Styles */
+@media (max-width: 768px) {
   .header {
-    height: 70px;
+    height: var(--header-height-mobile);
+  }
+
+  .header-container {
+    padding: 0 15px;
+    grid-template-columns: auto 1fr auto; /* Mobile layout */
   }
 
   .mobile-menu-btn {
-    display: none;
+    display: flex; /* Show on mobile */
   }
 
-  .desktop-nav {
-    display: flex;
+  .nav-links {
+    display: none; /* Hide desktop nav on mobile */
   }
 
   .right-section {
-    display: block;
+    display: none; /* Hide contact button on mobile */
+  }
+
+  .center-logo {
+    gap: 6px;
   }
 
   .center-text {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .logo {
-    height: 50px;
-  }
-
-  .nav-link {
-    font-size: 15px;
-  }
-
-  .header-button {
-    font-size: 14px;
-    padding: 10px 20px;
+    height: 30px;
   }
 }
 
-/* Desktop Styles */
-@media (min-width: 1024px) {
-  .header-container {
-    padding: 0 2rem;
-  }
-
+@media (max-width: 576px) {
   .center-text {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .logo {
-    height: 60px;
-  }
-
-  .nav-link {
-    font-size: 16px;
+    height: 25px;
   }
 }
