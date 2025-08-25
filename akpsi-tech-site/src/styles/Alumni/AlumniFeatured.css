@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    margin-top: 1.5rem;
     color: #030303;
   }
   
@@ -14,7 +15,7 @@
     text-transform: uppercase;
     color: #333;
     text-align: center;
-    padding-top: 1.5rem;   /* or whatever space you want above */
+    padding-top: 3rem;   /* or whatever space you want above */
   }
   
   .alumni-list {
@@ -63,16 +64,36 @@
   }
   
   .alumni-details {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
+    display: flex;
+    flex-direction: row;
     gap: 20px;
     padding-top: 20px;
-  }
+    align-items: flex-start;
+    border-top: 1px solid #000;
+    margin-top: 10px;
+}
   
+  .alumni-info-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;  
+  }
+
+  .alumni-quote {
+    flex: 2;
+    border: 1px solid #030303;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: var(--font-family-inria-serif);
+  }
+
   .alumni-class {
     color: #060606;
-    padding-left: 35px;
-  }
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
   
   .alumni-logo-container {
     display: flex;
