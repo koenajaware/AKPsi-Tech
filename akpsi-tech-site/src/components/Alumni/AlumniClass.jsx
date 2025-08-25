@@ -8,6 +8,24 @@ const AlumniClass = () => (
     {chapters.map((chapter) => (
       <section key={chapter.name} className="chapter-section">
         <h2 className="chapter-name">{chapter.name}</h2>
+        
+        {/* Mobile roster view */}
+        <div className="mobile-roster">
+          {chapter.members.map((member) => (
+            <div key={member.id} className="roster-item">
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="roster-link"
+              >
+                {member.name} - Class of {member.classYear}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop grid view */}
         <div className="members-grid">
           {chapter.members.map((member) => (
             <div key={member.id} className="member-wrapper">
@@ -18,16 +36,15 @@ const AlumniClass = () => (
                   alt={member.name}
                 />
                 <div className="photo-overlay">
-                  {/* adjust these to whatever fields your data has */}
                   <p className="overlay-name">{member.name}</p>
                   <p>Class: {member.classYear}</p>
                   <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="overlay-link"
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="overlay-link"
                   >
-                  LinkedIn
+                    LinkedIn
                   </a>
                 </div>
               </div>

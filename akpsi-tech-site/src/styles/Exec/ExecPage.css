@@ -23,6 +23,7 @@
   width: 100%;
   background-color: var(--exec-background-color);
   padding-bottom: 60px; /* Add padding at the bottom */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Banner styles */
@@ -243,15 +244,18 @@
 
   .exec-position {
     font-size: 20px;
+    text-align: center; /* Center position titles */
   }
 
   .exec-name {
     font-size: 17px;
+    text-align: center; /* Center names */
   }
 
   .exec-description,
   .exec-additional {
     font-size: 14px;
+    text-align: center; /* Center descriptions */
   }
 }
 
@@ -285,9 +289,17 @@
 
   .exec-position {
     font-size: 18px;
+    text-align: center; /* Center position titles */
   }
 
   .exec-name {
     font-size: 16px;
+    text-align: center; /* Center names */
+  }
+
+  .exec-description,
+  .exec-additional {
+    font-size: 13px;
+    text-align: center; /* Center descriptions */
   }
 } 

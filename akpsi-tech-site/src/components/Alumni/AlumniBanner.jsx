@@ -41,7 +41,7 @@ const AlumniBanner = () => {
           <Motion.img 
             src={AlumniImage} 
             alt="Alpha Kappa Psi members" 
-            className="banner-image"  /* updated class name */
+            className="banner-image"
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
             style={{ 
@@ -51,22 +51,23 @@ const AlumniBanner = () => {
             }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
+          
+          {/* HERO CONTENT - Now positioned on top of the image */}
+          <Motion.div 
+            className="hero-content"
+            style={{ opacity }}
+          >
+            <Motion.h1 
+              className="hero-title"
+              initial={{ opacity: 0.7, y: 3 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              Alumni
+            </Motion.h1>
+          </Motion.div>
         </Motion.div>
       </div>
-      
-      <Motion.div 
-        className="hero-content"
-        style={{ opacity }}
-      >
-        <Motion.h1 
-          className="hero-title"
-          initial={{ opacity: 0.7, y: 3 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          Alumni
-        </Motion.h1>
-      </Motion.div>
     </Motion.section>
   );
 };
