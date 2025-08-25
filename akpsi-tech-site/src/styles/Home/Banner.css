@@ -40,7 +40,7 @@
 .hero-title {
   font-size: 100px;
   font-family: var(--font-family-inria-serif);
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-top: 100px;
   white-space: nowrap;
 }
