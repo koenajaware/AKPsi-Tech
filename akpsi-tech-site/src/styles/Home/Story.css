@@ -1,3 +1,4 @@
+/* Story Styles - Original Desktop Layout */
 .story {
   display: flex;
   padding: 4rem 6rem;
@@ -29,5 +30,86 @@
   font-family: var(--font-family-thasadith);
   line-height: 1.6;
   text-align: center;
-  color: black
+  color: black;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 1200px) {
+  .story {
+    padding: 3rem 4rem;
+    gap: 60px;
+  }
+  
+  .story .section-title {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .story {
+    padding: 2.5rem 3rem;
+    gap: 50px;
+  }
+  
+  .story .section-title {
+    font-size: 60px;
+  }
+  
+  .story-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .story .section-title {
+    font-size: 48px;
+    text-align: center;
+  }
+  
+  .story-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .story-content p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .story {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .story .section-title {
+    font-size: 36px;
+  }
+  
+  .story-content p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story {
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+  
+  .story .section-title {
+    font-size: 32px;
+  }
+  
+  .story-content p {
+    font-size: 12px;
+  }
 }

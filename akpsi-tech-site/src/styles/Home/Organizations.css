@@ -1,9 +1,53 @@
+/* Mobile-first Organizations Styles */
 .organizations {
-  padding: 4rem 0;
+  padding: 2rem 0;
   text-align: center;
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   background-color: #082c54;
-  min-height: 80vh; /* Minimum height */
-  height: auto /* Auto height for content */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .organizations {
+    padding: 1rem 0;
+  }
+}
+
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
+  .organizations {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Tablet and desktop layout */
+@media (min-width: 768px) {
+  .organizations {
+    padding: 2rem 0;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .organizations {
+    padding: 3rem 0;
+  }
+}
+
+/* Additional mobile optimizations for logo display */
+@media (max-width: 767px) {
+  .organizations {
+    /* Ensure logos have enough space on mobile */
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .organizations {
+    /* Further reduce padding for very small screens */
+    padding: 0.75rem 0;
+  }
 }

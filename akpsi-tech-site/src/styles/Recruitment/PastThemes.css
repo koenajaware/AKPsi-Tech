@@ -1,21 +1,23 @@
 .previous-themes-wrapper {
-  max-width: 1000px;
-  margin: 2rem auto;
+  max-width: 100%; /* Full width on mobile */
+  margin: 1rem auto; /* Reduced margin for mobile */
   font-family: 'Inria Serif', serif;
   color: #000;
+  padding: 0 1rem; /* Add padding for mobile */
 }
   
   .previous-themes-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Smaller font for mobile */
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reduced margin for mobile */
+    line-height: 1.2;
   }
   
   .previous-themes-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced gap for mobile */
     
   }
   
@@ -23,7 +25,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 1000px;
+    max-width: 100%; /* Full width on mobile */
     margin: 0 auto;
   }
   
@@ -34,8 +36,8 @@
   }
   
   .previous-slide {
-    flex: 0 0 500px;
-    margin: 0 10px;
+    flex: 0 0 300px; /* Smaller slides for mobile */
+    margin: 0 5px; /* Reduced margin for mobile */
   }
   
   .previous-slide img {
@@ -50,14 +52,14 @@
   .previous-themes-controls {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 1.5rem;
+    gap: 1rem; /* Reduced gap for mobile */
+    margin-top: 1rem; /* Reduced margin for mobile */
   }
   
   .previous-themes-controls button {
-    font-size: 3rem;
+    font-size: 2rem; /* Smaller font for mobile */
     font-weight: 900;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem; /* Reduced padding for mobile */
     border: 2px solid #999;
     border-radius: 8px;
     background-color: #e0e0e0;
@@ -78,11 +80,11 @@
 .previous-themes-section {
   width: 100%;
   background: linear-gradient(to bottom, white 0%, #80AED5 50%, white 100%);
-  padding: 2rem 0;
+  padding: 1.5rem 0; /* Reduced padding for mobile */
 }
 .previous-theme {
   width: 100%;
-  padding: 2rem 0;
+  padding: 1.5rem 0; /* Reduced padding for mobile */
   background: linear-gradient(to bottom, white, #80AED5, white);
   overflow: hidden;
   position: relative;
@@ -92,15 +94,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem; /* Adds space below the grid */
+  margin-bottom: 2rem; /* Reduced margin for mobile */
 }
 
 .photo-grid-container {
   display: flex;
-  flex-direction: row;
-  gap: 4rem;
+  flex-direction: column; /* Stack vertically on mobile */
+  gap: 1rem; /* Reduced gap for mobile */
   width: 90%;
-  max-width: 1200px;
+  max-width: 100%; /* Full width on mobile */
   justify-content: center;
   margin: 0 auto;
 }
@@ -113,9 +115,9 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   aspect-ratio: 1 / 1;
-  width: 100%; /* 4 boxes with gap, fits in 90% container */
-  min-width: 120px;
-  max-width: 400px; /* Increased from 350px */
+  width: 100%; /* Full width on mobile */
+  min-width: 200px; /* Increased minimum width for mobile */
+  max-width: 100%; /* Full width on mobile */
   overflow: hidden;
 }
 
@@ -124,4 +126,99 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .previous-themes-wrapper {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0;
+  }
+  
+  .previous-themes-title {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .previous-themes-container {
+    gap: 2rem;
+  }
+  
+  .previous-slide {
+    flex: 0 0 400px;
+    margin: 0 10px;
+  }
+  
+  .previous-themes-controls {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .previous-themes-controls button {
+    font-size: 2.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .previous-themes-section {
+    padding: 2rem 0;
+  }
+  
+  .previous-theme {
+    padding: 2rem 0;
+  }
+  
+  .photo-grid {
+    margin-bottom: 3rem;
+  }
+  
+  .photo-grid-container {
+    flex-direction: row; /* Side by side on tablet */
+    gap: 2rem;
+    max-width: 1200px;
+  }
+  
+  .photo-grid-box {
+    min-width: 150px;
+    max-width: 300px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .previous-themes-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .previous-slide {
+    flex: 0 0 500px;
+    margin: 0 10px;
+  }
+  
+  .previous-themes-controls button {
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .previous-themes-section {
+    padding: 2rem 0;
+  }
+  
+  .previous-theme {
+    padding: 2rem 0;
+  }
+  
+  .photo-grid {
+    margin-bottom: 4rem;
+  }
+  
+  .photo-grid-container {
+    gap: 4rem;
+  }
+  
+  .photo-grid-box {
+    min-width: 120px;
+    max-width: 400px;
+  }
 }

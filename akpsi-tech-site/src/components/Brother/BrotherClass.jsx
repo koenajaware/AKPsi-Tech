@@ -1,5 +1,6 @@
 import React from 'react';
-import { chapters } from './data'; // import your data array
+// import { chapters } from './data_with_photos'; // scraper image update
+import {chapters} from './data2'; // manual image update
 import '../../styles/Brother/BrotherClass.css'; // import your CSS
 
 const BrotherClass = () => (
@@ -7,6 +8,24 @@ const BrotherClass = () => (
     {chapters.map((chapter) => (
       <section key={chapter.name} className="chapter-section">
         <h2 className="chapter-name">{chapter.name}</h2>
+        
+        {/* Mobile roster view */}
+        <div className="mobile-roster">
+          {chapter.members.map((member) => (
+            <div key={member.id} className="roster-item">
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="roster-link"
+              >
+                {member.name}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop grid view */}
         <div className="members-grid">
           {chapter.members.map((member) => (
             <div key={member.id} className="member-wrapper">

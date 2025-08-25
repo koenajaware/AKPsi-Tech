@@ -1,32 +1,39 @@
+/* Mobile-first Awards Styles */
 .awards {
   display: flex;
-  padding: 4rem 6rem;
-  gap: 75px;
-  width: 100vw;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .awards .section-title {
   color: #14437D;
-  font-size: 80px;
+  font-size: 2.5rem;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
   color: var(--color-primary);
   text-align: center;
-  flex-shrink: 0;
-  place-self: center;
   margin: 0;
   padding: 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .awards-content {
   width: 100%;
   margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .award-container {
   width: 100%;
   border-bottom: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .award-container:first-child {
@@ -36,46 +43,58 @@
 .award-item {
   display: flex;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   cursor: pointer;
   position: relative;
-
+  box-sizing: border-box;
 }
 
 .award-title {
   text-align: center;
   width: 100%;
-  font-size: 24px;
+  font-size: 1.2rem;
   color: #000;
   font-weight: normal;
   margin: 0;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .expand-icon {
   position: absolute;
   right: 0;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #000;
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
 }
 
 .award-dropdown {
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 1rem 0;
   line-height: 1.6;
   color: #000;
+  box-sizing: border-box;
 }
 
 .award-dropdown p {
   margin: 0;
-  max-width: 90%;
+  max-width: 100%;
   color: #000;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .individual-award {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .individual-award:last-child {
@@ -83,116 +102,114 @@
 }
 
 .award-name {
-  font-size: 28px;
+  font-size: 1.4rem;
   color: #000;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
   font-weight: 500;
   width: 100%;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .award-description {
   font-style: italic;
   color: #000;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1.5rem auto;
   line-height: 1.6;
-  max-width: 800px;
-}
-
-.award-title-bold {
-  font-weight: 700;
+  max-width: 100%;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .award-subsections {
-  text-align: center;
-  margin-top: 2rem;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .awards-grid {
   display: flex;
-  gap: 4rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .award-column {
-  flex: 1;
-  max-width: 300px;
-  padding: 1.5rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .award-column:first-child {
-  background-color: #CD7F32;
-  background: linear-gradient(to bottom, #e3b587, #CD7F32);
-  color: white;
+  margin-bottom: 2rem;
 }
 
 .award-column:last-child {
-  background-color: #C0C0C0;
-  background: linear-gradient(to bottom, #e5e5e5, #C0C0C0);
-  color: white;
+  margin-top: 2rem;
 }
 
 .award-subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  text-decoration: none;
-  color: white;
-  width: 100%;
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
   text-align: center;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .award-recipient {
-  margin: 0;
+  font-size: 0.9rem;
   color: #000;
-  font-size: 20px;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .award-column .award-recipient {
-  color: white;
-  font-size: 16px;
-  width: 100%;
   text-align: center;
   margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .recipients-list {
-  margin-top: 2rem;
-  text-align: center;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .achievements-list {
-  margin-top: 2rem;
-  text-align: center;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .achievement-item {
-  margin: 0;
+  font-size: 0.9rem;
   color: #000;
-  max-width: 800px;
-  text-align: center;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .chapter-award {
+  margin-bottom: 2rem;
   text-align: center;
-  margin-bottom: 4rem;
 }
 
 .chapter-award:last-child {
@@ -202,94 +219,243 @@
 .circles-container {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin: 2rem 0;
-  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .year-circle {
-  width: 150px;
-  height: 150px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.2;
 }
 
 .year-circle.filled {
-  background-color: #333;
+  background-color: #14437D;
   color: white;
 }
 
 .year-circle.outlined {
-  border: 2px solid #333;
-  color: #333;
+  border: 2px solid #14437D;
+  color: #14437D;
 }
 
 .award-description-centered {
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
   font-style: italic;
+  color: #000;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+  max-width: 100%;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
+/* Small mobile optimizations */
+@media (max-width: 480px) {
   .awards {
-    padding: 3rem 2rem;
+    padding: 1.5rem 0.75rem;
+    gap: 1.5rem;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 2rem;
   }
 
   .award-title {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
-
-  .awards-grid {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+  
+  .award-item {
+    padding: 0.75rem 0;
   }
-
-  .award-column {
-    width: 100%;
-    max-width: 280px;
+  
+  .award-dropdown {
+    padding: 0 0 0.75rem 0;
   }
-
+  
+  .award-dropdown p {
+    font-size: 0.85rem;
+  }
+  
+  .expand-icon {
+    font-size: 1.3rem;
+  }
+  
+  .award-name {
+    font-size: 1.2rem;
+  }
+  
+  .award-description {
+    font-size: 0.85rem;
+  }
+  
   .award-subtitle {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
-
-  .circles-container {
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
+  
   .year-circle {
-    width: 120px;
-    height: 120px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 0.6rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
   .awards {
     padding: 2rem 1rem;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 2.2rem;
   }
 
   .award-title {
-    font-size: 18px;
+    font-size: 1.15rem;
+  }
+  
+  .award-name {
+    font-size: 1.3rem;
+  }
+  
+  .award-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet and desktop layout */
+@media (min-width: 768px) {
+  .awards {
+    padding: 3rem 2rem;
+    gap: 3rem;
   }
 
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .award-title {
+    font-size: 1.3rem;
+  }
+  
+  .award-item {
+    padding: 1.25rem 0;
+  }
+  
   .award-dropdown p {
-    max-width: 100%;
+    font-size: 1rem;
+  }
+  
+  .award-name {
+    font-size: 1.5rem;
+  }
+  
+  .award-description {
+    font-size: 1rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .year-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .awards {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+
+  .section-title {
+    font-size: 4rem;
+  }
+
+  .award-title {
+    font-size: 1.5rem;
+  }
+  
+  .award-item {
+    padding: 1.5rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 1.1rem;
+  }
+  
+  .award-name {
+    font-size: 1.7rem;
+  }
+  
+  .award-description {
+    font-size: 1.1rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .year-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Large desktop layout */
+@media (min-width: 1200px) {
+  .awards {
+    padding: 4rem 6rem;
+    gap: 5rem;
+  }
+
+  .section-title {
+    font-size: 5rem;
+  }
+
+  .award-title {
+    font-size: 1.8rem;
+  }
+  
+  .award-item {
+    padding: 1.75rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 1.2rem;
+  }
+  
+  .award-name {
+    font-size: 2rem;
+  }
+  
+  .award-description {
+    font-size: 1.2rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .year-circle {
+    width: 90px;
+    height: 90px;
+    font-size: 1rem;
   }
 }

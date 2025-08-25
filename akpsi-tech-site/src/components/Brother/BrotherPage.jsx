@@ -1,6 +1,5 @@
 import React from 'react';
-import { chapters } from './data'; // import your data array
-import '../../styles/Brother/BrotherPage.css'; // import your CSS
+import '../../styles/Brother/BrotherPage.css'; 
 import BrotherBanner from './BrotherBanner';
 import BrotherClass from './BrotherClass';
 
