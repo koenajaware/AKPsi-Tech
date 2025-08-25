@@ -10,8 +10,8 @@
 
 .organization-logo {
   border-radius: 50%; /* Makes the logos circular */
-  width: 160px; /* Set a fixed size for the logos */
-  height: 160px; /* Ensure width and height are equal */
+  width: 120px; /* Smaller default size for mobile-first approach */
+  height: 120px; /* Ensure width and height are equal */
   object-fit: contain; /* Ensures the image fits within the circle */
   position: absolute;
   transition: transform 0.1s ease-out; /* optional for smooth movement */
@@ -21,11 +21,76 @@
   background-color: white
 }
 
+/* Small mobile devices (320px and up) */
+@media (min-width: 320px) {
+  .organization-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .logo-container {
+    min-height: 350px;
+    margin: 1rem auto;
+  }
+}
+
+/* Medium mobile devices (480px and up) */
+@media (min-width: 480px) {
+  .organization-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .logo-container {
+    min-height: 450px;
+    margin: 1.5rem auto;
+  }
+}
+
+/* Large mobile devices and tablets (768px and up) */
+@media (min-width: 768px) {
+  .organization-logo {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .logo-container {
+    min-height: 520px;
+    margin: 2rem auto;
+  }
+}
+
+/* Desktop devices (1024px and up) */
+@media (min-width: 1024px) {
+  .organization-logo {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .logo-container {
+    min-height: 600px;
+    margin: 2rem auto;
+  }
+}
+
 .impacted-organizations-text {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
   margin: 0 0 0 0; /* top | right | bottom | left */
   padding: 0;
+}
+
+/* Responsive text sizing for mobile */
+@media (max-width: 767px) {
+  .impacted-organizations-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impacted-organizations-text {
+    font-size: 1.5rem;
+  }
 }
 

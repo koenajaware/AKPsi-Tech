@@ -31,55 +31,56 @@ const Banner = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
-    <div className="hero-image-container">
-      <motion.div
-        style={{ 
-          position: "relative", 
-          width: "100%", 
-          height: "100%", 
-          overflow: "hidden" 
-        }}
-      >
-        <motion.img 
-          src={fratPic} 
-          alt="Alpha Kappa Psi members" 
-          className="hero-image"
-          initial={{ scale: 1.05 }}
-          animate={{ scale: 1 }}
+      <div className="hero-image-container">
+        <motion.div
           style={{ 
-            y,
-            scale,
-            transformOrigin: "center center" 
+            position: "relative", 
+            width: "100%", 
+            height: "100%", 
+            overflow: "hidden" 
           }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        />
-        {/* NEW OVERLAY DIV */}
-        <div className="hero-overlay"></div>
-      </motion.div>
-    </div>
-      
-      <motion.div 
-        className="hero-content"
-        style={{ opacity }}
-      >
-        <motion.h1 
-          className="hero-title"
-          initial={{ opacity: 0.7, y: 3 }} // Much less movement and higher starting opacity 
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }} // Faster with less delay
         >
-          ALPHA KAPPA PSI
-        </motion.h1>
-        
-        <motion.p 
-          className="hero-subtitle"
-          initial={{ opacity: 0.7, y: 3 }} // Much less movement and higher starting opacity
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }} // Faster with less delay
-        >
-          The Omega Theta Chapter at the University of Maryland - College Park
-        </motion.p>
-      </motion.div>
+          <motion.img 
+            src={fratPic} 
+            alt="Alpha Kappa Psi members" 
+            className="hero-image"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            style={{ 
+              y,
+              scale,
+              transformOrigin: "center center" 
+            }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          />
+          {/* OVERLAY DIV */}
+          <div className="hero-overlay"></div>
+          
+          {/* HERO CONTENT - Now positioned on top of the image */}
+          <motion.div 
+            className="hero-content"
+            style={{ opacity }}
+          >
+            <motion.h1 
+              className="hero-title"
+              initial={{ opacity: 0.7, y: 3 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              ALPHA KAPPA PSI
+            </motion.h1>
+            
+            <motion.p 
+              className="hero-subtitle"
+              initial={{ opacity: 0.7, y: 3 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              The Omega Theta Chapter at the University of Maryland - College Park
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      </div>
     </motion.section>
   );
 };

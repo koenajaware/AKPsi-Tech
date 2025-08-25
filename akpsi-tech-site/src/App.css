@@ -33,10 +33,117 @@
 body {
   font-family: var(--font-family-thasadith);
   background-color: var(--color-white);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Mobile-first App Styles */
 .app {
-  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.content {
+  flex: 1;
   width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Mobile-specific styles */
+.mobile-device {
+  /* Prevent horizontal scrolling */
   overflow-x: hidden;
+}
+
+/* Touch-friendly improvements */
+.mobile-device button,
+.mobile-device .header-button,
+.mobile-device .nav-link {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smooth scrolling for mobile */
+.mobile-device {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text selection on mobile */
+.mobile-device * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific elements */
+.mobile-device p,
+.mobile-device h1,
+.mobile-device h2,
+.mobile-device h3,
+.mobile-device h4,
+.mobile-device h5,
+.mobile-device h6 {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* General mobile improvements */
+@media (max-width: 768px) {
+  /* Ensure all text can wrap properly */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Prevent horizontal overflow */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Better text sizing for mobile */
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+  }
+  
+  p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
+}
+
+/* Tablet and Desktop adjustments */
+@media (min-width: 768px) {
+  .content {
+    padding-top: 70px;
+  }
+  
+  .mobile-device .content {
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding-top: 80px;
+  }
+  
+  .mobile-device .content {
+    padding-top: 80px;
+  }
 }

@@ -2,13 +2,14 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem; /* Reduced padding for mobile */
   background: linear-gradient(to top, #80AED5, #ffffff);
   color: #374151;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* main container for page */
@@ -21,15 +22,17 @@
 /* events grid */
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem; /* Reduced gap for mobile */
   justify-items: center;
 }
 
 /* individual event cards */
 .event-card {
-  width: 300px;
-  height: 280px;
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Max width for mobile */
+  height: auto; /* Auto height for mobile */
+  min-height: 250px; /* Minimum height */
   background: #edf7ff;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
@@ -41,14 +44,14 @@
 /* event card header */
 .event-header {
   background: #edf7ff;
-  padding: 1rem;
+  padding: 0.75rem; /* Reduced padding for mobile */
   border-bottom: 1px solid #d1d5db;
   text-align: center;
 }
 
 .event-title {
   font-family: 'Times New Roman', serif;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller font for mobile */
   font-weight: 600;
   color: #111827;
   margin: 0;
@@ -57,8 +60,9 @@
 
 /* event content */
 .event-content {
-  padding: 1rem;
-  height: 208px; /* total card height minus header, update?? */
+  padding: 0.75rem; /* Reduced padding for mobile */
+  height: auto; /* Auto height for mobile */
+  min-height: 180px; /* Minimum height */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,7 +78,7 @@
 }
 
 .event-description {
-  font-size: 0.875rem;
+  font-size: 0.8rem; /* Smaller font for mobile */
   color: #374151;
   line-height: 1.5;
   white-space: pre-line;
@@ -82,12 +86,12 @@
 
 /* dress code section */
 .event-dress-code {
-  margin-top: 1rem;
+  margin-top: 0.75rem; /* Reduced margin for mobile */
   text-align: center;
 }
 
 .dress-code-text {
-  font-size: 0.875rem;
+  font-size: 0.8rem; /* Smaller font for mobile */
   color: #6b7280;
 }
 
@@ -96,4 +100,67 @@
   color: #2563eb;
   text-decoration: underline;
   font-weight: 500;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .recruitment-events {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 2rem;
+  }
+  
+  .event-card {
+    max-width: 300px;
+    min-height: 280px;
+  }
+  
+  .event-header {
+    padding: 1rem;
+  }
+  
+  .event-title {
+    font-size: 1rem;
+  }
+  
+  .event-content {
+    padding: 1rem;
+    min-height: 208px;
+  }
+  
+  .event-description {
+    font-size: 0.875rem;
+  }
+  
+  .event-dress-code {
+    margin-top: 1rem;
+  }
+  
+  .dress-code-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .recruitment-events {
+    padding: 3rem 2rem;
+  }
+  
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 2rem;
+  }
+  
+  .event-card {
+    width: 300px;
+    height: 280px;
+  }
+  
+  .event-content {
+    height: 208px;
+  }
 }

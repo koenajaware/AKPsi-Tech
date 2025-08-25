@@ -1,32 +1,39 @@
+/* Mobile-first Pillars Styles */
 .pillars {
   display: flex;
-  padding: 4rem 6rem;
-  gap: 75px;
-  width: 100vw;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pillars .section-title {
   color: #14437D;
-  font-size: 80px;
+  font-size: 2.5rem;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
   color: var(--color-primary);
   text-align: center;
-  flex-shrink: 0;
-  place-self: center;
   margin: 0;
   padding: 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .pillars-content {
   width: 100%;
   margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pillar-container {
   width: 100%;
   border-bottom: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .pillar-container:first-child {
@@ -36,37 +43,49 @@
 .pillar-item {
   display: flex;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   cursor: pointer;
   position: relative;
+  box-sizing: border-box;
 }
 
 .pillar-title {  
   text-align: center;
   width: 100%;
-  font-size: 24px;
+  font-size: 1.2rem;
   color: #000;
   font-weight: normal;
   margin: 0;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .expand-icon {
   position: absolute;
   right: 0;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #000;
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
 }
 
 .pillar-dropdown {
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 1rem 0;
   line-height: 1.6;
   color: #000;
+  box-sizing: border-box;
 }
 
 .pillar-dropdown p {
   margin: 0;
-  max-width: 90%;
+  max-width: 100%;
   color: #000;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Hide the images section as per the design */
@@ -74,35 +93,121 @@
   display: none;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
+/* Small mobile optimizations */
+@media (max-width: 480px) {
   .pillars {
-    padding: 3rem 2rem;
+    padding: 1.5rem 0.75rem;
+    gap: 1.5rem;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 2rem;
   }
 
   .pillar-title {
-    font-size: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .pillar-item {
+    padding: 0.75rem 0;
+  }
+  
+  .pillar-dropdown {
+    padding: 0 0 0.75rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 0.85rem;
+  }
+  
+  .expand-icon {
+    font-size: 1.3rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Medium mobile optimizations */
+@media (min-width: 481px) and (max-width: 767px) {
   .pillars {
     padding: 2rem 1rem;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 2.2rem;
   }
 
   .pillar-title {
-    font-size: 18px;
+    font-size: 1.15rem;
+  }
+}
+
+/* Tablet and desktop layout */
+@media (min-width: 768px) {
+  .pillars {
+    padding: 3rem 2rem;
+    gap: 3rem;
   }
 
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .pillar-title {
+    font-size: 1.3rem;
+  }
+  
+  .pillar-item {
+    padding: 1.25rem 0;
+  }
+  
   .pillar-dropdown p {
-    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .pillars {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+
+  .section-title {
+    font-size: 4rem;
+  }
+
+  .pillar-title {
+    font-size: 1.5rem;
+  }
+  
+  .pillar-item {
+    padding: 1.5rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large desktop layout */
+@media (min-width: 1200px) {
+  .pillars {
+    padding: 4rem 6rem;
+    gap: 5rem;
+  }
+
+  .section-title {
+    font-size: 5rem;
+  }
+
+  .pillar-title {
+    font-size: 1.8rem;
+  }
+  
+  .pillar-item {
+    padding: 1.75rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 1.2rem;
   }
 }
