@@ -1,131 +1,146 @@
 import fs from 'fs';
 import puppeteer from 'puppeteer';
 import dotenv from 'dotenv';
-
 dotenv.config({ path: '../../../.env' });
 
 const { chapters } = await import('./data2.js');
 
 const EMAIL = process.env.LINKEDIN_EMAIL;
 const PASSWORD = process.env.LINKEDIN_PASSWORD;
-
-if (!EMAIL || !PASSWORD) {
-  throw new Error("❌ Missing LinkedIn credentials in .env file.");
-}
-
-console.log("📦 Loaded LinkedIn credentials");
-console.log("📚 Chapters loaded from data.js:");
-console.dir(chapters, { depth: null });
+const RESTART_INTERVAL = 25; // restart browser after every 25 members
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function loginToLinkedIn(page) {
-  console.log("🔐 Logging in to LinkedIn...");
-  await page.goto('https://www.linkedin.com/login', { waitUntil: 'networkidle2', timeout: 60000 });
+  console.log("🔐 Logging into LinkedIn...");
+  await page.goto('https://www.linkedin.com/login', { waitUntil: 'domcontentloaded' });
 
-  await page.waitForSelector('#username', { timeout: 30000 });
   await page.type('#username', EMAIL, { delay: 50 });
   await page.type('#password', PASSWORD, { delay: 50 });
+  await Promise.all([
+    page.click('button[type="submit"]'),
+    page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
+  ]);
+  console.log("✅ Logged in.");
+}
 
-  const initialUrl = page.url();
-  await page.click('button[type="submit"]');
+async function scrapeProfileWithRetry(member, page, maxRetries = 3) {
+  let attempts = 0;
+  while (attempts < maxRetries) {
+    try {
+      console.log(`🌐 [${attempts + 1}/${maxRetries}] Visiting: ${member.linkedin}`);
+      await page.goto(member.linkedin, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-  try {
-    // Wait for either URL to change or main nav to load
-    await Promise.race([
-      page.waitForFunction(`window.location.href !== '${initialUrl}'`, { timeout: 60000 }),
-      page.waitForSelector('nav[aria-label="Primary"]', { timeout: 60000 }),
-    ]);
-  } catch {
-    // check for checkpoint or error page
-    if (page.url().includes('/checkpoint/challenge')) {
-      const content = await page.content();
-      fs.writeFileSync('challenge_page.html', content);
-      throw new Error("⚠️ Login challenge detected. HTML saved to challenge_page.html");
+      const src = await page.evaluate(() => {
+        const selectors = [
+          'img.pv-top-card-profile-picture__image--show',
+          'img.profile-photo-edit__preview',
+          'img.pv-top-card-profile-picture__image',
+          'img.evi-image',
+          'img.entity-photo-circle-9',
+          'picture img',
+        ];
+
+        for (const sel of selectors) {
+          const img = document.querySelector(sel);
+          if (img && img.src && !img.src.includes('data:image/gif') && !img.src.includes('R0lGODlhAQABAIAAAAAAAP')) {
+            return img.src;
+          }
+        }
+        return null;
+      });
+
+      if (src) {
+        member.imageUrl = src;
+        console.log(`📸 Found photo for ${member.name}`);
+        break;
+      } else {
+        console.warn(`⚠️ No valid photo found for ${member.name}`);
+      }
+    } catch (err) {
+      console.error(`❌ Error scraping ${member.name} (attempt ${attempts + 1}): ${err.message}`);
     }
-    throw new Error("Login did not complete or timed out.");
-  }
 
-  console.log("✅ Logged in successfully");
+    attempts++;
+    if (attempts < maxRetries) {
+      const delayMs = 5000 + Math.floor(Math.random() * 2000);
+      console.log(`🔁 Retrying after ${delayMs}ms...`);
+      await sleep(delayMs);
+    } else {
+      member.imageUrl = null;
+      console.log(`❌ Giving up on ${member.name} after ${maxRetries} attempts.`);
+    }
+  }
 }
 
 async function scrapeLinkedInPhotos(chapters) {
-  const browser = await puppeteer.launch({
-    headless: false,
-    executablePath: puppeteer.executablePath(),
-  });
-  const page = await browser.newPage();
+  let chapterIndex = 0;
+  let memberIndex = 0;
+  const membersPerSession = 15;
 
-  await loginToLinkedIn(page);
+  while (chapterIndex < chapters.length) {
+    console.log("🚀 Launching new browser session...");
+    const browser = await puppeteer.launch({
+      headless: false,
+      executablePath: puppeteer.executablePath(),
+    });
 
-  for (const chapter of chapters) {
-    console.log(`📘 Processing chapter: ${chapter.name || 'Unnamed Chapter'}`);
-  
-    for (const member of chapter.members || []) {
-      console.log(`👤 Checking member: ${member.name || 'Unnamed Member'}`);
-  
-      if (!member.linkedin) {
-        console.log(`⚠️ Skipping ${member.name}: no LinkedIn link`);
-        member.imageUrl = null;
-        continue;
-      }
-  
-      try {
-        console.log(`🌐 Navigating to ${member.linkedin}`);
-        await page.goto(member.linkedin, { waitUntil: 'domcontentloaded', timeout: 30000 });
-  
-        console.log(`🌍 Current page URL: ${page.url()}`);
-  
-        const photoUrl = await page.evaluate(() => {
-          const selectors = [
-            'img.pv-top-card-profile-picture__image--show',
-            'img.profile-photo-edit__preview',
-            'img.pv-top-card-profile-picture__image',
-            'img.evi-image',
-            'img.entity-photo-circle-9',
-          ];
-  
-          for (const sel of selectors) {
-            const img = document.querySelector(sel);
-            if (img && img.src && !img.src.includes('R0lGODlhAQABAIAAAAAAAP')) {
-              return img.src;
-            }
-          }
-  
-          const picture = document.querySelector('picture img');
-          if (picture && picture.src) {
-            return picture.src;
-          }
-  
-          return null;
-        });
-  
-        if (photoUrl) {
-          console.log(`📸 Found photo for ${member.name}: ${photoUrl}`);
+    const page = await browser.newPage();
+    await loginToLinkedIn(page);
+
+    let scrapedInThisSession = 0;
+
+    outer: while (chapterIndex < chapters.length) {
+      const chapter = chapters[chapterIndex];
+      
+      while (memberIndex < chapter.members.length) {
+        const member = chapter.members[memberIndex];
+
+        if (!member.linkedin) {
+          console.log(`⛔️ Skipping ${member.name}: no LinkedIn URL`);
+          member.imageUrl = null;
         } else {
-          console.log(`⚠️ No photo found for ${member.name}`);
+          console.log(`🕵️ Scraping: ${member.name}`);
+          await scrapeProfileWithRetry(member, page);
+          scrapedInThisSession++;
+
+          const delayMs = 5000 + Math.floor(Math.random() * 3000);
+          console.log(`⏱ Waiting ${delayMs}ms...`);
+          await sleep(delayMs);
         }
-  
-        member.imageUrl = photoUrl;
-  
-      } catch (err) {
-        console.error(`❌ Failed to scrape ${member.name}:`, err.message);
-        member.imageUrl = null;
+
+        memberIndex++;
+
+        if (scrapedInThisSession >= membersPerSession) {
+          console.log("🔁 Restarting browser after session limit reached...");
+          await browser.close();
+          await sleep(10000); // 10s delay before restart
+          break outer; // breaks out to relaunch browser
+        }
       }
-  
-      await sleep(4000 + Math.random() * 4000); // ⏳ Delay to avoid rate limit
+
+      // Finished all members in chapter
+      if (memberIndex >= chapter.members.length) {
+        chapterIndex++;
+        memberIndex = 0;
+      }
     }
-  
-    await sleep(5000); // Optional: pause longer between chapters
+
+    console.log("✅ Closing browser at end of session");
+    await browser.close();
   }
-  await browser.close();
+
+  console.log("🎉 Finished scraping all profiles!");
   return chapters;
 }
 
+// Start the scraping process
+console.log("📚 Starting scrape...");
 const updated = await scrapeLinkedInPhotos(chapters);
 
+// Save to file
 console.log("💾 Writing output to data_with_photos.json...");
 fs.writeFileSync('data_with_photos.json', JSON.stringify({ chapters: updated }, null, 2));
-console.log('✅ Saved results to data_with_photos.json');
+console.log("✅ Done! Results saved.");

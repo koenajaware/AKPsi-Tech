@@ -1,0 +1,46 @@
+.notfound-container {
+    min-width: 100vw;
+    min-height: 100vh; 
+    /* navy */ 
+    background-color: white; 
+    color:navy; 
+    display: flex;
+    flex-direction:column; 
+    justify-content: center; 
+    align-items:center; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 50px 10px; 
+}
+
+.notfound-container h1 {
+    margin-top: 10px;
+    font-size: 10rem; 
+    font-weight: 700; 
+}
+
+.notfound-container h2 {
+    font-size: 4rem; 
+    font-weight: 400; 
+}
+
+.notfound-container p {
+    font-size: 2rem; 
+    font-weight: 400; 
+}
+
+
+.notfound-container a {
+    font-size: 2rem; 
+    font-weight: 400; 
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    background-color: lightblue; 
+    color: navy; 
+    border-radius: 20px; 
+}
+
+.notfound-container a:hover {
+    background-color: navy;
+    color: white; 
+    transition: all var(--transition-speed) ease;
+}
