@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/LogoPhysics.css';
+import staticLogos from '../assets/LogoPhysicsStaticLogos.png';
 
 const LogoPhysics = ({ logos }) => {
   // array that stores references to each logo
@@ -21,12 +22,13 @@ const LogoPhysics = ({ logos }) => {
     vx: 0,
     vy: 0
   })));
-
-  /*
-  in HTML, the coordinate system is (0,0) at the top left corner, 
-  and the x-coordinate increases as you go right, 
-  and the y-coordinate increases as you go down.
-  */
+  // track original window size
+  const originalWindowSize = useRef({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  // state to control logo visibility
+  const [showStaticImage, setShowStaticImage] = useState(false);
 
   // update initial positions
   useEffect(() => {
@@ -57,16 +59,30 @@ const LogoPhysics = ({ logos }) => {
 
     updateInitialPositions();
 
-    // makes sure the website works when the window is resized
     const handleResize = () => {
-      updateInitialPositions();
+      const isOriginalSize = 
+        window.innerWidth === originalWindowSize.current.width && 
+        window.innerHeight === originalWindowSize.current.height;
+      
+      if (isOriginalSize) {
+        // If back to original size, show logos and reload
+        if (showStaticImage) {
+          window.location.reload();
+        }
+      } else {
+        // If not original size, show static image
+        setShowStaticImage(true);
+      }
     };
+    
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [showStaticImage]);
 
   // changes velocity and position of each logo relative to the amount scrolled
   useEffect(() => {
+    if (showStaticImage) return;
+    
     const handleScroll = () => {
       // figure out the amount scrolled
       const scrollDelta = window.scrollY - scrollPosition.current;
@@ -77,8 +93,8 @@ const LogoPhysics = ({ logos }) => {
 
       // apply a random velocty to each logo relative to the clamped scroll delta
       positions.current.forEach(pos => {
-        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
-        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.025;
+        pos.vx += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
+        pos.vy += (Math.random() - 0.5) * clampedScrollDelta * 0.05;
       });
 
       // starts the animation frame
@@ -90,7 +106,7 @@ const LogoPhysics = ({ logos }) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [showStaticImage]);
 
   const animate = () => {
     const container = logoRefs.current[0]?.parentElement;
@@ -98,9 +114,6 @@ const LogoPhysics = ({ logos }) => {
     const containerRect = container.getBoundingClientRect();
     const containerLeft = containerRect.left;
     const containerTop = containerRect.top;
-    /* const box = centerBox.current;
-    const boxCenterX = box.x + box.width / 2;
-    const boxCenterY = box.y + box.height / 2; */
 
     // First apply velocity and damping
     positions.current.forEach((pos) => {
@@ -120,66 +133,6 @@ const LogoPhysics = ({ logos }) => {
       // Calculate logo center
       const logoCenterX = containerLeft + initial.left + pos.x + radius;
       const logoCenterY = containerTop + initial.top + pos.y + radius;
-
-      // 1. Center box collision - as a soft force field
-      /* const boxRepulsionForce = 0.25; // Softer repulsion
-      const boxPadding = 10; // Extra space around box
-
-      // Calculate distance from logo to box edges
-      const boxLeft = boxCenterX - box.width / 2 - boxPadding;
-      const boxRight = boxCenterX + box.width / 2 + boxPadding;
-      const boxTop = boxCenterY - box.height / 2 - boxPadding;
-      const boxBottom = boxCenterY + box.height / 2 + boxPadding; */
-
-      /* const checkCenterBoxCollision = (rx, ry, rw, rh, lx, ly, lr) => {
-        // calculate x and y distances between circle center and rectangle center
-        // abs collapses 4 quadrants to 1
-        let circleDistance = {
-          x: Math.abs(lx - rx),
-          y: Math.abs(ly - ry)
-        };
-
-        // if circle is beyond top or right edges of the rectangle, it is definitely not intersecting
-        if (circleDistance.x > (rw / 2 + lr)) { return false; }
-        if (circleDistance.y > (rh / 2 + lr)) { return false; }
-
-        // if circle is within top of right edges of the rectangle, it is definitely intersecting
-        if (circleDistance.x <= (rw / 2)) { return true; }
-        if (circleDistance.y <= (rh / 2)) { return true; }
-
-        // cover edge case where circle is intersecting top right corner of the rectangle
-        let cornerDistance_sq = Math.pow(circleDistance.x - (rw / 2), 2) +
-          Math.pow(circleDistance.y - (rh / 2), 2);
-
-        return (cornerDistance_sq <= Math.pow(lr, 2));
-      }
-
-      // Check if logo is overlapping with padded box
-      if (checkCenterBoxCollision(boxCenterX, boxCenterY, boxRight - boxLeft, boxBottom - boxTop, logoCenterX, logoCenterY, radius)) {
-
-        // Find closest box edge
-        const distToLeft = Math.abs(logoCenterX - boxLeft);
-        const distToRight = Math.abs(logoCenterX - boxRight);
-        const distToTop = Math.abs(logoCenterY - boxTop);
-        const distToBottom = Math.abs(logoCenterY - boxBottom);
-
-        const minDist = Math.min(distToLeft, distToRight, distToTop, distToBottom);
-
-        // Apply repulsion force away from closest edge
-        if (minDist === distToLeft) {
-          pos.vx -= boxRepulsionForce * (distToLeft);
-          pos.vx *= 0.75;
-        } else if (minDist === distToRight) {
-          pos.vx += boxRepulsionForce * (distToRight);
-          pos.vx *= 0.75;
-        } else if (minDist === distToTop) {
-          pos.vy -= boxRepulsionForce * (distToTop);
-          pos.vy *= 0.75;
-        } else {
-          pos.vy += boxRepulsionForce * (distToBottom);
-          pos.vy *= 0.75;
-        }
-      } */
 
       // 2. Boundary constraints (container edges)
       const minX = -initial.left;
@@ -261,16 +214,28 @@ const LogoPhysics = ({ logos }) => {
       </div>
 
       <div className="logo-container">
-        {logos.map((logo, i) => (
-          <img
-            key={i}
-            ref={el => logoRefs.current[i] = el}
-            className="logo organization-logo"
-            src={logo}
-            alt={`Organization ${i + 1}`}
-            style={{ borderRadius: '50%' }}
+        {showStaticImage ? (
+          <img 
+            src={staticLogos} 
+            alt="Organizations we've impacted" 
+            style={{ width: '100%', height: 'auto' }}
           />
-        ))}
+        ) : (
+          logos.map((logo, i) => (
+            <img
+              key={i}
+              ref={el => logoRefs.current[i] = el}
+              className="logo organization-logo"
+              src={logo}
+              alt={`Organization ${i + 1}`}
+              style={{ 
+                borderRadius: '50%',
+                opacity: showStaticImage ? 0 : 1,
+                transition: 'opacity 0.3s ease'
+              }}
+            />
+          ))
+        )}
       </div>
     </div>
   );
