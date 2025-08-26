@@ -1,7 +1,7 @@
-/* Mobile-first PhotoWheel Styles */
+/* Desktop-first PhotoWheel Styles */
 .photo-wheel {
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
   overflow: hidden;
   position: relative;
@@ -11,16 +11,17 @@
 .photo-track {
   display: flex;
   width: fit-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite; /* Default to desktop animation */
+  gap: 0; /* Ensure no gaps between photos */
 }
 
 .photo-slide {
   flex: 0 0 auto;
-  padding: 0 8px;
+  padding: 0 10px; /* Default to desktop padding */
 }
 
 .photo-slide img {
-  height: 200px;
+  height: 250px; /* Default to desktop height */
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,9 +37,45 @@
   }
 }
 
+/* Mobile-specific animation that shows all images */
+@keyframes scrollMobile {
+  0% {
+    transform: translateX(100%); /* Start from right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* End at left edge */
+  }
+}
+
 /* Pause animation on hover (optional) */
 .photo-track:hover {
   animation-play-state: paused;
+}
+
+/* Large desktop layout */
+@media (min-width: 1024px) {
+  .photo-slide img {
+    height: 300px; /* Large desktop height */
+  }
+}
+
+/* Medium mobile optimizations */
+@media (max-width: 767px) {
+  .photo-wheel {
+    padding: 1.25rem 0;
+  }
+  
+  .photo-slide {
+    padding: 0; /* No spacing between photos on mobile */
+  }
+  
+  .photo-slide img {
+    height: 160px; /* Mobile height */
+  }
+
+  .photo-track {
+    animation: scrollMobile 40s linear infinite; /* Switch to mobile animation */
+  }
 }
 
 /* Small mobile optimizations */
@@ -47,44 +84,11 @@
     padding: 1rem 0;
   }
   
-  .photo-slide {
-    padding: 0 6px;
-  }
-  
   .photo-slide img {
-    height: 150px;
+    height: 150px; /* Smaller height for small mobile */
   }
-}
 
-/* Medium mobile optimizations */
-@media (min-width: 481px) and (max-width: 767px) {
-  .photo-wheel {
-    padding: 1.25rem 0;
-  }
-  
-  .photo-slide img {
-    height: 180px;
-  }
-}
-
-/* Tablet and desktop layout */
-@media (min-width: 768px) {
-  .photo-wheel {
-    padding: 2rem 0;
-  }
-  
-  .photo-slide {
-    padding: 0 10px;
-  }
-  
-  .photo-slide img {
-    height: 250px;
-  }
-}
-
-/* Desktop layout */
-@media (min-width: 1024px) {
-  .photo-slide img {
-    height: 300px;
+  .photo-track {
+    animation: scrollMobile 40s linear infinite; /* Slower for small mobile */
   }
 } 
