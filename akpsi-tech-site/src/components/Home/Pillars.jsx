@@ -55,7 +55,7 @@ const Pillars = () => {
 
   return (
     <section className="pillars" id="pillars">
-      <h2 className="section-title">PILLARS</h2>
+      <h2 className="pillars-section-title">PILLARS</h2>
       
       <div className="pillars-content">
         <div className="pillars-list">

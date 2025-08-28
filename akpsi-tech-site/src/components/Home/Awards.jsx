@@ -118,7 +118,7 @@ const Awards = () => {
 
   return (
     <section className="awards" id="awards">
-      <h2 className="section-title">AWARDS</h2>
+      <h2 className="awards-section-title">AWARDS</h2>
       
       <div className="awards-content">
         <div className="awards-list">
