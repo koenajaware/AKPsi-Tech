@@ -1,49 +1,35 @@
-/* Desktop-first PhotoWheel Styles */
 .photo-wheel {
   width: 100%;
   padding: 2rem 0;
   background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
   overflow: hidden;
   position: relative;
-  box-sizing: border-box;
 }
 
 .photo-track {
   display: flex;
   width: fit-content;
-  animation: scroll 30s linear infinite; /* Default to desktop animation */
-  gap: 0; /* Ensure no gaps between photos */
+  animation: scroll1 40s linear infinite;
 }
 
 .photo-slide {
   flex: 0 0 auto;
-  padding: 0 10px; /* Default to desktop padding */
+  padding: 0 10px;
 }
 
 .photo-slide img {
-  height: 250px; /* Default to desktop height */
+  height: 300px;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
 }
 
-@keyframes scroll {
+@keyframes scroll1 {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Move by half of the total width (original set of images) */
-  }
-}
-
-/* Mobile-specific animation that shows all images */
-@keyframes scrollMobile {
-  0% {
-    transform: translateX(100%); /* Start from right edge */
-  }
-  100% {
-    transform: translateX(-100%); /* End at left edge */
+    transform: translateX(-500%); /* Move by half of the total width (original set of images) */
   }
 }
 
@@ -52,43 +38,19 @@
   animation-play-state: paused;
 }
 
-/* Large desktop layout */
-@media (min-width: 1024px) {
+/* Media Queries */
+@media screen and (max-width: 768px) {
   .photo-slide img {
-    height: 300px; /* Large desktop height */
+    height: 250px;
   }
 }
 
-/* Medium mobile optimizations */
-@media (max-width: 767px) {
-  .photo-wheel {
-    padding: 1.25rem 0;
-  }
-  
-  .photo-slide {
-    padding: 0; /* No spacing between photos on mobile */
-  }
-  
+@media screen and (max-width: 480px) {
   .photo-slide img {
-    height: 160px; /* Mobile height */
-  }
-
-  .photo-track {
-    animation: scrollMobile 40s linear infinite; /* Switch to mobile animation */
-  }
-}
-
-/* Small mobile optimizations */
-@media (max-width: 480px) {
-  .photo-wheel {
-    padding: 1rem 0;
+    height: 200px;
   }
   
-  .photo-slide img {
-    height: 150px; /* Smaller height for small mobile */
-  }
-
-  .photo-track {
-    animation: scrollMobile 40s linear infinite; /* Slower for small mobile */
+  .photo-wheel {
+    padding: 1.5rem 0;
   }
 } 
