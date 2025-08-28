@@ -77,7 +77,7 @@ export const chapters = [
         { id: 17, name: "Sydney Richman", linkedin: "https://www.linkedin.com/in/sydney-richman-8246b01b4/", imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFsH6O1PFUOhg/profile-displayphoto-shrink_400_400/B4EZVtB9VEHMAk-/0/1741290986362?e=1756944000&v=beta&t=RA8AXyKPeUCdeC-Naoq9t69MLmfi8chcxqJMfZ90wjs" },
         { id: 18, name: "Uzochi Njiaju", linkedin: "https://www.linkedin.com/in/uzochi-njiaju/", imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFshT4WFqlhTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708719451151?e=1756944000&v=beta&t=5EEwKVkBsdRgI1eeq0ayjWF6x7ek4Wy2nKbBR_LbXqI" },
         { id: 19, name: "Walid Khokhar", linkedin: "https://www.linkedin.com/in/walid-khokhar/", imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQEPHPcqSRfHnQ/profile-displayphoto-shrink_400_400/B4EZd2UB2lHsAg-/0/1750036652120?e=1756944000&v=beta&t=VgcFLeQWOONGY-rlYUKZa9SOlcSQpPltka2RfYXYJxE" },
-        { id: 20, name: "Zavian Johnson", linkedin: "https://www.linkedin.com/in/zavian-johnson-276638285/", imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQF76oFKzcU8QA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712266088375?e=1756944000&v=beta&t=slpuA_w-J7ylEUSFinzUIvL5jpHv8nlZir5Iu_BC4wQ" },
+        { id: 20, name: "Zavian Johnson", linkedin: "https://www.linkedin.com/in/zavian-johnson-276638285/", imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHHQzrO4lq5hg/profile-displayphoto-scale_200_200/B4DZiLEcouH4Ao-/0/1754679856623?e=1759363200&v=beta&t=ZklQJ6MVfKlyaDSKEJOoxxRAtfS6KKcF6_FJuyX9Db0" },
       ]
     },
     {
