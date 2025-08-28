@@ -19,11 +19,11 @@ const RecruitmentPhotoWheel = () => {
 
   return (
     <>
-    <h2 className="photo-wheel-title">Recruitment Gallery</h2>
-    <section className="photo-wheel">
-      <div className="photo-track">
+    <h2 className="recruitment-photo-wheel-title">Recruitment Gallery</h2>
+    <section className="recruitment-photo-wheel">
+      <div className="recruitment-photo-track">
         {duplicatedPhotos.map((photo, index) => (
-          <div key={index} className="photo-slide">
+          <div key={index} className="recruitment-photo-slide">
             <img src={photo} alt={`Slide ${index + 1}`} />
           </div>
         ))}

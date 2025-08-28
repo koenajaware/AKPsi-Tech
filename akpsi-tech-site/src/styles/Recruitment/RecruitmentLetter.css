@@ -91,23 +91,17 @@
     margin-top: 1rem;
   }
 
-  /* Hide corners on mobile */
-  @media (max-width: 767px) {
-    .msg-president .corner {
-      display: none; /* Hide corners on mobile */
-    }
+  /* Hide corners*/
+
+  .msg-president .corner {
+    display: none; /* Hide corners on mobile */
   }
+  
 
   /* Tablet styles */
   @media (min-width: 768px) {
     .msg-president {
       padding: 2.5rem 1.5rem;
-    }
-    
-    .msg-president .corner {
-      width: 2rem;
-      height: 2rem;
-      display: block; /* Show corners on tablet and up */
     }
     
     .mp-title {

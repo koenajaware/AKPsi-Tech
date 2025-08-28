@@ -1,23 +1,23 @@
 /* Banner Styles - Original Desktop Layout */
-.hero {
+.banner-hero {
   position: relative;
   width: 100%;
 }
 
-.hero-image-container {
+.banner-hero-image-container {
   width: 100%;
   height: 846px;
   overflow: hidden;
 }
 
-.hero-image {
+.banner-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.7;
 }
 
-.hero-overlay {
+.banner-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,9 +27,9 @@
   z-index: 1;
 }
 
-.hero-content {
+.banner-hero-content {
   position: absolute;
-  top: 15%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -37,15 +37,15 @@
   z-index: 2;
 }
 
-.hero-title {
+.banner-hero-title {
   font-size: 100px;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
-  margin-top: 100px;
+  margin-top: 0;
   white-space: nowrap;
 }
 
-.hero-subtitle {
+.banner-hero-subtitle {
   font-size: 32px;
   font-family: var(--font-family-thasadith);
   white-space: nowrap;
@@ -53,49 +53,46 @@
 
 /* Mobile Responsive Styles */
 @media (max-width: 1200px) {
-  .hero-title {
+  .banner-hero-title {
     font-size: 80px;
-    margin-top: 80px;
   }
   
-  .hero-subtitle {
+  .banner-hero-subtitle {
     font-size: 28px;
   }
 }
 
 @media (max-width: 992px) {
-  .hero-image-container {
+  .banner-hero-image-container {
     height: 600px;
   }
   
-  .hero-title {
+  .banner-hero-title {
     font-size: 60px;
-    margin-top: 60px;
   }
   
-  .hero-subtitle {
+  .banner-hero-subtitle {
     font-size: 24px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-image-container {
+  .banner-hero-image-container {
     height: 500px;
   }
   
-  .hero-content {
-    top: 20%;
+  .banner-hero-content {
+    top: 50%;
     padding: 0 1rem;
   }
   
-  .hero-title {
+  .banner-hero-title {
     font-size: 40px;
-    margin-top: 40px;
     white-space: normal;
     line-height: 1.2;
   }
   
-  .hero-subtitle {
+  .banner-hero-subtitle {
     font-size: 20px;
     white-space: normal;
     line-height: 1.3;
@@ -103,41 +100,39 @@
 }
 
 @media (max-width: 576px) {
-  .hero-image-container {
+  .banner-hero-image-container {
     height: 400px;
   }
   
-  .hero-content {
-    top: 25%;
+  .banner-hero-content {
+    top: 50%;
     padding: 0 0.75rem;
   }
   
-  .hero-title {
+  .banner-hero-title {
     font-size: 32px;
-    margin-top: 30px;
   }
   
-  .hero-subtitle {
+  .banner-hero-subtitle {
     font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-image-container {
+  .banner-hero-image-container {
     height: 350px;
   }
   
-  .hero-content {
-    top: 30%;
+  .banner-hero-content {
+    top: 50%;
     padding: 0 0.5rem;
   }
   
-  .hero-title {
+  .banner-hero-title {
     font-size: 28px;
-    margin-top: 25px;
   }
   
-  .hero-subtitle {
+  .banner-hero-subtitle {
     font-size: 16px;
   }
 }

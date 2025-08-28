@@ -26,16 +26,16 @@ const Banner = () => {
 
   return (
     <motion.section 
-      className="hero"
+      className="banner-hero"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
-      <div className="hero-image-container">
+      <div className="banner-hero-image-container">
         <motion.img 
           src={fratPic} 
           alt="Alpha Kappa Psi members" 
-          className="hero-image"
+          className="banner-hero-image"
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
           style={{ 
@@ -47,15 +47,15 @@ const Banner = () => {
         />
         
         {/* Overlay for better text readability */}
-        <div className="hero-overlay"></div>
+        <div className="banner-hero-overlay"></div>
         
         {/* Hero content positioned absolutely over the image */}
         <motion.div 
-          className="hero-content"
+          className="banner-hero-content"
           style={{ opacity }}
         >
           <motion.h1 
-            className="hero-title"
+            className="banner-hero-title"
             initial={{ opacity: 0.7, y: 3 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -64,7 +64,7 @@ const Banner = () => {
           </motion.h1>
           
           <motion.p 
-            className="hero-subtitle"
+            className="banner-hero-subtitle"
             initial={{ opacity: 0.7, y: 3 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}

@@ -62,7 +62,7 @@ const Tips = () => {
             ref={trackRef}
           >
             {duplicatedPhotos.map((photo, index) => (
-              <div key={index} className="photo-slide">
+              <div key={index} className="tips-photo-slide">
                 <img src={photo} alt={`Slide ${index + 1}`} />
               </div>
             ))}

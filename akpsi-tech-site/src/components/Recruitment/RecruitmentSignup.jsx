@@ -36,7 +36,7 @@ const RecruitmentSignup = () => {
                     <h2
                         className="recruitment-register-title"
                     >
-                        REGISTER<br></br>HERE:
+                        REGISTER HERE!
                     </h2>
                     <h3
                         className="recruitment-semester-subtitle"

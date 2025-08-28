@@ -1,5 +1,5 @@
 /* Title styling */
-.photo-wheel-title {
+.recruitment-photo-wheel-title {
   font-family: 'Inria Serif', serif;
   font-size: 2.5rem;
   font-weight: bold; /* Remove quotes – they break the value */
@@ -9,7 +9,7 @@
   color: #000000; /* gray-900 */
 }
 
-.photo-wheel {
+.recruitment-photo-wheel {
   width: 100%;
   padding: 2rem 0;
   background: linear-gradient(to bottom, white, #80AED5, white);
@@ -17,26 +17,27 @@
   position: relative;
 }
 
-.photo-track {
+.recruitment-photo-track {
   display: flex;
   width: max-content;
   min-width: 200%;
-  animation: scroll 30s linear infinite;
+  animation: recruitmentScroll 40s linear infinite; /* Default to desktop animation */
+  gap: 0; /* Ensure no gaps between photos */
 }
 
-.photo-slide {
+.recruitment-photo-slide {
   flex: 0 0 auto;
-  padding: 0 10px;
+  padding: 0 10px; /* Default to desktop padding */
 }
 
-.photo-slide img {
-  height: 300px;
+.recruitment-photo-slide img {
+  height: 300px; /* Default to desktop height */
   width: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes scroll {
+@keyframes recruitmentScroll {
   0% {
     transform: translateX(0);
   }
@@ -45,24 +46,58 @@
   }
 }
 
+/* Mobile-specific animation that shows all images */
+@keyframes recruitmentScrollMobile {
+  0% {
+    transform: translateX(0%); /* Start from right edge */
+  }
+  100% {
+    transform: translateX(-250%); /* End at left edge */
+  }
+}
+
 /* Pause animation on hover (optional) */
-.photo-track:hover {
+.recruitment-photo-track:hover {
   animation-play-state: paused;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .photo-slide img {
-    height: 250px;
+/* Large desktop layout */
+@media screen and (min-width: 1024px) {
+  .recruitment-photo-slide img {
+    height: 350px; /* Large desktop height */
   }
 }
 
-@media screen and (max-width: 480px) {
-  .photo-slide img {
-    height: 200px;
+/* Medium mobile optimizations */
+@media screen and (max-width: 768px) {
+  .recruitment-photo-wheel {
+    padding: 1.5rem 0;
   }
   
-  .photo-wheel {
-    padding: 1.5rem 0;
+  .recruitment-photo-slide {
+    padding: 0 10px; /* No spacing between photos on mobile */
+  }
+  
+  .recruitment-photo-slide img {
+    height: 250px; /* Mobile height */
+  }
+
+  .recruitment-photo-track {
+    animation: recruitmentScrollMobile 20s linear infinite; /* Switch to mobile animation */
+  }
+}
+
+/* Small mobile optimizations */
+@media screen and (max-width: 480px) {
+  .recruitment-photo-wheel {
+    padding: 1rem 0;
+  }
+  
+  .recruitment-photo-slide img {
+    height: 200px; /* Smaller height for small mobile */
+  }
+
+  .recruitment-photo-track {
+    animation: recruitmentScrollMobile 20s linear infinite; /* Mobile animation for small mobile */
   }
 }

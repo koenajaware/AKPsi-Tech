@@ -184,6 +184,11 @@
     .right-arrow {
       right: 15px;
     }
+    
+    /* Make title smaller on tablets/large phones */
+    .section-title {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (max-width: 480px) {
@@ -217,6 +222,11 @@
     
     .right-arrow {
       right: 10px;
+    }
+    
+    /* Make title smaller on small phones */
+    .section-title {
+      font-size: 1.6rem;
     }
   }
   

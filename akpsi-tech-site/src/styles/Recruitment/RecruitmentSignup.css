@@ -73,7 +73,7 @@
 /* Tablet styles */
 @media (min-width: 768px) {
   .recruitment-registration-container {
-    grid-template-columns: 1fr 1fr; /* Side by side on tablet */
+    /*grid-template-columns: 1fr 1fr; /* Side by side on tablet */
     gap: 3rem;
   }
   
