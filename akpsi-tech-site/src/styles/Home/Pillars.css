@@ -144,27 +144,15 @@
   }
 }
 
-/* Tablet and desktop layout */
-/*
-@media (min-width: 768px) {
-  .pillars {
-    padding: 3rem 2rem;
-    gap: 3rem;
-  }
-
-  .pillars .section-title {
-    font-size: 3rem;
-  }
-
-  .pillar-title {
-    font-size: 1.3rem;
-  }
-  
-  .pillar-item {
-    padding: 1.25rem 0;
-  }
-  
+/* Desktop enhancements */
+@media (min-width: 769px) {
   .pillar-dropdown p {
-    font-size: 1rem;
+    font-size: 1.15rem; /* larger, more readable on desktop */
+    line-height: 1.7;
+    max-width: 85ch; /* widen a bit to reduce side margins */
+    margin-left: auto; /* center the paragraph block */
+    margin-right: auto;
+    padding-left: 0.25rem; /* lighter padding */
+    padding-right: 0.25rem;
   }
-} */
+}
