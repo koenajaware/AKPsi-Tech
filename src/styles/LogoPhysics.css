@@ -1,7 +1,7 @@
 .logo-container {
   position: relative;
   min-height: 600px;
-  height: 60vh; /* Use viewport height for responsive scaling */
+  height: 60vh; /* Desktop/tablet default */
   margin: 2rem auto;
   width: 100vw; /* Set width to 100% of the viewport width */
   max-width: 100%; /* Ensure it doesn't exceed the viewport width */
@@ -74,6 +74,15 @@
   .logo-container {
     min-height: 600px;
     margin: 2rem auto;
+  }
+}
+
+/* On small screens, reduce container height to eliminate excess blue space */
+@media (max-width: 767px) {
+  .logo-container {
+    height: auto;          /* content-driven height on mobile */
+    min-height: 320px;     /* enough to display the logos without large blank space */
+    margin: 1rem auto;     /* slightly tighter spacing */
   }
 }
 

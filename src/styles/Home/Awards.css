@@ -188,6 +188,9 @@
   margin: 1rem 0;
   width: 100%;
   box-sizing: border-box;
+  list-style: none; /* remove default bullets */
+  padding-left: 0;  /* remove default list indent */
+  margin-left: 0;
 }
 
 .achievements-list {
@@ -197,6 +200,9 @@
   margin: 1rem 0;
   width: 100%;
   box-sizing: border-box;
+  list-style: none; /* remove default bullets */
+  padding-left: 0;  /* remove default list indent */
+  margin-left: 0;
 }
 
 .achievement-item {
@@ -205,6 +211,12 @@
   line-height: 1.4;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* Ensure list items do not show bullets across all contexts */
+.recipients-list li,
+.achievements-list li {
+  list-style: none;
 }
 
 .chapter-award {

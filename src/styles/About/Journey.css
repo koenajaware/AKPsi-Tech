@@ -186,7 +186,7 @@
     }
     
     /* Make title smaller on tablets/large phones */
-    .section-title {
+    .journey-section-title {
       font-size: 2rem;
     }
   }
@@ -225,7 +225,7 @@
     }
     
     /* Make title smaller on small phones */
-    .section-title {
+    .journey-section-title {
       font-size: 1.6rem;
     }
   }
