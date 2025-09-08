@@ -32,6 +32,7 @@
   padding: 20px;
   z-index: 2;
   box-sizing: border-box;
+  margin: 0 auto; /* center the content container */
 }
 
 .contact-content h1 {
@@ -155,7 +156,7 @@
   }
   
   .contact-content {
-    padding: 15px;
+    padding: 100px 15px 15px; /* extra top padding to clear navbar */
   }
   
   .contact-content h1 {
@@ -204,7 +205,7 @@
 /* Small mobile optimizations */
 @media (max-width: 480px) {
   .contact-content {
-    padding: 10px;
+    padding: 90px 10px 10px; /* ensure title is visible on very small screens */
   }
   
   .contact-content h1 {
@@ -238,6 +239,7 @@
 @media (min-width: 769px) {
   .contact-content {
     padding: 40px;
+    max-width: 1200px; /* keep a pleasant readable width on desktop */
   }
   
   .contact-content h1 {
@@ -246,18 +248,24 @@
   }
   
   .contact-body {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 520px));
     gap: 40px;
-    align-items: flex-start;
+    align-items: start;
+    justify-content: center; /* center the two columns as a unit */
+    justify-items: stretch;
   }
   
   .contact-details {
     flex: 1;
-    text-align: left;
+    text-align: center; /* center names and text on the left column */
+    width: 100%;
+    max-width: 520px; /* slightly shorter column */
+    justify-self: center;
   }
   
   .contact-person {
-    text-align: left;
+    text-align: center; /* ensure each card is centered */
     background: none;
     backdrop-filter: none;
     padding: 0;
@@ -265,12 +273,15 @@
   
   .contact-form-container {
     flex: 2;
-    min-width: 300px;
-    max-width: 500px;
+    min-width: 0; /* allow to shrink within grid */
+    max-width: 520px; /* slightly shorter column */
+    width: 100%;
+    justify-self: center; /* center the form in the right column */
   }
   
   .contact-form-container button {
     width: min-content;
     padding: 5px 24px;
+    align-self: center; /* center the submit button within the form */
   }
 }
