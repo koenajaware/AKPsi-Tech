@@ -1,9 +1,9 @@
-/* Mobile-first Awards Styles */
+/* Desktop-first Awards Styles */
 .awards {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
-  gap: 2rem;
+  padding: 4rem 3rem;
+  gap: 4rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 .awards-section-title {
   color: #14437D;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
   color: var(--color-primary);
@@ -43,7 +43,7 @@
 .award-item {
   display: flex;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
@@ -52,7 +52,7 @@
 .award-title {
   text-align: center;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #000;
   font-weight: normal;
   margin: 0;
@@ -82,7 +82,7 @@
   margin: 0;
   max-width: 100%;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -273,14 +273,182 @@
   overflow-wrap: break-word;
 }
 
-/* Small mobile optimizations */
+/* Large desktop layout */
+@media (min-width: 1200px) {
+  .awards {
+    padding: 4rem 6rem;
+    gap: 5rem;
+  }
+
+  .awards-section-title {
+    font-size: 5rem;
+  }
+
+  .award-title {
+    font-size: 1.8rem;
+  }
+  
+  .award-item {
+    padding: 1.75rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 1.2rem;
+  }
+  
+  .award-name {
+    font-size: 2rem;
+  }
+  
+  .award-description {
+    font-size: 1.2rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .year-circle {
+    width: 90px;
+    height: 90px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .awards {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+
+  .awards-section-title {
+    font-size: 4rem;
+  }
+
+  .award-title {
+    font-size: 1.5rem;
+  }
+  
+  .award-item {
+    padding: 1.5rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 1.1rem;
+  }
+  
+  .award-name {
+    font-size: 1.7rem;
+  }
+  
+  .award-description {
+    font-size: 1.1rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .year-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .awards {
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  .awards-section-title {
+    font-size: 3rem;
+  }
+
+  .award-title {
+    font-size: 1.3rem;
+  }
+  
+  .award-item {
+    padding: 1.25rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 1rem;
+  }
+  
+  .award-name {
+    font-size: 1.5rem;
+  }
+  
+  .award-description {
+    font-size: 1rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .year-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Medium mobile layout */
+@media (min-width: 481px) and (max-width: 767px) {
+  .awards {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .awards-section-title {
+    font-size: 2.2rem;
+  }
+
+  .award-title {
+    font-size: 1.15rem;
+  }
+  
+  .award-item {
+    padding: 1rem 0;
+  }
+  
+  .award-dropdown p {
+    font-size: 0.9rem;
+  }
+  
+  .award-name {
+    font-size: 1.3rem;
+  }
+  
+  .award-description {
+    font-size: 0.9rem;
+  }
+  
+  .award-subtitle {
+    font-size: 1.15rem;
+  }
+  
+  .year-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Small mobile layout */
 @media (max-width: 480px) {
   .awards {
     padding: 1.5rem 0.75rem;
     gap: 1.5rem;
   }
 
-  .section-title {
+  .awards-section-title {
     font-size: 2rem;
   }
 
@@ -320,154 +488,5 @@
     width: 50px;
     height: 50px;
     font-size: 0.6rem;
-  }
-}
-
-/* Medium mobile optimizations */
-@media (min-width: 481px) and (max-width: 767px) {
-  .awards {
-    padding: 2rem 1rem;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
-
-  .award-title {
-    font-size: 1.15rem;
-  }
-  
-  .award-name {
-    font-size: 1.3rem;
-  }
-  
-  .award-description {
-    font-size: 0.9rem;
-  }
-}
-
-/* Tablet and desktop layout */
-@media (min-width: 768px) {
-  .awards {
-    padding: 3rem 2rem;
-    gap: 3rem;
-  }
-
-  .section-title {
-    font-size: 3rem;
-  }
-
-  .award-title {
-    font-size: 1.3rem;
-  }
-  
-  .award-item {
-    padding: 1.25rem 0;
-  }
-  
-  .award-dropdown p {
-    font-size: 1rem;
-  }
-  
-  .award-name {
-    font-size: 1.5rem;
-  }
-  
-  .award-description {
-    font-size: 1rem;
-  }
-  
-  .award-subtitle {
-    font-size: 1.3rem;
-  }
-  
-  .year-circle {
-    width: 70px;
-    height: 70px;
-    font-size: 0.8rem;
-  }
-}
-
-/* Desktop layout */
-@media (min-width: 1024px) {
-  .awards {
-    padding: 4rem 3rem;
-    gap: 4rem;
-  }
-
-  .section-title {
-    font-size: 4rem;
-  }
-
-  .award-title {
-    font-size: 1.5rem;
-  }
-  
-  .award-item {
-    padding: 1.5rem 0;
-  }
-  
-  .award-dropdown p {
-    font-size: 1.1rem;
-  }
-  
-  .award-name {
-    font-size: 1.7rem;
-  }
-  
-  .award-description {
-    font-size: 1.1rem;
-  }
-  
-  .award-subtitle {
-    font-size: 1.5rem;
-  }
-  
-  .year-circle {
-    width: 80px;
-    height: 80px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Large desktop layout */
-@media (min-width: 1200px) {
-  .awards {
-    padding: 4rem 6rem;
-    gap: 5rem;
-  }
-
-  .section-title {
-    font-size: 5rem;
-  }
-
-  .award-title {
-    font-size: 1.8rem;
-  }
-  
-  .award-item {
-    padding: 1.75rem 0;
-  }
-  
-  .award-dropdown p {
-    font-size: 1.2rem;
-  }
-  
-  .award-name {
-    font-size: 2rem;
-  }
-  
-  .award-description {
-    font-size: 1.2rem;
-  }
-  
-  .award-subtitle {
-    font-size: 1.8rem;
-  }
-  
-  .year-circle {
-    width: 90px;
-    height: 90px;
-    font-size: 1rem;
   }
 }

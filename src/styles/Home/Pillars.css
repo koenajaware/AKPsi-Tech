@@ -1,9 +1,9 @@
-/* Mobile-first Pillars Styles */
+/* Desktop-first Pillars Styles */
 .pillars {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
-  gap: 2rem;
+  padding: 4rem 3rem;
+  gap: 4rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 .pillars-section-title {
   color: #14437D;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--font-family-inria-serif);
   font-weight: bold;
   color: var(--color-primary);
@@ -43,7 +43,7 @@
 .pillar-item {
   display: flex;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
@@ -52,7 +52,7 @@
 .pillar-title {  
   text-align: center;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #000;
   font-weight: normal;
   margin: 0;
@@ -82,7 +82,7 @@
   margin: 0;
   max-width: 100%;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -93,18 +93,111 @@
   display: none;
 }
 
+/* Large desktop layout */
+@media (min-width: 1200px) {
+  .pillars {
+    padding: 4rem 6rem;
+    gap: 5rem;
+  }
 
-/* Small mobile optimizations */
-/*
+  .pillars-section-title {
+    font-size: 5rem;
+  }
+
+  .pillar-title {
+    font-size: 1.8rem;
+  }
+  
+  .pillar-item {
+    padding: 1.75rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .pillars {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+
+  .pillars-section-title {
+    font-size: 4rem;
+  }
+
+  .pillar-title {
+    font-size: 1.5rem;
+  }
+  
+  .pillar-item {
+    padding: 1.5rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pillars {
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  .pillars-section-title {
+    font-size: 3rem;
+  }
+
+  .pillar-title {
+    font-size: 1.3rem;
+  }
+  
+  .pillar-item {
+    padding: 1.25rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium mobile layout */
+@media (min-width: 481px) and (max-width: 767px) {
+  .pillars {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .pillars-section-title {
+    font-size: 2.2rem;
+  }
+
+  .pillar-title {
+    font-size: 1.15rem;
+  }
+  
+  .pillar-item {
+    padding: 1rem 0;
+  }
+  
+  .pillar-dropdown p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile layout */
 @media (max-width: 480px) {
   .pillars {
     padding: 1.5rem 0.75rem;
     gap: 1.5rem;
   }
 
-  .pillars .section-title {
+  .pillars-section-title {
     font-size: 2rem;
-    text-align: center;
   }
 
   .pillar-title {
@@ -125,34 +218,5 @@
   
   .expand-icon {
     font-size: 1.3rem;
-  }
-}
-
-/* Medium mobile optimizations */
-/*
-@media (min-width: 481px) and (max-width: 767px) {
-  .pillars {
-    padding: 2rem 1rem;
-  }
-
-  .pillars .section-title {
-    font-size: 2.2rem;
-  }
-
-  .pillar-title {
-    font-size: 1.15rem;
-  }
-}
-
-/* Desktop enhancements */
-@media (min-width: 769px) {
-  .pillar-dropdown p {
-    font-size: 1.15rem; /* larger, more readable on desktop */
-    line-height: 1.7;
-    max-width: 85ch; /* widen a bit to reduce side margins */
-    margin-left: auto; /* center the paragraph block */
-    margin-right: auto;
-    padding-left: 0.25rem; /* lighter padding */
-    padding-right: 0.25rem;
   }
 }
