@@ -52,7 +52,7 @@
     transform: translateX(0%); /* Start from right edge */
   }
   100% {
-    transform: translateX(-250%); /* End at left edge */
+    transform: translateX(-850%); /* End at left edge */
   }
 }
 
@@ -98,6 +98,6 @@
   }
 
   .recruitment-photo-track {
-    animation: recruitmentScrollMobile 20s linear infinite; /* Mobile animation for small mobile */
+    animation: recruitmentScrollMobile 60s linear infinite; /* Mobile animation for small mobile */
   }
 }

@@ -8,8 +8,8 @@
 
 .photo-track {
   display: flex;
-  width: fit-content;
-  animation: scroll1 40s linear infinite;
+  width: max-content;
+  animation: scroll1 30s linear infinite;
 }
 
 .photo-slide {
@@ -29,7 +29,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-500%); /* Move by half of the total width (original set of images) */
+    transform: translateX(-50%); /* Move by half of the total width (original set of images) */
+  }
+}
+
+@keyframes scrollMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half of the total width (original set of images) */
   }
 }
 
@@ -43,6 +52,10 @@
   .photo-slide img {
     height: 250px;
   }
+  
+  .photo-track {
+    animation: scrollMobile 20s linear infinite;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -52,5 +65,9 @@
   
   .photo-wheel {
     padding: 1.5rem 0;
+  }
+  
+  .photo-track {
+    animation: scrollMobile 30s linear infinite;
   }
 } 
