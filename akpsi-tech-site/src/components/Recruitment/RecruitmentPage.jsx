@@ -18,12 +18,11 @@ const RecruitmentPage = () => {
       </header>
       <main>
           <RecruitmentLetter />
-          <RecruitmentSignup />
+          {/* <RecruitmentSignup /> */}
           <RecruitmentEvents />
           <RecruitmentTipsGallery />
           <RecruitmentPhotoWheel />
-          <PastThemes />
-          
+          {/* <PastThemes /> */}
       </main>
     </div>
   );

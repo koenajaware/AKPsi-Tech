@@ -4,6 +4,9 @@ import '../../styles/Recruitment/RecruitmentLetter.css';
 export default function RecruitmentLetter() {
     return (
       <section className="msg-president">
+
+        <div className="corner top-left" />
+        <div className="corner bottom-right" />
   
         {/* Title */}
         <h2 className="mp-title">Letter from our VP of Membership</h2>
@@ -13,10 +16,7 @@ export default function RecruitmentLetter() {
   
         {/* Body copy */}
         <div className="mp-body-wrapper">
-            <div className="mp-body-aligner">
-                <div className="corner top-left" />
-                <div className="corner bottom-right" />
-            </div>
+            
           <div className="mp-body">
           <p>
               On behalf of the Omega Theta chapter, I would like to welcome you to
@@ -42,7 +42,7 @@ export default function RecruitmentLetter() {
               will take you beyond what you thought possible.
             </p>
             <p>
-              This Spring 2025, our rush theme is 'Squid Game'! I highly encourage
+              This Spring 2026, our rush theme is 'Stranger Things'! I highly encourage
               you to take a chance, have confidence, and come out to our rush
               events this semester. The Brothers of Alpha Kappa Psi cannot wait to
               meet you!
@@ -50,7 +50,7 @@ export default function RecruitmentLetter() {
             
           </div>
           {/* Signature */}
-          <p className="mp-signature">– Abhiram Sreeramaneni</p>
+          <p className="mp-signature">– Hashem Alomar</p>
         </div>
   
         

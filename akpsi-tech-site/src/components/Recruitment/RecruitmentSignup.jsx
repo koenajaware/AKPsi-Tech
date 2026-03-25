@@ -41,7 +41,7 @@ const RecruitmentSignup = () => {
                     <h3
                         className="recruitment-semester-subtitle"
                     >
-                        Fall 2025
+                        Fall 2026
                     </h3>
                 </div>
 

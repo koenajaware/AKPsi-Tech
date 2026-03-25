@@ -41,7 +41,7 @@ export default function MsgPresident() {
             will take you beyond what you thought possible.
           </p>
           <p>
-            This Spring 2025, our rush theme is 'Squid Game'! I highly encourage
+            This Spring 2026, our rush theme is 'Stranger Things'! I highly encourage
             you to take a chance, have confidence, and come out to our rush
             events this semester. The Brothers of Alpha Kappa Psi cannot wait to
             meet you!
@@ -49,7 +49,7 @@ export default function MsgPresident() {
           
         </div>
         {/* Signature */}
-        <p className="mp-signature">– Sydney Richman</p>
+        <p className="mp-signature">– Jason Jia</p>
       </div>
 
       

@@ -17,14 +17,14 @@ const ContactPage = () => {
           <div className="contact-body">
             <div className="contact-details">
               <div className="contact-person">
-                <h2>Sydney Richman</h2>
+                <h2>Jason Jia</h2>
                 <p>President</p>
                 <a href="mailto:president.akpsiot@gmail.com">
                   president.akpsiot@gmail.com
                 </a>
               </div>
               <div className="contact-person">
-                <h2>Abhiram Sreeramaneni</h2>
+                <h2>Hashem Alomar</h2>
                 <p>Vice President of Membership</p>
                 <a href="mailto:akpsiotrush@gmail.com">akpsiotrush@gmail.com</a>
               </div>
