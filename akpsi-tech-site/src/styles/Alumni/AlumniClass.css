@@ -127,6 +127,11 @@
   font-size: 0.9rem;
 }
 
+.photo-overlay p {
+  padding: 0;
+  margin: 0; 
+}
+
 /* Show overlay on hover for desktop */
 @media (hover: hover) {
   .member-photo:hover .photo-overlay {
